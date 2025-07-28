@@ -1,0 +1,57 @@
+
+enum TimesheetReviewStatus{
+    PENDING
+    APPROVED
+    REJECTED
+}
+
+// entity TimesheetReview{
+//     id UUID required unique
+//     status TimesheetReviewStatus required
+//     note String
+//     signature ImageBlob
+//     createdDate ZonedDateTime required
+//     lastUpdated ZonedDateTime required
+// }
+
+entity PersonalMonthlyTimesheet{
+    id UUID required unique
+    status TimesheetReviewStatus required 
+    createdDate ZonedDateTime required
+    lastUpdated ZonedDateTime required
+}
+
+entity TimeKeeping {
+  id UUID required unique
+  date LocalDate
+  firstCheckIn ZonedDateTime
+  lastCheckIn ZonedDateTime
+  hoursWorked Float
+  note String
+  isAbnormal Boolean
+  isDayOff Boolean
+  isOverride Boolean
+  locked Boolean
+  createdAt ZonedDateTime required
+  lastUpdatedAt ZonedDateTime required
+}
+
+// entity TimesheetReviewMapping{
+//     id UUID required unique
+
+// }
+
+// relationship OneToMany {
+//     TimesheetReview{timesheetReviewMapping} to TimesheetReviewMapping
+
+// }
+relationship ManyToOne {
+    // PersonalMonthlyTimesheet{timesheetReviewMappings} to TimesheetReviewMapping
+    PersonalMonthlyTimesheet to Employee with builtInEntity
+    PersonalMonthlyTimesheet{timeKeepings} to TimeKeeping
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass

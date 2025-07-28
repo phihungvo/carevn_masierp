@@ -1,0 +1,100 @@
+{
+  "annotations": {
+    "changelogDate": "20241123090458"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "invoiceId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "paymentMethodId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "paymentMethodCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentMethodName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vatId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "vat",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "vatAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "debtDays",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "RelatedCosts",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

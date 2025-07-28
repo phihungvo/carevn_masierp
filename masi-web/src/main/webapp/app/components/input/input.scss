@@ -1,0 +1,97 @@
+@import "../../bootstrap-variables";
+
+input,
+select {
+  padding: $space-8 $space-16;
+  border-radius: $rounded-8 !important;
+  border: 1px solid #bfc1c5 !important;
+  height: 40px;
+
+  &::placeholder {
+    font-size: $text-body-16 !important;
+    font-weight: $font-body-400 !important;
+    line-height: 24px;
+  }
+}
+
+input[type="checkbox"] {
+  width: $space-16 !important;
+  height: $space-16 !important;
+  padding: unset !important;
+  border-radius: $rounded-4 !important;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $primary-color !important;
+  }
+}
+
+input:disabled {
+  background-color: $secondary-black-80 !important;
+}
+
+textarea:disabled {
+  background-color: $secondary-black-80 !important;
+}
+
+.form-control:disabled {
+  color: currentColor;
+}
+
+.search {
+  position: relative;
+
+  &-input {
+    height: 40px;
+    width: 194px !important;
+    padding-left: 40px !important;
+    border-radius: 8px !important;
+
+    &::placeholder {
+      font-size: $text-body-14;
+      font-weight: $font-body-400;
+      color: #667085;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.invalid {
+  border-color: $red-invalid !important;
+}
+
+.input-container {
+  position: relative;
+
+  img {
+    width: $space-16;
+    height: $space-16;
+  }
+}
+
+.input-reveal-password {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.input-numberic {
+  min-width: 200px;
+
+  input {
+    padding: $space-6 0 !important;
+    border-radius: unset !important;
+    border: unset !important;
+    width: 100% !important;
+  }
+}

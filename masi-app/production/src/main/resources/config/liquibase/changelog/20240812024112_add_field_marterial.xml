@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+    - Thêm field "Số cân"
+- Field cấc loại cá độc: Bỏ ô chọn lý do khi tick "Không"
+- Thêm dropdown "Chọn loại nguyên liệu" với ds option : Thân cá, Đầu cá, Khác
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240812024111" author="Huu Hoang" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            DO $$
+            BEGIN
+    -- Check and add delivery_term_from column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='production_standard' AND column_name='material_Id') THEN
+            ALTER TABLE production_standard ADD COLUMN material_Id UUID;
+            END IF;
+
+            END $$;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

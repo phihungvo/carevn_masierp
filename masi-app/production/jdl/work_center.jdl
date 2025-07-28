@@ -1,0 +1,19 @@
+entity WorkCenter{
+    id UUID unique required,
+    name String required,
+    status WorkCenterStatusEnum required,
+    companyId UUID required,
+    createdAt ZonedDateTime,
+    createdBy String,
+    updatedAt ZonedDateTime,
+    updatedBy String,
+    isDeleted Boolean required,
+    deletedAt ZonedDateTime,
+    deletedBy String
+}
+enum WorkCenterStatusEnum {
+    ACTIVE, DAMAGED, REPAIR, PENDING
+}
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

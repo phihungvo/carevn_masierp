@@ -1,0 +1,236 @@
+entity ItemInfo {
+  id UUID,
+  code String,
+  name String, // Tên
+  registrationNumber String, // Số đăng ký
+  registrationDate ZonedDateTime, // Ngày đăng ký
+  handoverNumber String, // Số bàn giao
+  handoverDate ZonedDateTime, // Ngày bàn giao
+  handoverBy String, // Người bàn giao
+  userId UUID, // Người sử dụng
+  userPosition String, // Vị trí người sử dụng
+  seriesNumber String, // Số series
+  usageDate ZonedDateTime, // Ngày sử dụng
+  invoiceNumber String, // Số hóa đơn
+  invoiceDate ZonedDateTime, // Ngày hóa đơn
+  note TextBlob, // Ghi chú
+  status String,
+
+  liquidationDate ZonedDateTime, // Ngày thanh lý
+  unit UUID, // Đơn vị tính
+  yearOfUse Integer, // Năm sử dụng
+  monthOfUse Integer, // Tháng sử dụng
+  warrantyPeriod Float, // Thời hạn bảo hành
+  manufacturer String, // Nhà sản xuất
+  isMadeIn Boolean, // Nơi sản xuất
+  specs String, // Thông số
+  removalDate ZonedDateTime, // Ngày định chỉ
+  reasonForRemoval String, // Lý do định chỉ
+  attribute String, // Thuộc tính
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+entity ItemInfoDetail {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  status String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+entity ItemAssetTransfer {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  status String,
+
+  inventoriesStorageId UUID, // Kho tài sản
+  transactionTypeId UUID, // Loại phát sinh
+  itemCategoryId UUID, // nhóm tài sản
+
+  transferDate ZonedDateTime, // Ngày điều chuyển
+  description TextBlob, // Diễn giải
+  fromUnit String, // Từ đơn vị
+
+  fromDepartmentId UUID, // Từ bộ phận
+  toDepartmentId UUID, // Đến bộ phận
+  fromPersonId UUID, // Đến người
+  toPersonId UUID, // Người tạo
+  fromAddress String, // Địa chỉ bắt đầu
+  toAddress String, // Địa chỉ đích
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+entity AssetTransferDetails {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  status String,
+  inventoriesStorageId String, // Mã tài sản
+  quantity BigDecimal,
+  notes TextBlob, // Ghi chú
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+// loai phat sinh
+entity TransactionType {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+entity ItemAssetDepreciation {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  status String,
+
+  depreciationDate LocalDate,
+  accountingDate LocalDate,
+  employeeId UUID,
+  description String,
+  TypePageDepreciation TypePageDepreciation,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+
+}
+
+enum TypePageDepreciation{
+  AMORTIZATION,
+  ALLOWANCE
+}
+
+entity ItemAssetDepreciationDetail {
+  id UUID,
+  code String,
+  attribute String,
+  name TextBlob,
+
+  inventoriesStorageId UUID,
+  note TextBlob,
+  costInformation String,
+  amortizedCostInformation String,
+
+  amortizationAmount BigDecimal,
+  amortizationRate BigDecimal,
+  accumulatedAmortizationAmount BigDecimal,
+  recipe String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+
+}
+
+entity ItemLiquidation {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  status String,
+
+  liquidationDate ZonedDateTime,
+  description TextBlob,
+  reason TextBlob,
+  personnelList String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+
+entity ItemLiquidationDetail {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  liquidationDate ZonedDateTime,
+  description String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

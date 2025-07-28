@@ -1,0 +1,76 @@
+@import '../../bootstrap-variables';
+
+h1 {
+  font-size: $text-body-44;
+  font-weight: $font-body-700;
+  line-height: 51.56px;
+  letter-spacing: -0.5px;
+  text-align: left;
+  margin-bottom: $space-24;
+}
+
+h3 {
+  font-size: $text-body-36;
+  font-weight: $font-body-700;
+  line-height: 51.56px;
+  letter-spacing: -0.5px;
+  text-align: left;
+  margin-bottom: $space-24;
+}
+
+h4 {
+  font-size: $text-body-24;
+  font-weight: $font-body-500;
+  line-height: 28.13px;
+  letter-spacing: -0.5px;
+}
+
+h5 {
+  font-size: $text-body-20;
+  font-weight: $font-body-500;
+  line-height: 28.13px;
+  letter-spacing: -0.5px;
+  margin-bottom: 0px;
+}
+
+// span {
+//   display: inline-block;
+// }
+
+p {
+  margin-bottom: 0;
+  font-weight: $font-body-400;
+
+  &.bold {
+    font-weight: $font-body-700;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  &.success {
+    color: $success-green-20;
+  }
+
+  &.error {
+    color: $red-error-40;
+    background-color: unset !important;
+  }
+}
+
+.page_container {
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px -2px #10182808, 0px 12px 16px -4px #10182814;
+
+  &-V2 {
+    padding: 0;
+  }
+}

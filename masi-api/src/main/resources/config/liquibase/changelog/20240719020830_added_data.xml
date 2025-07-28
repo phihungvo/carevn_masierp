@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240719020825" author="HuuHoang" runOnChange="true" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sqlFile dbms="postgresql"
+                 encoding="UTF-8"
+                 endDelimiter=";"
+                 path="config/liquibase/data/migratedata.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"/>
+        <sql>
+            alter table masi_user
+                add column if not exists signature_id varchar (100);
+        </sql>
+    </changeSet>
+    <changeSet id="20240719020829" author="HuuHoang" runOnChange="true" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            alter table masi_user
+                add column if not exists signature_id varchar (100);
+            alter table masi_user
+                add column if not exists signature varchar (100);
+            alter table masi_user
+                add column if not exists signature_content_type varchar (100);
+            alter table masi_user
+                add column if not exists signature_file_name varchar (100);
+            alter table masi_user
+                add column if not exists signatureid varchar (100);
+        </sql>
+        <sql>
+            INSERT INTO masi_user (id, user_name, password_hash, first_name, last_name, email, image_url, activated,
+                                   lang_key, activation_key, reset_key, created_by, created_date, reset_date,
+                                   last_modified_by, last_modified_date, is_super_admin, employee_id, company_id,
+                                   signature, signature_content_type, signature_file_name, signature_id, signatureid)
+            VALUES ('d6cd8ee1-1dec-4db8-9f2c-7a68ef9a338c'::uuid, 'nguyen_bao_nhut_minh',
+                    '$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K', 'Minh', 'Nguyễn Bảo Nhựt',
+                    'minh.nguyen@masi.vn', '', True, 'en', NULL, NULL, 'system', '2024-09-17T16:20:06.296956', NULL,
+                    'system', '2024-09-17T16:20:06.296956', False, 'd6cd8ee1-1dec-4db8-9f2c-7a68ef9a338c'::uuid, 'MMS',
+                    NULL, NULL, NULL, NULL, NULL),
+                   ('7569db99-a59b-4394-aabb-945ac5c877e6'::uuid, 'tran_trung_huynh',
+                    '$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K', 'Huỳnh', 'Trần Trung',
+                    'huynh.tran@masi.vn', '', True, 'en', NULL, NULL, 'system', '2024-09-17T16:20:06.302496', NULL,
+                    'system', '2024-09-17T16:20:06.302496', False, '7569db99-a59b-4394-aabb-945ac5c877e6'::uuid, 'MMS',
+                    NULL, NULL, NULL, NULL, NULL),
+                   ('4977b7e2-d83f-4f10-9734-a207de592708'::uuid, 'nguyen_huu_uc',
+                    '$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K', 'Đức', 'Nguyễn Hữu',
+                    'duc.nguyen@masi.vn', '', True, 'en', NULL, NULL, 'system', '2024-09-17T16:20:06.307193', NULL,
+                    'system', '2024-09-17T16:20:06.307193', False, '4977b7e2-d83f-4f10-9734-a207de592708'::uuid, 'MMS',
+                    NULL, NULL, NULL, NULL, NULL),
+                   ('1ea21b81-5130-44b3-8baa-cd243ebba8bb'::uuid, 'nguyen_thi_thien_ly',
+                    '$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K', 'Lý', 'Nguyễn Thị Thiên',
+                    'ly.nguyen@masi.vn', '', True, 'en', NULL, NULL, 'system', '2024-09-17T16:20:06.311325', NULL,
+                    'system', '2024-09-17T16:20:06.311325', False, '1ea21b81-5130-44b3-8baa-cd243ebba8bb'::uuid, 'MMS',
+                    NULL, NULL, NULL, NULL, NULL),
+                   ('ae6d06a1-8e11-4e2a-aab6-1da0ee8c61fe'::uuid, 'oan_tran_cao_danh',
+                    '$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K', 'Danh', 'Đoàn Trần Cao',
+                    'danh.doan@masi.vn', '', True, 'en', NULL, NULL, 'system', '2024-09-17T16:20:06.316553', NULL,
+                    'system', '2024-09-17T16:20:06.316553', False, 'ae6d06a1-8e11-4e2a-aab6-1da0ee8c61fe'::uuid, 'MMS',
+                    NULL, NULL, NULL, NULL, NULL) on conflict do nothing;
+        </sql>
+
+    </changeSet>
+
+
+</databaseChangeLog>

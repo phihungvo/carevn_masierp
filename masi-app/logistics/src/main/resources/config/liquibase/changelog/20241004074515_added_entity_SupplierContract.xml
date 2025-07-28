@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity SupplierContract.
+    -->
+    <changeSet id="20241004074515-1" author="jhipster">
+        <createTable tableName="supplier_contract">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="contract_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="contract_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="supplier_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="contract_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="end_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="attachments" type="jsonb">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="supplier_contract" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="supplier_contract" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="supplier_contract" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+</databaseChangeLog>

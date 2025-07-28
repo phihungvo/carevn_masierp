@@ -1,0 +1,38 @@
+@import "../../bootstrap-variables";
+
+.actions-dropdown {
+  &-toggle {
+    background-color: white;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  .dropdown-item {
+    &:hover {
+      background-color: $secondary-black-90;
+      color: unset;
+    }
+
+    button {
+      font-weight: $font-body-400 !important;
+      font-size: $text-body-16 !important;
+    }
+  }
+
+  .update {
+    color: #46a6ff;
+  }
+
+  .delete {
+    color: #f54635;
+  }
+}
+
+.modals-create-uom,
+.modals-detail-uom-group {
+  .modal-content {
+    width: 1024px;
+  }
+}

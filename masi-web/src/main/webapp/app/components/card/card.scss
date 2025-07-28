@@ -1,0 +1,51 @@
+@import '../../bootstrap-variables';
+
+.card {
+  padding: 0 !important;
+
+  &-header {
+    background-color: white;
+    padding: $space-12 0;
+    display: flex;
+    justify-content: space-between;
+
+    &-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-subtitle {
+      align-self: flex-end !important;
+      font-size: $text-body-16;
+      font-style: italic;
+      font-weight: $font-body-400;
+      line-height: 18.75px;
+      letter-spacing: -0.5px;
+    }
+
+    &-extra {
+      display: flex;
+      gap: $space-16;
+      height: 40px;
+    }
+
+    &-bold {
+      font-weight: $font-body-700;
+    }
+  }
+
+  &-body {
+    padding: 0;
+    // overflow: auto;
+    // padding: 0 $space-64 $space-24 $space-64;
+    &-padding {
+      padding: $space-12 0;
+    }
+
+    &-overflow {
+      overflow-x: auto;
+      max-height: 100vh;
+    }
+  }
+}

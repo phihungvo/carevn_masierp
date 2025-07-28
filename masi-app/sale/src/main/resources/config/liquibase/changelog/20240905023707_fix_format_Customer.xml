@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity QualityIndex.
+    -->
+    <changeSet id="20240905023707" author="Hoang Dang" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+            DROP TRIGGER IF EXISTS trg_before_insert_customer ON public.customer;
+
+
+            CREATE OR REPLACE FUNCTION public.generate_customer_code(format_code text, current_value integer)
+RETURNS text
+LANGUAGE plpgsql
+AS $$
+DECLARE
+            padding_length integer;
+    padding_format text;
+            BEGIN
+    -- Trích xuất độ dài padding từ format_code
+    padding_format := substring(format_code from '%(\d+)d');
+    IF padding_format IS NOT NULL THEN
+        padding_length := padding_format::integer;
+            ELSE
+        padding_length := 4; -- Mặc định nếu không có định dạng
+            END IF;
+
+    -- Thay thế ký tự đại diện `%d` hoặc `%0Nd` bằng giá trị hiện tại với padding phù hợp
+            RETURN regexp_replace(format_code, '%\d*d', lpad(current_value::text, padding_length, '0'));
+            END;
+$$;
+
+
+CREATE OR REPLACE FUNCTION public.before_insert_customer()
+RETURNS trigger
+LANGUAGE plpgsql
+AS $$
+DECLARE
+            format_code text;
+    current_code integer;
+            BEGIN
+    -- Lấy định dạng và current_value từ bảng `customer_code_formats` theo company và department
+            SELECT format_customer_code, current_value INTO format_code, current_code
+            FROM public.customer_code_formats
+            WHERE company = NEW.company
+              AND (department = NEW.department OR department IS NULL)
+            ORDER BY department DESC
+                LIMIT 1;
+
+            -- Nếu không tìm thấy định dạng, xử lý lỗi
+            IF format_code IS NULL THEN
+        RAISE EXCEPTION 'No format found for company % and department %', NEW.company, NEW.department;
+            END IF;
+
+    -- Sinh mã khách hàng
+    NEW.customer_code := public.generate_customer_code(format_code, current_code);
+
+            -- Tăng giá trị current_value lên 1 trong bảng customer_code_formats
+            UPDATE public.customer_code_formats
+            SET current_value = current_value + 1 -- Changed from current_valueE to current_value
+            WHERE company = NEW.company
+              AND (department = NEW.department OR department IS NULL);
+
+            RETURN NEW;
+            END;
+$$;
+
+
+            CREATE TRIGGER trg_before_insert_customer
+                BEFORE INSERT ON public.customer
+                FOR EACH ROW
+                EXECUTE FUNCTION public.before_insert_customer();
+
+
+
+
+
+
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>

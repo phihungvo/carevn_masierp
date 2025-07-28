@@ -1,0 +1,69 @@
+{
+  "annotations": {
+    "changelogDate": "20240604094048"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiProduction",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fromDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "toDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "MoStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CREATED,PENDING,APPROVED,REJECTED,CANCELLED"
+    },
+    {
+      "fieldName": "orderId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiProduction",
+  "name": "ManufactureOrder",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "workOrder",
+      "otherEntityRelationshipName": "manufactureOrder",
+      "relationshipName": "workOrder",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

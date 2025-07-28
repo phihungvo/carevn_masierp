@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "changelogDate": "20240729030202"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "stock",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updateAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updateBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deleteAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deleteBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "UniformStock",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "uniform",
+      "otherEntityRelationshipName": "uniformStock",
+      "relationshipName": "uniform",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

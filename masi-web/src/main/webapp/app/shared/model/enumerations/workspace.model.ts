@@ -1,0 +1,4 @@
+export enum WORKSPACE_TYPE {
+  OFFICE = 'OFFICE',
+  FACTORY = 'FACTORY',
+}

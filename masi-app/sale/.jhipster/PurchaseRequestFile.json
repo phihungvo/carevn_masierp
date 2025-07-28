@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20240701092237"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiSale",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "filePath",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiSale",
+  "name": "PurchaseRequestFile",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "purchaseRequest",
+      "otherEntityRelationshipName": "purchaseRequestFile",
+      "relationshipName": "purchaseRequest",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="TruongDD" id="20240627201600">
+        <addColumn
+            schemaName="public"
+            tableName="time_keeping">
+            <column name="leave_type"
+                    type="varchar(255)"
+            >
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn
+            schemaName="public"
+            tableName="time_keeping">
+            <column name="leave_day_type"
+                    type="varchar(255)"
+            >
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addColumn
+            schemaName="public"
+            tableName="time_keeping">
+            <column name="violation_type"
+                    type="varchar(255)"
+            >
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

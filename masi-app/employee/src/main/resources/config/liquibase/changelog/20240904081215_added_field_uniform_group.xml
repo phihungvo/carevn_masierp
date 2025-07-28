@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240904081215" author="HuuHoang">
+        <sql dbms="postgresql"
+        endDelimiter=";"
+        splitStatements="false"
+        stripComments="true">
+            ALTER TABLE uniform ADD COLUMN IF NOT EXISTS base_price DOUBLE PRECISION;
+            ALTER TABLE uniform ADD COLUMN IF NOT EXISTS uom_group_id UUID;
+
+            ALTER TABLE uniform_form_detail ADD COLUMN IF NOT EXISTS actual_price DOUBLE PRECISION;
+            ALTER TABLE uniform_form_detail ADD COLUMN IF NOT EXISTS uom_id UUID;
+            ALTER TABLE uniform_form_detail ADD COLUMN IF NOT EXISTS uom_name VARCHAR(255);
+
+            ALTER TABLE uniform_order ADD COLUMN IF NOT EXISTS total_base_price DOUBLE PRECISION;
+            ALTER TABLE uniform_order ADD COLUMN IF NOT EXISTS total_actual_price DOUBLE PRECISION;
+            ALTER TABLE uniform_order ADD COLUMN IF NOT EXISTS supplier_id UUID;
+
+            ALTER TABLE uniform_stock ADD COLUMN IF NOT EXISTS warehouse_id UUID;
+            ALTER TABLE uniform_stock ADD COLUMN IF NOT EXISTS warehouse_name VARCHAR(255);
+
+        </sql>
+
+    </changeSet>
+
+</databaseChangeLog>

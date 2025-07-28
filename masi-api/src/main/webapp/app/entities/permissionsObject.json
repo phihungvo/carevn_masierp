@@ -1,0 +1,594 @@
+[
+  {
+    "name": "ROLE_ADMIN",
+    "description": "Quyền quản trị hệ thống"
+  },
+  {
+    "name": "ROLE_DIRECTOR",
+    "description": "Giám đốc của công ty trục thuộc"
+  },
+  {
+    "name": "ROLE_DEPARTMENT_MANAGER",
+    "description": "Quản lý bộ phận trục thuộc"
+  },
+  {
+    "name": "ROLE_STAFF",
+    "description": "Nhân viên văn phòng"
+  },
+  {
+    "name": "ROLE_WORKER",
+    "description": "Nhân viên nhà máy"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING.CREATE",
+    "description": "Quyền tạo mới chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING.READ",
+    "description": "Quyền xem chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING.UPDATE",
+    "description": "Quyền cập nhật chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING.DELETE",
+    "description": "Quyền xóa chấm công"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REQUEST.CREATE",
+    "description": "Quyền tạo mới đơn xin nghỉ phép"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REQUEST.READ",
+    "description": "Quyền xem đơn xin nghỉ phép"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REQUEST.UPDATE",
+    "description": "Quyền cập nhật đơn xin nghỉ phép"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REQUEST.DELETE",
+    "description": "Quyền xóa đơn xin nghỉ phép"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REQUEST.REVIEW",
+    "description": "Quyền xét duyệt đơn xin nghỉ phép"
+  },
+  {
+    "name": "PERMISSION.ANNUAL_LEAVE.CREATE",
+    "description": "Quyền tạo mới phép năm"
+  },
+  {
+    "name": "PERMISSION.ANNUAL_LEAVE.READ",
+    "description": "Quyền xem phép năm"
+  },
+  {
+    "name": "PERMISSION.ANNUAL_LEAVE.UPDATE",
+    "description": "Quyền cập nhật phép năm"
+  },
+  {
+    "name": "PERMISSION.ANNUAL_LEAVE.DELETE",
+    "description": "Quyền xóa phép năm"
+  },
+  {
+    "name": "PERMISSION.EMPLOYEE.CREATE",
+    "description": "Quyền tạo mới nhân viên"
+  },
+  {
+    "name": "PERMISSION.EMPLOYEE.READ",
+    "description": "Quyền xem nhân viên"
+  },
+  {
+    "name": "PERMISSION.EMPLOYEE.UPDATE",
+    "description": "Quyền cập nhật nhân viên"
+  },
+  {
+    "name": "PERMISSION.EMPLOYEE.DELETE",
+    "description": "Quyền xóa nhân viên"
+  },
+  {
+    "name": "PERMISSION.EMPLOYEE_PROFILE.CREATE",
+    "description": "Quyền tạo mới hồ sơ nhân viên"
+  },
+  {
+    "name": "PERMISSION.EMPLOYEE_PROFILE.READ",
+    "description": "Quyền xem hồ sơ nhân viên"
+  },
+  {
+    "name": "PERMISSION.EMPLOYEE_PROFILE.UPDATE",
+    "description": "Quyền cập nhật hồ sơ nhân viên"
+  },
+  {
+    "name": "PERMISSION.EMPLOYEE_PROFILE.DELETE",
+    "description": "Quyền xóa hồ sơ nhân viên"
+  },
+  {
+    "name": "PERMISSION.MONTHLY_TIME_SHEET.CREATE",
+    "description": "Quyền tạo mới bảng chấm công tháng"
+  },
+  {
+    "name": "PERMISSION.MONTHLY_TIME_SHEET.READ",
+    "description": "Quyền xem bảng chấm công tháng"
+  },
+  {
+    "name": "PERMISSION.MONTHLY_TIME_SHEET.UPDATE",
+    "description": "Quyền cập nhật bảng chấm công tháng"
+  },
+  {
+    "name": "PERMISSION.MONTHLY_TIME_SHEET.DELETE",
+    "description": "Quyền xóa bảng chấm công tháng"
+  },
+  {
+    "name": "PERMISSION.MONTHLY_TIME_SHEET.REVIEW",
+    "description": "Quyền xét duyệt bảng chấm công tháng"
+  },
+  {
+    "name": "PERMISSION.INTERVIEW_SCHEDULE.CREATE",
+    "description": "Quyền tạo mới lịch phỏng vấn"
+  },
+  {
+    "name": "PERMISSION.INTERVIEW_SCHEDULE.READ",
+    "description": "Quyền xem lịch phỏng vấn"
+  },
+  {
+    "name": "PERMISSION.INTERVIEW_SCHEDULE.UPDATE",
+    "description": "Quyền cập nhật lịch phỏng vấn"
+  },
+  {
+    "name": "PERMISSION.INTERVIEW_SCHEDULE.DELETE",
+    "description": "Quyền xóa lịch phỏng vấn"
+  },
+  {
+    "name": "PERMISSION.RECRUITMENT_REQUEST.CREATE",
+    "description": "Quyền tạo mới yêu cầu tuyển dụng"
+  },
+  {
+    "name": "PERMISSION.RECRUITMENT_REQUEST.READ",
+    "description": "Quyền xem yêu cầu tuyển dụng"
+  },
+  {
+    "name": "PERMISSION.RECRUITMENT_REQUEST.UPDATE",
+    "description": "Quyền cập nhật yêu cầu tuyển dụng"
+  },
+  {
+    "name": "PERMISSION.RECRUITMENT_REQUEST.DELETE",
+    "description": "Quyền xóa yêu cầu tuyển dụng"
+  },
+  {
+    "name": "PERMISSION.RECRUITMENT_REQUEST.REVIEW",
+    "description": "Quyền xét duyệt yêu cầu tuyển dụng"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING_VIOLATION.CREATE",
+    "description": "Quyền tạo mới vi phạm chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING_VIOLATION.READ",
+    "description": "Quyền xem vi phạm chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING_VIOLATION.UPDATE",
+    "description": "Quyền cập nhật vi phạm chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING_VIOLATION.DELETE",
+    "description": "Quyền xóa vi phạm chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING_EXPLANATION.CREATE",
+    "description": "Quyền tạo mới giải trình chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING_EXPLANATION.READ",
+    "description": "Quyền xem giải trình chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING_EXPLANATION.UPDATE",
+    "description": "Quyền cập nhật giải trình chấm công"
+  },
+  {
+    "name": "PERMISSION.TIME_KEEPING_EXPLANATION.DELETE",
+    "description": "Quyền xóa giải trình chấm công"
+  },
+  {
+    "name": "PERMISSION.WORK_ITEM.CREATE",
+    "description": "Quyền tạo mới biểu mẫu"
+  },
+  {
+    "name": "PERMISSION.WORK_ITEM.READ",
+    "description": "Quyền xem biểu mẫu"
+  },
+  {
+    "name": "PERMISSION.WORK_ITEM.UPDATE",
+    "description": "Quyền cập nhật biểu mẫu"
+  },
+  {
+    "name": "PERMISSION.WORK_ITEM.DELETE",
+    "description": "Quyền xóa biểu mẫu"
+  },
+  {
+    "name": "PERMISSION.PRODUCTION_STANDARD.CREATE",
+    "description": "Quyền tạo mới định mức sản xuất"
+  },
+  {
+    "name": "PERMISSION.PRODUCTION_STANDARD.READ",
+    "description": "Quyền xem định mức sản xuất"
+  },
+  {
+    "name": "PERMISSION.PRODUCTION_STANDARD.UPDATE",
+    "description": "Quyền cập nhật định mức sản xuất"
+  },
+  {
+    "name": "PERMISSION.PRODUCTION_STANDARD.DELETE",
+    "description": "Quyền xóa định mức sản xuất"
+  },
+  {
+    "name": "PERMISSION.RECEIVE_MATERIAL_CHECKLIST.CREATE",
+    "description": "Quyền tạo mới biểu mẫu kiểm tra tiếp nhận nguyên liệu"
+  },
+  {
+    "name": "PERMISSION.RECEIVE_MATERIAL_CHECKLIST.READ",
+    "description": "Quyền xem biểu mẫu kiểm tra tiếp nhận nguyên liệu"
+  },
+  {
+    "name": "PERMISSION.RECEIVE_MATERIAL_CHECKLIST.UPDATE",
+    "description": "Quyền cập nhật biểu mẫu kiểm tra tiếp nhận nguyên liệu"
+  },
+  {
+    "name": "PERMISSION.RECEIVE_MATERIAL_CHECKLIST.DELETE",
+    "description": "Quyền xóa biểu mẫu kiểm tra tiếp nhận nguyên liệu"
+  },
+  {
+    "name": "PERMISSION.MACHINE_OPERATION_CHECKLIST.CREATE",
+    "description": "Quyền tạo mới biểu mẫu kiểm tra hoạt động máy"
+  },
+  {
+    "name": "PERMISSION.MACHINE_OPERATION_CHECKLIST.READ",
+    "description": "Quyền xem biểu mẫu kiểm tra hoạt động máy"
+  },
+  {
+    "name": "PERMISSION.MACHINE_OPERATION_CHECKLIST.UPDATE",
+    "description": "Quyền cập nhật biểu mẫu kiểm tra hoạt động máy"
+  },
+  {
+    "name": "PERMISSION.MACHINE_OPERATION_CHECKLIST.DELETE",
+    "description": "Quyền xóa biểu mẫu kiểm tra hoạt động máy"
+  },
+  {
+    "name": "PERMISSION.ADDITIVE_MATERIAL_CHECKLIST.CREATE",
+    "description": "Quyền tạo mới biểu mẫu kiểm tra lựa và bổ sung phụ gia"
+  },
+  {
+    "name": "PERMISSION.ADDITIVE_MATERIAL_CHECKLIST.READ",
+    "description": "Quyền xem biểu mẫu kiểm tra lựa và bổ sung phụ gia"
+  },
+  {
+    "name": "PERMISSION.ADDITIVE_MATERIAL_CHECKLIST.UPDATE",
+    "description": "Quyền cập nhật biểu mẫu kiểm tra lựa và bổ sung phụ gia"
+  },
+  {
+    "name": "PERMISSION.ADDITIVE_MATERIAL_CHECKLIST.DELETE",
+    "description": "Quyền xóa biểu mẫu kiểm tra lựa và bổ sung phụ gia"
+  },
+  {
+    "name": "PERMISSION.QUALITY_CHECK_SAMPLE.CREATE",
+    "description": "Quyền tạo mới biểu mẫu kiểm tra chất lượng mẫu"
+  },
+  {
+    "name": "PERMISSION.QUALITY_CHECK_SAMPLE.READ",
+    "description": "Quyền xem biểu mẫu kiểm tra chất lượng mẫu"
+  },
+  {
+    "name": "PERMISSION.QUALITY_CHECK_SAMPLE.UPDATE",
+    "description": "Quyền cập nhật biểu mẫu kiểm tra chất lượng mẫu"
+  },
+  {
+    "name": "PERMISSION.QUALITY_CHECK_SAMPLE.DELETE",
+    "description": "Quyền xóa biểu mẫu kiểm tra chất lượng mẫu"
+  },
+  {
+    "name": "PERMISSION.MANUFACTURE_ORDER.CREATE",
+    "description": "Quyền tạo mới lệnh sản xuất"
+  },
+  {
+    "name": "PERMISSION.MANUFACTURE_ORDER.READ",
+    "description": "Quyền xem lệnh sản xuất"
+  },
+  {
+    "name": "PERMISSION.MANUFACTURE_ORDER.UPDATE",
+    "description": "Quyền cập nhật lệnh sản xuất"
+  },
+  {
+    "name": "PERMISSION.MANUFACTURE_ORDER.DELETE",
+    "description": "Quyền xóa lệnh sản xuất"
+  },
+  {
+    "name": "PERMISSION.SAMPLE_DISPOSAL.CREATE",
+    "description": "Quyền tạo mới đơn huỷ mẫu kiểm thử"
+  },
+  {
+    "name": "PERMISSION.SAMPLE_DISPOSAL.READ",
+    "description": "Quyền xem đơn huỷ mẫu kiểm thử"
+  },
+  {
+    "name": "PERMISSION.SAMPLE_DISPOSAL.UPDATE",
+    "description": "Quyền cập nhật đơn huỷ mẫu kiểm thử"
+  },
+  {
+    "name": "PERMISSION.SAMPLE_DISPOSAL.DELETE",
+    "description": "Quyền xóa đơn huỷ mẫu kiểm thử"
+  },
+  {
+    "name": "PERMISSION.WORK_ORDER.CREATE",
+    "description": "Quyền tạo mới công đoạn sản xuất"
+  },
+  {
+    "name": "PERMISSION.WORK_ORDER.READ",
+    "description": "Quyền xem công đoạn sản xuất"
+  },
+  {
+    "name": "PERMISSION.WORK_ORDER.UPDATE",
+    "description": "Quyền cập nhật công đoạn sản xuất"
+  },
+  {
+    "name": "PERMISSION.WORK_ORDER.DELETE",
+    "description": "Quyền xóa công đoạn sản xuất"
+  },
+  {
+    "name": "PERMISSION.STEAMING_PROCESS_CHECKLIST.CREATE",
+    "description": "Quyền tạo mới biểu mẫu kiểm tra hấp - sấy"
+  },
+  {
+    "name": "PERMISSION.STEAMING_PROCESS_CHECKLIST.READ",
+    "description": "Quyền xem biểu mẫu kiểm tra hấp - sấy"
+  },
+  {
+    "name": "PERMISSION.STEAMING_PROCESS_CHECKLIST.UPDATE",
+    "description": "Quyền cập nhật biểu mẫu kiểm tra hấp - sấy"
+  },
+  {
+    "name": "PERMISSION.STEAMING_PROCESS_CHECKLIST.DELETE",
+    "description": "Quyền xóa biểu mẫu kiểm tra hấp - sấy"
+  },
+  {
+    "name": "PERMISSION.METAL_DETECTION_CHECKLIST.CREATE",
+    "description": "Quyền tạo mới biểu mẫu kiểm tra nam châm và lưới"
+  },
+  {
+    "name": "PERMISSION.METAL_DETECTION_CHECKLIST.READ",
+    "description": "Quyền xem biểu mẫu kiểm tra nam châm và lưới"
+  },
+  {
+    "name": "PERMISSION.METAL_DETECTION_CHECKLIST.UPDATE",
+    "description": "Quyền cập nhật biểu mẫu kiểm tra nam châm và lưới"
+  },
+  {
+    "name": "PERMISSION.METAL_DETECTION_CHECKLIST.DELETE",
+    "description": "Quyền xóa biểu mẫu kiểm tra nam châm và lưới"
+  },
+  {
+    "name": "PERMISSION.MIXING_REPORT_CHECKLIST.CREATE",
+    "description": "Quyền tạo mới biểu mẫu báo cáo trộn sản phẩm bột cá"
+  },
+  {
+    "name": "PERMISSION.MIXING_REPORT_CHECKLIST.READ",
+    "description": "Quyền xem biểu mẫu báo cáo trộn sản phẩm bột cá"
+  },
+  {
+    "name": "PERMISSION.MIXING_REPORT_CHECKLIST.UPDATE",
+    "description": "Quyền cập nhật biểu mẫu báo cáo trộn sản phẩm bột cá"
+  },
+  {
+    "name": "PERMISSION.MIXING_REPORT_CHECKLIST.DELETE",
+    "description": "Quyền xóa biểu mẫu báo cáo trộn sản phẩm bột cá"
+  },
+  {
+    "name": "PERMISSION.WORK_CENTER.CREATE",
+    "description": "Quyền tạo mới cụm máy sản xuất"
+  },
+  {
+    "name": "PERMISSION.WORK_CENTER.READ",
+    "description": "Quyền xem cụm máy sản xuất"
+  },
+  {
+    "name": "PERMISSION.WORK_CENTER.UPDATE",
+    "description": "Quyền cập nhật cụm máy sản xuất"
+  },
+  {
+    "name": "PERMISSION.WORK_CENTER.DELETE",
+    "description": "Quyền xóa cụm máy sản xuất"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_MAINTAIN.CREATE",
+    "description": "Quyền tạo mới bảo trì sản phẩm"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_MAINTAIN.READ",
+    "description": "Quyền xem bảo trì sản phẩm"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_MAINTAIN.UPDATE",
+    "description": "Quyền cập nhật bảo trì sản phẩm"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_MAINTAIN.DELETE",
+    "description": "Quyền xóa bảo trì sản phẩm"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_ROUTING.CREATE",
+    "description": "Quyền tạo mới định tuyến sản xuất"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_ROUTING.READ",
+    "description": "Quyền xem định tuyến sản xuất"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_ROUTING.UPDATE",
+    "description": "Quyền cập nhật định tuyến sản xuất"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_ROUTING.DELETE",
+    "description": "Quyền xóa định tuyến sản xuất"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_PACKAGE.CREATE",
+    "description": "Quyền tạo mới đóng gói sản phẩm"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_PACKAGE.READ",
+    "description": "Quyền xem đóng gói sản phẩm"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_PACKAGE.UPDATE",
+    "description": "Quyền cập nhật đóng gói sản phẩm"
+  },
+  {
+    "name": "PERMISSION.PRODUCT_PACKAGE.DELETE",
+    "description": "Quyền xóa đóng gói sản phẩm"
+  },
+  {
+    "name": "PERMISSION.CONTRACT.CREATE",
+    "description": "Quyền tạo mới hợp đồng"
+  },
+  {
+    "name": "PERMISSION.CONTRACT.READ",
+    "description": "Quyền xem hợp đồng"
+  },
+  {
+    "name": "PERMISSION.CONTRACT.UPDATE",
+    "description": "Quyền cập nhật hợp đồng"
+  },
+  {
+    "name": "PERMISSION.CONTRACT.DELETE",
+    "description": "Quyền xóa hợp đồng"
+  },
+  {
+    "name": "PERMISSION.CUSTOMER.CREATE",
+    "description": "Quyền tạo mới khách hàng"
+  },
+  {
+    "name": "PERMISSION.CUSTOMER.READ",
+    "description": "Quyền xem khách hàng"
+  },
+  {
+    "name": "PERMISSION.CUSTOMER.UPDATE",
+    "description": "Quyền cập nhật khách hàng"
+  },
+  {
+    "name": "PERMISSION.CUSTOMER.DELETE",
+    "description": "Quyền xóa khách hàng"
+  },
+  {
+    "name": "PERMISSION.ORDER.CREATE",
+    "description": "Quyền tạo mới đơn hàng"
+  },
+  {
+    "name": "PERMISSION.ORDER.READ",
+    "description": "Quyền xem đơn hàng"
+  },
+  {
+    "name": "PERMISSION.ORDER.UPDATE",
+    "description": "Quyền cập nhật đơn hàng"
+  },
+  {
+    "name": "PERMISSION.ORDER.DELETE",
+    "description": "Quyền xóa đơn hàng"
+  },
+  {
+    "name": "PERMISSION.ORDER.REVIEW",
+    "description": "Quyền xét duyệt đơn hàng"
+  },
+  {
+    "name": "PERMISSION.PURCHASE_REQUEST.CREATE",
+    "description": "Quyền tạo mới yêu cầu thu mua"
+  },
+  {
+    "name": "PERMISSION.PURCHASE_REQUEST.READ",
+    "description": "Quyền xem yêu cầu thu mua"
+  },
+  {
+    "name": "PERMISSION.PURCHASE_REQUEST.UPDATE",
+    "description": "Quyền cập nhật yêu cầu thu mua"
+  },
+  {
+    "name": "PERMISSION.PURCHASE_REQUEST.DELETE",
+    "description": "Quyền xóa yêu cầu thu mua"
+  },
+  {
+    "name": "PERMISSION.PURCHASE_REQUEST.REVIEW",
+    "description": "Quyền xét duyệt yêu cầu thu mua"
+  },
+  {
+    "name": "PERMISSION.QUOTATION.CREATE",
+    "description": "Quyền tạo mới bảng báo giá"
+  },
+  {
+    "name": "PERMISSION.QUOTATION.READ",
+    "description": "Quyền xem bảng báo giá"
+  },
+  {
+    "name": "PERMISSION.QUOTATION.UPDATE",
+    "description": "Quyền cập nhật bảng báo giá"
+  },
+  {
+    "name": "PERMISSION.QUOTATION.DELETE",
+    "description": "Quyền xóa bảng báo giá"
+  },
+  {
+    "name": "PERMISSION.QUOTATION.REVIEW",
+    "description": "Quyền xét duyệt bảng báo giá"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REGIME_REQUEST.CREATE",
+    "description": "Quyền tạo mới Đăng ký nghỉ chế độ"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REGIME_REQUEST.READ",
+    "description": "Quyền xem Đăng ký nghỉ chế độ"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REGIME_REQUEST.UPDATE",
+    "description": "Quyền cập nhật Đăng ký nghỉ chế độ"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REGIME_REQUEST.DELETE",
+    "description": "Quyền xóa Đăng ký nghỉ chế độ"
+  },
+  {
+    "name": "PERMISSION.LEAVE_REGIME_REQUEST.REVIEW",
+    "description": "Quyền xét duyệt Đăng ký nghỉ chế độ"
+  },
+  {
+    "name": "PERMISSION.GROUP.CREATE",
+    "description": "Quyền tạo mới bộ phận"
+  },
+  {
+    "name": "PERMISSION.GROUP.READ",
+    "description": "Quyền xem bộ phận"
+  },
+  {
+    "name": "PERMISSION.GROUP.UPDATE",
+    "description": "Quyền cập nhật bộ phận"
+  },
+  {
+    "name": "PERMISSION.GROUP.DELETE",
+    "description": "Quyền xóa bộ phận"
+  },
+  {
+    "name": "PERMISSION.COMPANY.CREATE",
+    "description": "Quyền tạo mới công ty"
+  },
+  {
+    "name": "PERMISSION.COMPANY.READ",
+    "description": "Quyền xem công ty"
+  },
+  {
+    "name": "PERMISSION.COMPANY.UPDATE",
+    "description": "Quyền cập nhật công ty"
+  },
+  {
+    "name": "PERMISSION.COMPANY.DELETE",
+    "description": "Quyền xóa công ty"
+  }
+]

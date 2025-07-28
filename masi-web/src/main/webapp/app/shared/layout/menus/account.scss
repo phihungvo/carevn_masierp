@@ -1,0 +1,61 @@
+@import '../../../bootstrap-variables';
+
+.account {
+  &-avatar {
+    background-color: #f1f6fd;
+    border-radius: 50px;
+  }
+}
+
+.dropdown {
+  &-menu {
+    background-color: white;
+    border: 1px solid #f2f4f7;
+    border-radius: 8px;
+    box-shadow:
+      0px 4px 6px -2px #10182808,
+      0px 12px 16px -4px #10182814;
+    padding: 0;
+    overflow: hidden;
+
+    .show {
+      transition: all 0.5s ease-in;
+    }
+  }
+
+  &-item {
+    color: #344054;
+    padding: 10px 16px;
+
+    &-info {
+      border-bottom: 1px solid #98a2b3;
+      display: flex;
+      padding: 10px 16px;
+      gap: 10px;
+      align-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    &:hover {
+      background-color: $primary-color;
+    }
+
+    &:last-child {
+      border-top: 1px solid #98a2b3;
+      color: #d92d20;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &-toggle {
+    &::after {
+      color: #4479c5;
+    }
+  }
+}

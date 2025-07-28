@@ -1,0 +1,11 @@
+id;status;approval_status_sign;approval_status_sign_content_type;approval_status_note;approval_solution;awaiting_date;last_updated;created_date;employee_id
+f91326a4-e92b-47d4-9665-a7ea85339b3b;PENDING;../fake-data/blob/hipster.png;image/png;briskly plus;WAITING;2024-06-28;2024-06-27T09:27:03;2024-06-27T17:32:44;d7c31b6e-ffd7-4919-8287-393d8e3f8ab2
+e5a43e37-e718-461f-9170-4887f24f3552;APPROVED;../fake-data/blob/hipster.png;image/png;bah;WAITING;2024-06-28;2024-06-28T01:23:53;2024-06-27T23:04:07;d51ed906-d2ba-447a-888e-00babfc73e76
+d6b479bb-0024-4e35-8de0-58bf01fa4807;REJECTED;../fake-data/blob/hipster.png;image/png;thrifty seminar ick;WAITING;2024-06-28;2024-06-27T16:47:59;2024-06-27T20:45:42;5d8fdf8c-1878-4f61-afa6-5c78c379ff47
+847c044b-867f-4246-828b-4d295b1d6c77;APPROVED;../fake-data/blob/hipster.png;image/png;inquisitively;WAITING;2024-06-27;2024-06-27T20:07:01;2024-06-27T18:22:50;153dff2b-f0dc-4c1d-9b77-eb1ac4955bda
+3aa46528-194a-4dd5-a814-8713b0cad460;PENDING;../fake-data/blob/hipster.png;image/png;square pulse behind;WAITING;2024-06-27;2024-06-27T23:05:17;2024-06-27T19:30:08;6793b3c4-46b7-48ce-886d-17b2f2b4ba99
+5b0ff154-6aaf-4ce8-949a-aa1a7dd3eef3;REJECTED;../fake-data/blob/hipster.png;image/png;boo;WAITING;2024-06-27;2024-06-27T16:32:40;2024-06-27T09:31:26;51ab8393-96a6-4f61-af61-9c3d6f37d493
+f548163f-7b02-46de-9744-7a04c869a410;REJECTED;../fake-data/blob/hipster.png;image/png;ack;WAITING;2024-06-27;2024-06-28T04:36:56;2024-06-27T15:17:59;54c6e33c-48a4-4703-a718-6a85b225c465
+5673cb2d-033b-459b-b798-f07eea6f92a7;APPROVED;../fake-data/blob/hipster.png;image/png;hence because energetic;WAITING;2024-06-27;2024-06-27T15:40:19;2024-06-27T21:21:57;b3790c2a-d27a-43e2-9a67-202fa4e59012
+d8642bb2-fc82-487d-8826-c6e838a8ce9d;REJECTED;../fake-data/blob/hipster.png;image/png;locality relent mysteriously;WAITING;2024-06-28;2024-06-27T10:04:12;2024-06-27T22:24:21;450ff2a1-5980-401b-b6c7-bc3110c781fe
+792f7765-0603-4d56-8775-a22a292ce9a6;APPROVED;../fake-data/blob/hipster.png;image/png;norm deprecate;WAITING;2024-06-27;2024-06-27T12:16:49;2024-06-27T15:07:06;d62edb5a-9bd5-40b1-b24b-24a721e1ff3a

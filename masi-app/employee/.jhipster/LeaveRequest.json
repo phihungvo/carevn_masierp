@@ -1,0 +1,101 @@
+{
+  "annotations": {
+    "changelogDate": "20240501102734"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["unique", "required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "LeaveRequestStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDING,APPROVED,REJECTED,CANCELLED"
+    },
+    {
+      "fieldName": "fromDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "toDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fromTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "toTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "leaveRequestType",
+      "fieldType": "LeaveType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SICK_LEAVE,ANNUAL_LEAVE,MATERNITY_LEAVE,UNPAID_LEAVE"
+    },
+    {
+      "fieldName": "fileAttachment",
+      "fieldType": "AnyBlob"
+    },
+    {
+      "fieldName": "fileAttachmentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "leaveRequestDayType",
+      "fieldType": "LeaveRequestDayType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "FULL_DAY,HALF_DAY"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "LeaveRequest",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "sensor",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "substitute",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

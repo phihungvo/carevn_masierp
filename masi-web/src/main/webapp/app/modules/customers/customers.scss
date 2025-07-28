@@ -1,0 +1,29 @@
+@import '../../bootstrap-variables';
+
+.modals-filter-customers {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.modals-detail-customers,
+.modals-update-customers,
+.modals-create-customers {
+  .modal-content {
+    transform: unset !important;
+    width: 1000px !important;
+  }
+}
+
+.next-month-birthday-highlight {
+  color: $red-invalid;
+  font-weight: 600;
+}
+
+.modal-transfer-customer {
+  .modal-content {
+    width: 600px;
+    transform: translate(-10%);
+    overflow: unset !important;
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "annotations": {
+    "changelogDate": "20240710073414"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "leaveType",
+      "fieldType": "LeaveType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SICK_LEAVE,ANNUAL_LEAVE,MATERNITY_LEAVE,UNPAID_LEAVE,FUNERAL_LEAVE,WEDDING_LEAVE,COMPENSATION_LEAVE"
+    },
+    {
+      "fieldName": "lastWorkDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "returnWorkDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "substituteId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "workspaceId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "attachment",
+      "fieldType": "AnyBlob"
+    },
+    {
+      "fieldName": "attachmentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "leaveRequestDayType",
+      "fieldType": "LeaveRequestDayType",
+      "fieldValues": "FULL_DAY,HALF_DAY"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "LeaveRegimeRequestStatus",
+      "fieldValues": "WAITING_APPROVAL,APPROVED,REJECTED,CANCEL"
+    },
+    {
+      "fieldName": "leaveRequestId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "UUID"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "LeaveRegimeRequest",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

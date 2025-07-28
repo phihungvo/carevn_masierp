@@ -1,0 +1,60 @@
+entity CallCenter {
+  id UUID required,
+  code String,
+  receptionDate ZonedDateTime,
+  groupCS GroupCs,
+  phoneOfCaller String,
+  phoneOfName String,
+
+  status StatusEntity,
+  typeCS TypeCS,
+  customerId UUID,
+  employeeCreatedId UUID,
+  attribute String,
+  problemContent TextBlob,
+  resolutionContent TextBlob,
+  responseContent TextBlob,
+
+  employeeAssignId UUID,
+  employeeCloseId UUID,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime required
+  createdBy String required
+  updatedAt ZonedDateTime
+  updatedBy String
+  deletedAt ZonedDateTime
+  deletedBy String
+  company String
+  department String
+}
+
+enum GroupCs {
+  EMPLOYEE,
+  CUSTOMER
+}
+
+enum TypeCS {
+  COMPLAINT,
+  REQUEST,
+  OTHER
+}
+
+enum StatusEntity {
+  NEW,
+  APPROVED,
+  REJECTED,
+  CANCELLED,
+  COMPLETED
+}
+
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct
+
+
+
+
+

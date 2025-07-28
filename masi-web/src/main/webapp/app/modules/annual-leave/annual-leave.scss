@@ -1,0 +1,26 @@
+@import "../../bootstrap-variables";
+
+.modals-create-annual-leave {
+  .modal-content {
+    width: 744px;
+  }
+}
+
+.annual-leave-extra-headers {
+  th {
+    padding: $space-12 $space-24 !important;
+    &:first-child {
+      border-right: 1px solid $secondary-black-70;
+    }
+  }
+}
+
+.annual-leave-table {
+  thead {
+    tr:nth-child(2) {
+      th:nth-child(4) {
+        border-right: 1px solid $secondary-black-70;
+      }
+    }
+  }
+}

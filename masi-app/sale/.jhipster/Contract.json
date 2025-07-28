@@ -1,0 +1,96 @@
+{
+  "annotations": {
+    "changelogDate": "20240628084252"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiSale",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ContractStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DRAFT,WAITING_APPROVAL,APPROVED,FINISHED,WAITING_LIQUIDATION,LIQUIDATED,CANCELLED,DELETED"
+    },
+    {
+      "fieldName": "contractName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contractValid",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contractType",
+      "fieldType": "ContractType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "NEW,PRICE_UP,PRICE_DOWN,EXTEND"
+    },
+    {
+      "fieldName": "contractOwner",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contractTotal",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "proteinPercent",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "approvalSign",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "rejectNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiSale",
+  "name": "Contract",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "contractFile",
+      "otherEntityRelationshipName": "contract",
+      "relationshipName": "contractFile",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

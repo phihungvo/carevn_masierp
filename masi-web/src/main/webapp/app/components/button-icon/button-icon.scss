@@ -1,0 +1,9 @@
+@import "../../bootstrap-variables";
+
+.btn-icon {
+  outline: none !important;
+  border: none !important;
+  cursor: pointer;
+  display: flex;
+  gap: $space-8;
+}

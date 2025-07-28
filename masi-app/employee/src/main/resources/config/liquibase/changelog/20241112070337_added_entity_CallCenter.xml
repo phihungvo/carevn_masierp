@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity CallCenter.
+    -->
+    <changeSet id="20241112070337-1" author="jhipster">
+        <createTable tableName="call_center">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="reception_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="group_cs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="phone_of_caller" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="phone_of_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="type_cs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_created_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="attribute" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="problem_content" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="resolution_content" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="response_content" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_assign_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_close_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="call_center" columnName="reception_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="call_center" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="call_center" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="call_center" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20241112070337-2" author="Hoang Dang">
+        <sql>
+            ALTER TABLE call_center
+                add COLUMN IF NOT EXISTS type_page_cs VARCHAR (255);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241112070337-3" author="Hoang Dang">
+        <sql>
+            ALTER TABLE call_center
+                DROP COLUMN IF EXISTS attribute;
+
+            ALTER TABLE call_center
+                ADD COLUMN IF NOT EXISTS attribute Json;
+
+            ALTER TABLE call_center
+            DROP COLUMN IF EXISTS attachment;
+
+            ALTER TABLE call_center
+                ADD COLUMN IF NOT EXISTS attachment Json;
+        </sql>
+    </changeSet>
+    <changeSet id="20241112070337-4" author="Hoang Dang">
+        <sql>
+            ALTER TABLE call_center
+                ADD COLUMN IF NOT EXISTS employee_assign_date TIMESTAMP WITH TIME ZONE;
+
+            ALTER TABLE call_center
+                ADD COLUMN IF NOT EXISTS employee_close_date TIMESTAMP WITH TIME ZONE;
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241112070337-5" author="Hoang Dang">
+        <sql>
+            ALTER TABLE call_center
+                ADD COLUMN IF NOT EXISTS confirm_date TIMESTAMP WITH TIME ZONE;
+        </sql>
+    </changeSet>
+    <changeSet id="20241112070337-6" author="luc.luong">
+        <sql>
+            ALTER TABLE call_center
+                ADD COLUMN IF NOT EXISTS source_cs text;
+        </sql>
+    </changeSet>
+    <changeSet id="20241112070337-7" author="luc.luong">
+        <sql>
+            ALTER TABLE time_keeping_explanation
+                ADD COLUMN IF NOT EXISTS company VARCHAR(255);
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,56 @@
+@import '../../bootstrap-variables';
+
+.auth-table {
+  &__group {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    left: 52px;
+
+    &:has(tr[data-row-sub][data-open='false']) {
+      th:nth-child(1), td:nth-child(1) {
+        position: sticky;
+        left: 0;
+        // backdrop-filter: blur(100px);
+        // border-bottom: 1px solid #f5f6f6b9;
+      }
+      th:nth-child(2), td:nth-child(2) {
+        position: sticky;
+        left: 56px;
+        // backdrop-filter: blur(100px);
+        // border-bottom: 1px solid #f5f6f6b9;
+      }
+    }
+
+    &:has(tr[data-row-sub][data-open='true']) {
+      th:nth-child(1), td:nth-child(1) {
+        position: sticky;
+        left: 0;
+        // backdrop-filter: blur(100px);
+        // border-bottom: 1px solid #f5f6f6b9;
+      }
+      th:nth-child(2), td:nth-child(2) {
+        position: sticky;
+        left: 84px;
+        // backdrop-filter: blur(100px);
+        // border-bottom: 1px solid #f5f6f6b9;
+      }
+    }
+
+    thead, tbody {
+      min-width: 100%;
+    }
+
+    tbody tr[data-row-sub] td {
+      background-color: white;
+      box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
+    }
+
+    &--td {
+      display: grid;
+      place-items: center;
+    }
+
+  }
+
+}

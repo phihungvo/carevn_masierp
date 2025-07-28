@@ -1,0 +1,82 @@
+{
+  "annotations": {
+    "changelogDate": "20240709034213"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "candidateName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "interviewDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cvFile",
+      "fieldType": "ImageBlob"
+    },
+    {
+      "fieldName": "interviewerId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "rate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "process",
+      "fieldType": "RecruitmentProcess",
+      "fieldValues": "WAITING_INTERVIEW,INTERVIEWED"
+    },
+    {
+      "fieldName": "interviewMode",
+      "fieldType": "InterviewMode",
+      "fieldValues": "ONLINE,OFFLINE"
+    },
+    {
+      "fieldName": "interviewResult",
+      "fieldType": "InterviewResult",
+      "fieldValues": "PASS,FAIL,HOLD"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "InterviewSchedule",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "recruitmentRequest",
+      "otherEntityRelationshipName": "interviewSchedules",
+      "relationshipName": "recruitmentRequest",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

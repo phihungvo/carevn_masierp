@@ -1,0 +1,64 @@
+{
+  "annotations": {
+    "changelogDate": "20240918073839"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "roleId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updateAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updateBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deleteAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deleteBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "WarehouseRole",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "warehouseType",
+      "otherEntityRelationshipName": "warehouseRole",
+      "relationshipName": "warehouseType",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

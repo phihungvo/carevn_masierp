@@ -1,0 +1,50 @@
+@import '../../bootstrap-variables';
+
+.modal-contracts-detail {
+  .modal-content {
+    width: 80vw;
+  }
+}
+
+.modals-create-contracts {
+  .modal-content {
+    transform: unset !important;
+  }
+}
+
+.btn-remove {
+  margin: 4px auto;
+}
+
+.additive-form-header {
+  margin-bottom: 8px;
+}
+
+.material-select {
+  max-width: 200px;
+}
+
+.unit-select {
+  max-width: 64px;
+}
+
+.additive-unit-select {
+  width: 100px;
+}
+
+.input-numberic {
+  min-width: 0px !important;
+}
+
+.contracts-propose-liquid-modals,
+.contracts-proposo-approve-modals,
+.modals-filter-contracts {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.active {
+  font-weight: 700;
+  color: #000;
+}

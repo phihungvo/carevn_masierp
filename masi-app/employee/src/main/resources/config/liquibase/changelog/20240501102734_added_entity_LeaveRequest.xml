@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity LeaveRequest.
+    -->
+    <changeSet id="20240501102734-1" author="jhipster">
+        <createTable tableName="leave_request">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="from_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="to_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="from_time" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="to_time" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="reason" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="leave_request_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="file_attachment" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="file_attachment_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="file_attachment_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="leave_request_day_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_updated" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="substitute_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="leave_request" columnName="from_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leave_request" columnName="to_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leave_request" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leave_request" columnName="last_updated" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240501102734-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/leave_request.csv"
+                  separator=";"
+                  tableName="leave_request"
+                  usePreparedStatements="true">
+            <column name="id" type="${uuidType}"/>
+            <column name="status" type="string"/>
+            <column name="from_date" type="date"/>
+            <column name="to_date" type="date"/>
+            <column name="from_time" type="date"/>
+            <column name="to_time" type="date"/>
+            <column name="reason" type="string"/>
+            <column name="leave_request_type" type="string"/>
+            <column name="file_attachment" type="blob"/>
+            <column name="file_attachment_content_type" type="string"/>
+            <column name="file_attachment_name" type="string"/>
+            <column name="leave_request_day_type" type="string"/>
+            <column name="is_active" type="boolean"/>
+            <column name="created_at" type="date"/>
+            <column name="last_updated" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

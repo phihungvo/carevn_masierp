@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- Added employee_id to payment_request -->
+    <changeSet id="20241108144941" author="system">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE incoming_invoice
+                ADD COLUMN IF NOT EXISTS pattern_no VARCHAR(255);
+            ALTER TABLE incoming_invoice
+                ADD COLUMN IF NOT EXISTS status VARCHAR(255);
+            ALTER TABLE incoming_invoice
+                ADD COLUMN IF NOT EXISTS currency_code VARCHAR(255);
+            ALTER TABLE incoming_invoice
+                ADD COLUMN IF NOT EXISTS need_approval BOOLEAN;
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS manager_id UUID;
+            ALTER TABLE incoming_invoice
+                ADD COLUMN IF NOT EXISTS supplier_id UUID;
+            ALTER TABLE supplies_item
+                ADD COLUMN IF NOT EXISTS bank_info VARCHAR(255);
+            ALTER TABLE supplies_item
+                ADD COLUMN IF NOT EXISTS note TEXT;
+
+            ALTER TABLE payment_request
+                ADD COLUMN IF NOT EXISTS payment_voucher VARCHAR(500);
+            ALTER TABLE payment_request
+                ADD COLUMN IF NOT EXISTS payment_voucher_amount DOUBLE PRECISION;
+
+            ALTER TABLE payment_request
+                ADD COLUMN IF NOT EXISTS remaining_balance DOUBLE PRECISION;
+            ALTER TABLE payment_request
+                ADD COLUMN IF NOT EXISTS over_spent DOUBLE PRECISION;
+
+            ALTER TABLE payment_detail
+                ADD COLUMN IF NOT EXISTS created_by VARCHAR(255);
+
+            ALTER TABLE payment_detail
+                ADD COLUMN IF NOT EXISTS created_at TIMESTAMPTZ;
+
+            ALTER TABLE payment_detail
+                ADD COLUMN IF NOT EXISTS updated_by VARCHAR(255);
+
+            ALTER TABLE payment_detail
+                ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ;
+
+            ALTER TABLE payment_detail
+                ADD COLUMN IF NOT EXISTS deleted_by VARCHAR(255);
+            ALTER TABLE payment_detail
+                ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMPTZ;
+            ALTER TABLE payment_detail
+                ADD COLUMN IF NOT EXISTS department VARCHAR(255);
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>

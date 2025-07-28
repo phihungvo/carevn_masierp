@@ -1,0 +1,127 @@
+{
+  "annotations": {
+    "changelogDate": "20241112070337"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "receptionDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "groupCS",
+      "fieldType": "GroupCs",
+      "fieldValues": "EMPLOYEE,CUSTOMER"
+    },
+    {
+      "fieldName": "phoneOfCaller",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneOfName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "StatusEntity",
+      "fieldValues": "NEW,APPROVED,REJECTED,CANCELLED,COMPLETED"
+    },
+    {
+      "fieldName": "typeCS",
+      "fieldType": "TypeCS",
+      "fieldValues": "COMPLAINT,REQUEST,OTHER"
+    },
+    {
+      "fieldName": "customerId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "employeeCreatedId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "attribute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "problemContent",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "resolutionContent",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "responseContent",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "employeeAssignId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "employeeCloseId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "MasiEmployee",
+  "name": "CallCenter",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

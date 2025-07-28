@@ -1,0 +1,23 @@
+.filter {
+  position: relative;
+
+  .rmdp-input {
+    cursor: pointer !important;
+    position: absolute;
+    width: 88px;
+    height: 48px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .rmdp-wrapper {
+    transform: translate(-20%, 0%) !important;
+  }
+}
+
+.report-uniform-expired-history-modal {
+  .modal-content {
+    width: 1000px;
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "annotations": {
+    "changelogDate": "20240918073840"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updateAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updateBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deleteAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deleteBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "WarehouseType",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "warehouse",
+      "otherEntityRelationshipName": "warehouseType",
+      "relationshipName": "warehouse",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "warehouseRole",
+      "otherEntityRelationshipName": "warehouseType",
+      "relationshipName": "warehouseRole",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "itemCategory",
+      "otherEntityRelationshipName": "warehouseType",
+      "relationshipName": "itemCategory",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

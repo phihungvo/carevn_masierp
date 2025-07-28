@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "changelogDate": "20241021022050"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiUtility",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dayOfWeek",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "numberOfShifts",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "workHours",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "departmentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "MasiUtility",
+  "name": "StandardWorkScheduleConfig",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

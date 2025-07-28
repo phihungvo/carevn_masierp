@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20240812262214" author="HoangDang">
+        <validCheckSum>ANY</validCheckSum>
+        <addColumn tableName="contract">
+            <column name="monetary_unit" type="varchar(255)" defaultValue="VND">
+                <constraints nullable="true"/>
+            </column>
+            <column name="exchange_rate" type="${floatType}" defaultValue="1">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="20240812262255" author="Huu Hoang" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql endDelimiter=";">
+            alter table contract_file
+                alter contract_index_file_path drop not null;
+        </sql>
+        <sql>
+            alter table contract_file
+                alter contract_file_path drop not null;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

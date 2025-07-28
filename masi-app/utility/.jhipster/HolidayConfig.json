@@ -1,0 +1,52 @@
+{
+  "annotations": {
+    "changelogDate": "20240919045744"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiUtility",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "HolidayType",
+      "fieldValues": "FIXED,FLEXIBLE"
+    },
+    {
+      "fieldName": "calenderType",
+      "fieldType": "CalenderType",
+      "fieldValues": "LUNAR,SOLAR"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "MasiUtility",
+  "name": "HolidayConfig",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

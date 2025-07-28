@@ -1,0 +1,29 @@
+.create-asset-move {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ant-tabs-tab {
+  padding: 6px 12px 6px 12px !important;
+  margin-left: 4px !important;
+  margin-bottom: 12px !important;
+  font-weight: 600;
+  background: #667085;
+}
+
+.ant-tabs-tab-active {
+    border-bottom: none !important;
+    background-color: #E4E7EC !important;
+    border-radius: 6px !important;
+    color: #344054 !important;
+    font-weight: 600;
+  }
+
+.ant-tabs-top >.ant-tabs-nav .ant-tabs-ink-bar {
+  width: 0 !important;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #344054 !important;
+}
+

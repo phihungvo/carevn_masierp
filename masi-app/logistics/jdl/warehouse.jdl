@@ -1,0 +1,40 @@
+entity Warehouse {
+    id UUID
+    code String
+    name String
+    address String
+    active Boolean
+
+    //
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+entity WarehouseType {
+    id UUID
+    name String
+    description String
+    active Boolean
+
+    //
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+relationship OneToMany {
+    WarehouseType to Warehouse
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

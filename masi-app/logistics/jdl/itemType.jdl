@@ -1,0 +1,23 @@
+entity ItemType{
+  id UUID,
+  code String,
+  name String,
+  description String,
+  isActive Boolean,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime
+  createdBy String
+  updatedAt ZonedDateTime
+  updatedBy String
+  deletedAt ZonedDateTime
+  deletedBy String
+  company String
+  department String
+}
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

@@ -1,0 +1,27 @@
+entity MixingReportChecklist {
+    id UUID required unique
+   dateCheck LocalDate required,
+   finProduct1No String required,
+   finProduct1Weight Float required,
+   finProduct2No String required,
+   finProduct2Weight Float required,
+   bhtNo String required,
+   bhtWeight Float required,
+   bhtWeightPrd Float required,
+   weightPrdNo String required,
+   checkImpurity Boolean required,
+   checkImpurityNote String
+   checkSmell Boolean required,
+   checkSmellNote String
+   checkColor Boolean required,
+   checkColorNote String
+   checkEmployeeId String required,
+   note String,
+   isActive Boolean required,
+   createdAt ZonedDateTime
+   lastUpdated ZonedDateTime,
+    moisture Float required
+    tvn Float required
+    ash Float  required
+    protein Float required
+}

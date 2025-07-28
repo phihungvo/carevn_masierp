@@ -1,0 +1,32 @@
+entity MachineOperationChecklist{
+    id UUID required unique
+    checkTime ZonedDateTime required,
+        incineratorAirDuct Boolean required
+        incineratorAirDuctNote String
+        incinerator Boolean required
+        incineratorCheckNote String
+        dryingOvenAirDuct Boolean required
+        dryingOvenAirDuctNote String
+        dryingOvenMeter Boolean required
+        dryingOvenMeterNote String
+        dryingOvenWall Boolean required
+        dryingOvenWallNote String
+        dryingOvenValve Boolean required
+        dryingOvenValveNote String
+        sieveScreen Boolean required
+        sieveScreenNote String
+        crusher Boolean required
+        crusherNote String
+        magnet Boolean required
+        magnetNote String
+        mixer Boolean required
+        mixerNote String
+        packagingMachine Boolean required
+        packagingMachineNote String
+        isActive Boolean required
+   createdAt ZonedDateTime
+   lastUpdated ZonedDateTime
+}
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass

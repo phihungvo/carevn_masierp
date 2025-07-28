@@ -1,0 +1,45 @@
+{
+  "annotations": {
+    "changelogDate": "20240701092236"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiSale",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "deliveried",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "waitingDelivery",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiSale",
+  "name": "PurchaseDelivery",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "purchaseRequest",
+      "otherEntityRelationshipName": "purchaseDelivery",
+      "relationshipName": "purchaseRequest",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

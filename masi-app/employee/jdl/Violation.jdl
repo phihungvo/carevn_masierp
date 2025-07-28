@@ -1,0 +1,23 @@
+
+enum Level {
+  LEVEL_1,
+  LEVEL_2,
+  LEVEL_3
+}
+
+entity Violation {
+  description TextBlob required,
+  penalty BigDecimal required,
+  status ViolationStatus required,
+  createdAt Instant required,
+  updatedAt Instant
+}
+
+enum ViolationStatus {
+  NEW,
+  PENDING_APPROVAL,
+  APPROVED,
+  REJECTED
+}
+
+

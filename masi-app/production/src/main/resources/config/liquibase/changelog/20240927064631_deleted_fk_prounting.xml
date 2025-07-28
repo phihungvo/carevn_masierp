@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ProMaintainProPackage.
+    -->
+    <changeSet id="20240927064631-1" author="jhipster">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE "public"."product_routing"
+            DROP CONSTRAINT IF EXISTS "fk_product_routing__factory_id";
+
+            ALTER TABLE "public"."product_routing"
+            DROP CONSTRAINT IF EXISTS "fk_product_routing__storage_id";
+
+            alter table product_routing
+                add column if not exists product_maintain_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="1727672061352-21" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table production_standard
+                add column if not exists status varchar(100);
+        </sql>
+        <sql>
+            alter table machine_operation_checklist
+                add column if not exists check_date date;
+        </sql>
+    </changeSet>
+    <changeSet id="1727780186807-1" author="[BE] Huu Hoang">
+        <sql>
+            alter table manufacture_order
+                add column if not exists material_id UUID;
+            alter table manufacture_order
+                add column if not exists percent_protein varchar(255);
+        </sql>
+    </changeSet>
+    <changeSet id="1727837587117-1" author="[BE] Huu Hoang">
+        <sql>
+            alter table sample_disposal
+                alter column position drop not null;
+            alter table sample_disposal
+                alter column disposal_note drop not null;
+            alter table sample_disposal
+                alter column quantity_stt drop not null;
+            alter table sample_disposal
+                alter column quantity_sample_name drop not null;
+            alter table sample_disposal
+                alter column quantity_sample_no drop not null;
+            alter table sample_disposal
+                alter column quantity drop not null;
+            alter table sample_disposal
+                alter column quantity_save_date drop not null;
+            alter table sample_disposal
+                alter column quantity_release_date drop not null;
+            alter table sample_disposal
+                alter column disposal_method drop not null;
+            alter table sample_disposal
+                alter column disposal_result drop not null;
+            alter table sample_disposal
+                alter column reviewer_id drop not null;
+            alter table sample_disposal
+                alter column requester_id drop not null;
+        </sql>
+    </changeSet>
+    <changeSet id="1727850637469-1" author="[BE] Huu Hoang">
+        <sql>
+            --             columns.add(Column.aliased("quantity", table, columnPrefix + "_quantity"));
+            alter table release_warehouse
+                add column if not exists quantity decimal (10,2);
+        </sql>
+    </changeSet>
+    <changeSet id="1727859673472-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table release_warehouse
+                add column if not exists calculation_quantity decimal (10,2);
+            alter table release_warehouse
+                add column if not exists expire_date date;
+            alter table release_warehouse
+                add column if not exists production_quantity decimal (10,2);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

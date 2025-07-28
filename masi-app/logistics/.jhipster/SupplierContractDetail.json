@@ -1,0 +1,51 @@
+{
+  "annotations": {
+    "changelogDate": "20241004074516"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "contractId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "supplyItemId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "unitId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "SupplierContractDetail",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "supplierContract",
+      "relationshipName": "supplierContract",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

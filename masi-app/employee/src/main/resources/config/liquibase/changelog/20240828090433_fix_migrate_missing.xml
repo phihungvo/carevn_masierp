@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240828090433" author="HuuHoang" failOnError="false">
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+
+        alter table leave_regime_request
+            add column if not exists files jsonb default '[]'::jsonb;
+
+        alter table leave_request
+            add column if not exists files jsonb default '[]'::jsonb;
+
+        alter table employee
+            add column if not exists full_name varchar(255);
+
+
+        alter table recruitment_request
+            alter column description type text;
+        alter table recruitment_request
+            alter column recruitment_purposes type text;
+
+        alter table interview_schedule
+            alter column rate type text;
+        </sql>
+        <sql>
+
+            Alter table employee_profile
+    alter contract_date drop not null;
+
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

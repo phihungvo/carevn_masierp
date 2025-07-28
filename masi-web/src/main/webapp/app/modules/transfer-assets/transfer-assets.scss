@@ -1,0 +1,88 @@
+@import '../../bootstrap-variables';
+
+.modal-transfer-assets-filter {
+  .modal-content {
+    width: 290px;
+    overflow: unset !important;
+  }
+}
+.incoming-transfer-assets-create-modal {
+  .modal-content {
+    width: 800px;
+  }
+}
+
+.transfer-assets-detail-modal {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.transfer-assets-upload-modal {
+  .modal-content {
+    width: 434px;
+  }
+}
+
+.transfer-assets-upload {
+  &-container {
+    cursor: pointer;
+    margin-bottom: $space-12;
+    width: 320px;
+    height: 62px;
+    padding: $space-12 $space-12 $space-12 $space-16;
+    border-radius: $space-8;
+    border: 1px solid $secondary-black-60;
+  }
+
+  &-label {
+    position: relative;
+    font-weight: $font-body-400;
+    font-size: $text-body-16;
+    line-height: 18.75px;
+    letter-spacing: -0.5px;
+
+    &-required {
+      top: -4px;
+      left: -8px;
+      color: #ff1212;
+      font-weight: $font-body-400;
+      font-size: $text-body-14;
+      position: absolute;
+    }
+  }
+
+  &-sub {
+    font-size: $text-body-12;
+    font-weight: $font-body-400;
+    line-height: 14.06px;
+    letter-spacing: -0.5px;
+    color: #b3b3b3;
+  }
+}
+
+.confirm-leave-modal {
+  .modal-content {
+    width: 744px;
+    overflow: unset !important;
+  }
+}
+
+.modals-import-transfer-assets {
+  .modal-content {
+    width: 484px;
+  }
+}
+
+.supplies-filter-modals {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.incoming-transfer-assets-create-modal,
+.incoming-transfer-assets-update-modal {
+  .modal-content {
+    width: 830px;
+  }
+}

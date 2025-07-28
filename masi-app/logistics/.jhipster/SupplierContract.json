@@ -1,0 +1,98 @@
+{
+  "annotations": {
+    "changelogDate": "20241004074515"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "contractCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contractName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supplierId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "contractDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attachments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ContractStatus",
+      "fieldValues": "NEW,CANCELED,PENDING,APPROVED,REJECTED"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "SupplierContract",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "supplierContractDetail",
+      "otherEntityRelationshipName": "supplierContract",
+      "relationshipName": "supplierContractDetail",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

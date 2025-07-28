@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ItemType.
+    -->
+    <changeSet id="20241122164454-1" author="jhipster">
+        <createTable tableName="item_type">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="item_type" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_type" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_type" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20241122164454-2" author="jhipster">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+
+            ALTER TABLE item_type
+            DROP COLUMN IF EXISTS attribute;
+            ALTER TABLE item_type
+                ADD COLUMN IF NOT EXISTS attribute jsonb;
+
+            ALTER TABLE item
+            DROP COLUMN IF EXISTS item_type_id;
+            ALTER TABLE item
+                ADD COLUMN IF NOT EXISTS item_type_id UUID ;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241122164454-3" author="jhipster">
+        <sql>
+        ALTER TABLE invoice_supplies
+        DROP COLUMN IF EXISTS tax;
+        ALTER TABLE invoice_supplies
+            ADD COLUMN IF NOT EXISTS vat NUMERIC(19,2);
+        ALTER TABLE invoice_supplies
+            ADD COLUMN IF NOT EXISTS grand_total NUMERIC(19,2);
+        ALTER TABLE invoice_supplies
+        DROP COLUMN IF EXISTS import_tax_percentage;
+        ALTER TABLE invoice_supplies
+            ADD COLUMN IF NOT EXISTS import_vat_percentage NUMERIC;
+        ALTER TABLE invoice_supplies
+        DROP COLUMN IF EXISTS import_vat_amount;
+        ALTER TABLE invoice_supplies
+            ADD COLUMN IF NOT EXISTS import_vat_amount NUMERIC;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

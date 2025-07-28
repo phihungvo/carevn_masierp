@@ -1,0 +1,190 @@
+
+
+enum ContractType{
+  TRIAL
+  FIXED_TERM
+  UNDEFINED_TERM
+  SEASONAL
+}
+enum EmployeeStatus{
+    WORKING
+    RESIGNED
+}   
+enum Position {
+    EMPLOYEE
+    TEAM_LEADER
+    SUPERVISOR
+    DIRECTOR
+}
+
+enum WorkPlace {
+	OFFICE
+    FACTORY
+}
+
+enum RecruitmentStatus {
+    WAITING_APPROVAL
+    APPROVED
+    REJECTED
+}
+
+enum RecruitmentProcess {
+    WAITING_INTERVIEW
+    INTERVIEWED
+}
+
+enum InterviewResult {
+    PASS
+    FAIL
+    HOLD
+}
+
+
+enum InterviewMode {
+    ONLINE
+    OFFLINE
+}
+
+enum  Gender{
+	FEMALE
+    MALE
+    NO_PREFERENCE
+}
+entity EmployeeProfile{
+	employeeCode String required
+    fullName String required
+    gender Gender required
+    workspaceId UUID required
+    citizenId String  required
+    citizenIssueDate LocalDate
+	citizenIssuePlace String
+    residenceAddress String
+    temporaryAddress String
+    birthday LocalDate
+    phone String
+    taxCode String required
+    startWorkDate LocalDate required
+    role String required
+    position Position  required
+    bankCode String
+    bankNumber String
+    contractType String required
+    contractTerm LocalDate required
+    contractNumber String required
+    contractDate LocalDate required
+    contractEndDate LocalDate
+    level String
+    parkingCard String
+    insuranceCard String
+    referrerId UUID	
+    referrerDate LocalDate
+    email String
+    note String
+    status EmployeeStatus
+    createdAt ZonedDateTime
+    updatedAt ZonedDateTime
+    isDeleted Boolean
+}
+
+ enum LeaveType {
+    SICK_LEAVE
+    ANNUAL_LEAVE
+    MATERNITY_LEAVE
+    UNPAID_LEAVE
+    FUNERAL_LEAVE
+    WEDDING_LEAVE
+    COMPENSATION_LEAVE
+}
+ enum LeaveRequestDayType {
+    FULL_DAY
+    HALF_DAY
+}
+
+// Đăng ký nghĩ chế độ
+// Tên field	Loại	Bắt buộc?	Có thể chỉnh sửa	Loại dữ liệu
+// Loại nghỉ phép	Lựa chọn	Y	Y	String
+// Ngày cuối cùng làm việc	Date picker	Y	Y	Date
+// Ngày trở lại làm việc	Date picker	Y	Y	Date
+// Người thay thế	Lựa chọn	N	Y	String
+// Đính kèm	Upload	N	Y	File
+// Người duyệt	Lựa chọn	Y	Y	String
+// Nghỉ chế độ tên bảng là LeaveRegime 
+
+entity LeaveRegimeRequest{
+    leaveType LeaveType required
+    lastWorkDate ZonedDateTime required
+    returnWorkDate ZonedDateTime required
+    substituteId UUID
+    workspaceId UUID 
+    attachment Blob
+    attachmentName String
+    approverId UUID required
+    employeeId UUID required
+    leaveRequestDayType LeaveRequestDayType required
+    status EmployeeStatus
+    createdAt ZonedDateTime
+    updatedAt ZonedDateTime
+    isDeleted Boolean
+}
+
+
+
+
+entity AnnualLeave {
+    id UUID required
+    leaveAfterProbation Integer required // Số phép sau thử việc
+    leavePerYear Integer required // Số phép sau mỗi năm
+    carryForwardMonth Integer required // Ngày phép được cộng dồn đến tháng
+    employeeId UUID required
+    lastUpdated ZonedDateTime required
+    createdDate ZonedDateTime required
+    workPlace WorkPlace required
+    updatedAt ZonedDateTime
+}
+
+
+entity RecruitmentRequest {
+    id UUID required
+    requestDescription String required
+    position Position required
+    jobTitle String required
+    wage Float required
+    quantity Integer required
+    level Integer required
+    startDate LocalDate
+    recruitmentPurposes String
+    employeeId UUID required
+    requestNotes String
+    description String
+    gender Gender
+    approvalSign ImageBlob
+    rejectNote String
+    status RecruitmentStatus required
+    contractType ContractType required
+    lastUpdated  ZonedDateTime required
+    createdDate ZonedDateTime required
+    isDeleted Boolean
+}
+
+entity InterviewSchedule {
+    id UUID required
+    candidateName String required
+    interviewDate ZonedDateTime required
+    cvFile ImageBlob
+    interviewerId UUID required
+    recruitmentRequestId UUID required
+    rate String
+    process RecruitmentProcess
+    interviewMode InterviewMode 
+    interviewResult InterviewResult
+    lastUpdated  ZonedDateTime required
+    createdDate ZonedDateTime required
+    isDeleted Boolean
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass
+
+

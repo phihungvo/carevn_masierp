@@ -1,0 +1,44 @@
+entity Currency{
+    id UUID,
+    code String,
+    name String,
+    symbol String,
+    isActive Boolean,
+    rate BigDecimal,
+    attributes String,
+
+    isDeleted Boolean,
+    createdAt ZonedDateTime required
+    createdBy String required
+    updatedAt ZonedDateTime
+    updatedBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+    company String
+    department String
+}
+
+entity PaymentMethod{
+    id UUID,
+    code String,
+    name String,
+    description String,
+    isActive Boolean,
+    attributes String,
+    isCash Boolean,
+
+    isDeleted Boolean,
+    createdAt ZonedDateTime required
+    createdBy String required
+    updatedAt ZonedDateTime
+    updatedBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+    company String
+    department String
+}
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct

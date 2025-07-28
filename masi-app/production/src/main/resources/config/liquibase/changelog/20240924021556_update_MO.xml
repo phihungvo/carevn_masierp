@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ReleaseWarehouse.
+    -->
+    <changeSet id="20240924021556" author="jhipster">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            alter table manufacture_order
+                add column if not exists production_standard_id UUID;
+
+            alter table manufacture_order
+                add column if not exists code varchar;
+
+            alter table production_standard
+                add column if not exists material_id UUID;
+
+            alter table release_warehouse
+                add column if not exists production_standard_id UUID;
+
+
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "sampling_date" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "sample_no" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "product_type" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "sample_weight" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "customer" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "internal_hum" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "internal_tvn" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "internal_ash" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "internal_protein" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "external_hum" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "external_tvn" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "external_ash" DROP NOT NULL;
+            ALTER TABLE "public"."quality_check_sample" ALTER COLUMN "external_protein" DROP NOT NULL;
+
+            alter table quality_check_sample
+                add column if not exists manufacture_order_id UUID;
+        </sql>
+
+    </changeSet>
+</databaseChangeLog>

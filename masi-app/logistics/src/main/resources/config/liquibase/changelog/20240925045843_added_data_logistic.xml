@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity InventoryInOutCheck.
+    -->
+    <changeSet id="20240925045843" author="jhipster" runAlways="true">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            ALTER TABLE item ADD COLUMN IF NOT EXISTS percent_protein INTEGER;
+            ALTER TABLE item ADD COLUMN IF NOT EXISTS notes text;
+
+            truncate table item_category;
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('882acfca-3d60-4d78-9765-a7bdaf5843ec', 'FINISHED_PRODUCT', 'Thành phẩm', 'KIM_LONG', NULL, 'f', 'system', '2024-09-19 10:02:23', NULL, NULL, NULL, NULL, '9c7146b7-bd47-4692-a912-6e27d6c7984c');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('26a3e170-4614-473b-83c9-235d80d4a97e', 'ADDITIVE', 'Phụ gia', 'KIM_LONG', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, '4b0e4fd8-7ab7-41b3-81e7-bd2d46eae7d4');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('b754dd04-53cd-4fa5-a9cf-0db8044e9459', 'TOOLS_AND_EQUIPMENT', 'Tài sản công cụ dụng cụ', 'KIM_LONG', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, 'd4c3e824-8735-419b-b41f-332063edd318');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('66af9aff-3c73-488f-9aad-d08e2105d9c5', 'RAW_MATERIAL', 'Nguyên liệu', 'KIM_LONG', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, '4b0e4fd8-7ab7-41b3-81e7-bd2d46eae7d4');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('de80e071-8409-48d2-b864-f489048d074d', 'SEMI_FINISHED_PRODUCT', 'Bán thành phẩm', 'KIM_LONG', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, 'bdb81f26-6bf5-46e6-a54a-d260c0890c49');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('87540869-18a0-433e-82d2-5be96739c36d', 'FINISHED_PRODUCT', 'Thành phẩm', 'MMS', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, 'bd1251a8-f59e-441e-b34b-2b2845051a03');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('103826bf-918a-430f-9e2d-1b5a4c7612d5', 'ADDITIVE', 'Phụ gia', 'MMS', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, 'f62b5864-9c04-4928-a2a4-193564e537aa');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('b4d6d9b7-7b49-4490-a897-7bf81064c739', 'TOOLS_AND_EQUIPMENT', 'Tài sản công cụ dụng cụ', 'MMS', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, '67b1ac0e-2c58-4d63-9d07-f60978a7fadb');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('f0f667dd-1b27-459a-bc55-651efb3bace6', 'RAW_MATERIAL', 'Nguyên liệu', 'MMS', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, 'f62b5864-9c04-4928-a2a4-193564e537aa');
+            INSERT INTO "public"."item_category" ("id", "code", "name", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at", "warehouse_type_id") VALUES ('725ffd8a-3449-4533-8f45-9e31e2bed089', 'SEMI_FINISHED_PRODUCT', 'Bán thành phẩm', 'MMS', NULL, 'f', 'system', '2024-10-01 02:47:52.748919', NULL, NULL, NULL, NULL, '6b865d57-fb1a-4645-9817-0d8e6a51cb49');
+
+
+        </sql>
+        <sqlFile dbms="postgresql"
+                 encoding="UTF-8"
+                 endDelimiter=";"
+                 path="sql/insertWarehouse.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"/>
+    </changeSet>
+
+
+</databaseChangeLog>

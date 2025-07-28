@@ -1,0 +1,104 @@
+entity TransactionIn{
+    id UUID,
+    code String,
+    unitPrice BigDecimal,
+    quantity Integer,
+    notes String,
+    transactionId UUID,
+    transactionCode String,
+    //
+    expiredDate ZonedDateTime,
+    manufactureDate ZonedDateTime,
+    //
+
+    itemId UUID,
+    itemCode String,
+    warehouseId UUID ,
+    warehouseCode String,
+    supplierId UUID,
+    supplierCode String,
+    customerId UUID,
+    customerCode String,
+    orderId UUID,
+    orderCode String,
+    manufactureId UUID,
+    manufactureCode String,
+    packingId UUID,
+    packingCode String,
+
+    //audit fields
+    createAt ZonedDateTime
+    createBy String
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+    department String
+}
+
+entity TransactionOut{
+    id UUID,
+    code String,
+    transactionId UUID,
+    transactionCode String,
+    unitPrice BigDecimal,
+    quantity Integer,
+    remain Integer,
+    notes String,
+    type String,
+    //
+    expiredDate ZonedDateTime,
+    manufactureDate ZonedDateTime,
+    //
+
+    itemId UUID,
+    itemCode String,
+    warehouseId UUID ,
+    warehouseCode String,
+    supplierId UUID,
+    supplierCode String,
+    customerId UUID,
+    customerCode String,
+    orderId UUID,
+    orderCode String,
+    manufactureId UUID,
+    manufactureCode String,
+    packingId UUID,
+    packingCode String,
+
+    //audit fields
+    createAt ZonedDateTime
+    createBy String
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+    department String
+}
+
+entity InventoryInOutCheck{
+    id UUID
+    code String
+    transactionInId UUID
+    transactionInCode String
+    transactionOutId UUID
+    transactionOutCode String
+
+    // Audit fields
+    createAt ZonedDateTime
+    createBy String
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+    department String
+}
+
+filter *
+paginate * with pagination
+service all with serviceClass
+dto * with mapstruct
+

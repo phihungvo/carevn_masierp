@@ -1,0 +1,13 @@
+//quality index
+
+entity QualityIndex {
+    id UUID required
+    name String required
+    value String required
+    orderId UUID required
+    createdAt ZonedDateTime required
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

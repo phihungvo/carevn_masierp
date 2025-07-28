@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ReceiveMaterialChecklist.
+    -->
+    <changeSet id="20240605093743-1" author="jhipster">
+        <createTable tableName="receive_material_checklist">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="check_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="check_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="weight_number" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="transport_condition" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="transport_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="check_status" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="status_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="check_smell" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="smell_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="check_impurity" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="impurity_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="check_poison" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="poison_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="receiver_id" type="${uuidType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_updated" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="receive_material_checklist" columnName="check_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="receive_material_checklist" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="receive_material_checklist" columnName="last_updated" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240605093743-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/receive_material_checklist.csv"
+                  separator=";"
+                  tableName="receive_material_checklist"
+                  usePreparedStatements="true">
+            <column name="id" type="${uuidType}"/>
+            <column name="check_date" type="date"/>
+            <column name="check_time" type="date"/>
+            <column name="weight_number" type="string"/>
+            <column name="transport_condition" type="boolean"/>
+            <column name="transport_note" type="string"/>
+            <column name="check_status" type="boolean"/>
+            <column name="status_note" type="string"/>
+            <column name="check_smell" type="boolean"/>
+            <column name="smell_note" type="string"/>
+            <column name="check_impurity" type="boolean"/>
+            <column name="impurity_note" type="string"/>
+            <column name="check_poison" type="boolean"/>
+            <column name="poison_note" type="string"/>
+            <column name="receiver_id" type="${uuidType}"/>
+            <column name="note" type="string"/>
+            <column name="is_active" type="boolean"/>
+            <column name="created_at" type="date"/>
+            <column name="last_updated" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

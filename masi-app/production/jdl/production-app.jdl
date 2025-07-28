@@ -1,0 +1,27 @@
+application {
+  config {
+    baseName MasiProduction
+    applicationType microservice
+    testFrameworks [cucumber]
+    serverPort 8082
+    packageName com.masi.production
+    serviceDiscoveryType consul
+    authenticationType jwt
+    databaseType sql
+    devDatabaseType postgresql
+    prodDatabaseType postgresql
+    buildTool maven
+    searchEngine elasticsearch
+    enableSwaggerCodegen false
+    clientFramework no
+    enableTranslation true
+    languages [en, vi]
+    messageBroker false
+    microfrontends []
+    nativeLanguage en
+    reactive true
+    skipClient true
+    skipUserManagement true
+    websocket false
+  }
+}

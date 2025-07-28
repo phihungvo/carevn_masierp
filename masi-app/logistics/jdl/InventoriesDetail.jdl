@@ -1,0 +1,36 @@
+entity InventoriesDetail {
+  id UUID,
+  code String,
+  itemId UUID,
+  inventoriesId UUID,
+  quantity BigDecimal,
+  price BigDecimal,
+  totalPrice BigDecimal,
+  note TextBlob,
+  codeUom String,
+  uomId UUID,
+  uomName String,
+
+  beforeItemInventory Float,
+  afterItemInventory Float,
+  costPrice BigDecimal,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime required
+  createdBy String required
+  updatedAt ZonedDateTime
+  updatedBy String
+  deletedAt ZonedDateTime
+  deletedBy String
+  company String
+  department String
+
+
+}
+
+// DTOs and Pagination
+dto * with mapstruct
+paginate * with pagination
+service * with serviceClass
+filter *
+// Services

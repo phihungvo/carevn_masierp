@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+    - Thêm field "Số cân"
+- Field cấc loại cá độc: Bỏ ô chọn lý do khi tick "Không"
+- Thêm dropdown "Chọn loại nguyên liệu" với ds option : Thân cá, Đầu cá, Khác
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240812024111" author="Huu Hoang" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            alter table manufacture_order
+                add column if not exists quality_check_sample_id UUID;
+
+            alter table product_package
+                add column if not exists manufacture_order_id UUID;
+
+            alter table product_maintain
+                add column if not exists product_package_id UUID;
+
+            alter table product_routing
+                add column if not exists product_package_id UUID;
+
+
+
+            alter table manufacture_order
+                add column if not exists production_status varchar;
+
+            alter table quality_check_sample
+                add column if not exists production_status varchar;
+
+            alter table product_package
+                add column if not exists production_status varchar;
+
+            alter table product_maintain
+                add column if not exists production_status varchar;
+
+            alter table product_routing
+                add column if not exists production_status varchar;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

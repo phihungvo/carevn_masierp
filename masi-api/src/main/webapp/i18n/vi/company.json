@@ -1,0 +1,27 @@
+{
+  "masiErpApp": {
+    "company": {
+      "home": {
+        "title": "Companies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Company",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Company",
+        "search": "Tìm Company",
+        "notFound": "No Companies found"
+      },
+      "created": "Một Company mới được tạo với định danh {{ param }}",
+      "updated": "Một Company cập nhật với định danh {{ param }}",
+      "deleted": "Một Company đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Company {{ id }}?"
+      },
+      "detail": {
+        "title": "Company"
+      },
+      "id": "Id",
+      "name": "Name",
+      "description": "Description",
+      "parentId": "Parent Id"
+    }
+  }
+}

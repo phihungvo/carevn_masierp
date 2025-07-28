@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20240619124234-1-data" author="jhipster">
+        <loadData
+            file="config/liquibase/fake-data/20240619_time_keeping_violation.csv"
+            separator=";"
+            tableName="time_keeping_violation"
+            usePreparedStatements="true">
+            <column name="id" type="${uuidType}"/>
+            <column name="type" type="string"/>
+            <column name="is_active" type="boolean"/>
+            <column name="created_at" type="date"/>
+            <column name="last_updated_at" type="date"/>
+            <column name="time_keeping_id" type="${uuidType}"/>
+            <column name="employee_id" type="${uuidType}"/>
+            <column name="explanation_id" type="${uuidType}"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

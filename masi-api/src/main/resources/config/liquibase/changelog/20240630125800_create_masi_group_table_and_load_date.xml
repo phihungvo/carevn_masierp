@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+
+    <changeSet id="20240616072100-1" author="truongdd">
+        <createTable tableName="masi_group">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_group_name"/>
+            </column>
+            <column name="description" type="varchar(256)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_by" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_modified_date" type="timestamp">
+                <constraints nullable="true"/>
+            </column>
+            <column name="activated" type="boolean" valueBoolean="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="workspace_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <loadData tableName="masi_group"
+                  file="config/liquibase/data/20240630125900_masi_group.csv"
+                  separator=";"
+                  usePreparedStatements="true">
+            <column name="id" type="uuid"/>
+            <column name="name" type="varchar(50)"/>
+            <column name="description" type="varchar(256)"/>
+            <column name="created_by" type="varchar(50)"/>
+            <column name="created_date" type="datetime"/>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="datetime"/>
+            <column name="activated" type="boolean"/>
+            <column name="workspace_id" type="uuid"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

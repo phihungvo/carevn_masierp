@@ -1,0 +1,122 @@
+{
+  "annotations": {
+    "changelogDate": "20241127083947"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attribute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "inventoriesStorageId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "transactionTypeId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "itemCategoryId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "transferDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "TextBlob"
+    },
+    {
+      "fieldName": "fromUnit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fromDepartmentId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "toDepartmentId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "fromPersonId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "toPersonId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "fromAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "toAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "ItemAssetTransfer",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

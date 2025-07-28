@@ -1,0 +1,20 @@
+entity ProductMaintain {
+    id UUID required unique
+    productMaintainId UUID required,
+    productPackage String required,
+
+    company String,
+    department String,
+    isDeleted Boolean,
+    createdBy String,
+    createdDate ZonedDateTime,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime
+}
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass
+

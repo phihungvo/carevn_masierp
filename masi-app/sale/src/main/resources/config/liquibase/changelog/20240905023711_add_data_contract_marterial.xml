@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity QualityIndex.
+    -->
+
+    <changeSet id="20240905023709" author="Hoang Dang" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+            DO
+            $$
+            BEGIN
+    -- Check and add manufacture_order_id column
+    IF
+            NOT EXISTS (
+        SELECT 1
+        FROM information_schema.columns
+        WHERE table_name='contract_material'
+        AND column_name='manufacture_order_id'
+    ) THEN
+            ALTER TABLE contract_material
+                ADD COLUMN manufacture_order_id UUID;
+            END IF;
+
+    -- Check and add item_id column
+    IF
+            NOT EXISTS (
+        SELECT 1
+        FROM information_schema.columns
+        WHERE table_name='material'
+        AND column_name='item_id'
+    ) THEN
+            ALTER TABLE material
+                ADD COLUMN item_id UUID;
+            END IF;
+
+            END $$;
+
+
+        </sql>
+        <sql>
+            alter table contract_material
+                add column if not exists delivered_quantity float8 default 0;
+        </sql>
+    </changeSet>
+    <changeSet id="1730261747200-1" author="[BE] Huu Hoang">
+        <sql>
+            alter table contract
+                add column if not exists old_status varchar (255);
+-- lay chua
+        </sql>
+    </changeSet>
+
+    <changeSet id="1728444719142-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table quotation
+                add column if not exists process_at timestamp;
+            alter table contract
+                add column if not exists review_at timestamp;
+            alter table contract
+                add column if not exists review_by uuid;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,45 @@
+.supplier-contract-print-section {
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .font-bold {
+    font-weight: 600;
+  }
+
+  .title-inline {
+    display: inline-block;
+    width: 124px;
+    margin-bottom: 8px;
+  }
+
+  .title-secondary {
+    color: #747474;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  table {
+    thead {
+      tr {
+        th {
+          padding-inline: 4px;
+          text-align: center;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          padding-inline: 4px;
+        }
+      }
+    }
+  }
+}

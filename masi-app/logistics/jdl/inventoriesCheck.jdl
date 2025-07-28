@@ -1,0 +1,51 @@
+entity InventoriesCheck {
+  id UUID required,
+  code String ,
+  checkDate ZonedDateTime ,
+  warehouse UUID,
+  note TextBlob,
+  approver1 UUID ,
+  approver2 UUID,
+  approver3 UUID,
+  status String ,
+  attribute String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime
+  createdBy String
+  updatedAt ZonedDateTime
+  updatedBy String
+  deletedAt ZonedDateTime
+  deletedBy String
+  company String
+  department String
+
+}
+
+entity InventoriesCheckDetail {
+  id UUID required,
+  inventoriesCheckId UUID,
+  code String ,
+  itemId UUID,
+
+  systemQuantity BigDecimal,
+  actualQuantity BigDecimal
+  note TextBlob,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime
+  createdBy String
+  updatedAt ZonedDateTime
+  updatedBy String
+  deletedAt ZonedDateTime
+  deletedBy String
+  company String
+  department String
+
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *
+

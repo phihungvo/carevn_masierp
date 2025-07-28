@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ProMaintainProPackage.
+    -->
+    <changeSet id="20240927064632" author="jhipster">
+        <sql>
+            ALTER TABLE product_package ADD COLUMN IF NOT EXISTS status VARCHAR(255);
+            ALTER TABLE quality_check_sample ADD COLUMN IF NOT EXISTS package_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="1728455587251-1" author="[BE] Huu Hoang">
+        <sql>
+
+            ALTER TABLE mixing_report_checklist
+                ALTER COLUMN fin_product_1_no DROP NOT NULL,
+            ALTER
+            COLUMN fin_product_1_weight DROP
+            NOT NULL,
+    ALTER
+            COLUMN check_date DROP
+            NOT NULL,
+    ALTER
+            COLUMN fin_product_2_no DROP
+            NOT NULL,
+    ALTER
+            COLUMN fin_product_2_weight DROP
+            NOT NULL,
+    ALTER
+            COLUMN bht_no DROP
+            NOT NULL,
+    ALTER
+            COLUMN bht_weight DROP
+            NOT NULL,
+    ALTER
+            COLUMN bht_weight_prd DROP
+            NOT NULL,
+    ALTER
+            COLUMN weight_prd_no DROP
+            NOT NULL,
+    ALTER
+            COLUMN check_impurity DROP
+            NOT NULL,
+    ALTER
+            COLUMN check_smell DROP
+            NOT NULL,
+    ALTER
+            COLUMN check_color DROP
+            NOT NULL,
+    ALTER
+            COLUMN check_employee_id DROP
+            NOT NULL,
+    ALTER
+            COLUMN moisture DROP
+            NOT NULL,
+    ALTER
+            COLUMN tvn DROP
+            NOT NULL,
+    ALTER
+            COLUMN ash DROP
+            NOT NULL,
+    ALTER
+            COLUMN protein DROP
+            NOT NULL;
+
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

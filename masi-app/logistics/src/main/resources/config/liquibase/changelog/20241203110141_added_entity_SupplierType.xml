@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity SupplierType.
+    -->
+    <changeSet id="20241203110141-1" author="jhipster">
+        <createTable tableName="supplier_type">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="supplier_type" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="supplier_type" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="supplier_type" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <changeSet id="20241203110142-1" author="luc.luong">
+        <sql>
+            ALTER TABLE suppliers ADD COLUMN IF NOT EXISTS supplier_type_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110141-1-data-2" author="jhipster">
+        <sql>
+            ALTER TABLE incoming_invoice ADD COLUMN IF NOT EXISTS order_created_at TIMESTAMP;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110152" author="luc.luong">
+        <sql>
+            ALTER TABLE inventories_storage ADD COLUMN IF NOT EXISTS asset_logs JSONB;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241203110153" author="Hoang Dang">
+        <sql>
+            ALTER TABLE inventories_storage ADD COLUMN IF NOT EXISTS supplier_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110154" author="Khai.Do">
+        <sql>
+            ALTER TABLE payment_request ADD COLUMN IF NOT EXISTS reference_number VARCHAR(255);
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110155" author="Khai.Do">
+        <sql>
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS supplier_full_name VARCHAR(255);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS supplier_phone VARCHAR(255);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS supplier_email VARCHAR(255);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS supplier_position VARCHAR(255);
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110156" author="luc.luong">
+        <sql>
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS company VARCHAR(255);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241203110157" author="luc.luong">
+        <sql>
+            ALTER TABLE item_type
+                ADD COLUMN IF NOT EXISTS item_type VARCHAR (255) DEFAULT 'ITEM';
+
+            ALTER TABLE item_type
+                ADD COLUMN IF NOT EXISTS attribute JSON;
+
+            ALTER TABLE item_liquidation_detail
+                ADD COLUMN IF NOT EXISTS item_liquidation_id UUID;
+
+            ALTER TABLE item_asset_depreciation_detail
+                ADD COLUMN IF NOT EXISTS item_asset_depreciation_id UUID;
+
+            ALTER TABLE inventories_storage
+            DROP
+            COLUMN IF EXISTS attribute;
+
+            ALTER TABLE inventories_storage
+                ADD COLUMN IF NOT EXISTS attribute Json;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241203110158" author="luc.luong">
+        <sql>
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS actual_delivery_date DATE;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110159" author="luc.luong">
+        <sql>
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS actual_delivery_date DATE;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110160" author="luc.luong">
+        <sql>
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS contract_detail_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110161" author="luc.luong">
+        <sql>
+            INSERT INTO "public"."transaction_type" ("id", "code", "attribute", "name", "is_deleted", "created_at", "created_by", "updated_at", "updated_by", "deleted_at", "deleted_by", "company", "department") VALUES ('8a8745f6-8fc8-b577-f67e-77bccb9695be', 'LPS-01', NULL, 'Loại phát sinh 1', 'f', '2003-05-01 02:16:46', 'system', NULL, NULL, NULL, NULL, 'KIM_LONG', NULL) ON CONFLICT (id) DO NOTHING;
+            INSERT INTO "public"."transaction_type" ("id", "code", "attribute", "name", "is_deleted", "created_at", "created_by", "updated_at", "updated_by", "deleted_at", "deleted_by", "company", "department") VALUES ('3c7ce106-aad1-d8e7-6173-6758851cb192', 'LPS-02', NULL, 'Loại phát sinh 2', 'f', '2013-05-30 14:29:17', 'system', NULL, NULL, NULL, NULL, 'KIM_LONG', NULL) ON CONFLICT (id) DO NOTHING;
+            INSERT INTO "public"."transaction_type" ("id", "code", "attribute", "name", "is_deleted", "created_at", "created_by", "updated_at", "updated_by", "deleted_at", "deleted_by", "company", "department") VALUES ('31bfb7c8-8772-ffa1-4165-34b9437ebbb9', 'LPS-03', NULL, 'Loại phát sinh 3', 'f', '2019-04-06 19:58:12', 'system', NULL, NULL, NULL, NULL, 'KIM_LONG', NULL) ON CONFLICT (id) DO NOTHING;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110162-1" author="luc.luong">
+        <sql>
+--             INSERT INTO public.payment_method
+--             (id, code, "name", description, is_active, "attributes", is_cash, is_deleted, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, company, department)
+--             VALUES('a44f1161-d5f9-491c-a79c-e19528b1b757'::uuid, 'CARD', 'CARD', 'CARD', true, NULL, false, false, '1997-07-09 02:44:17.112', 'quick brown', '2015-02-05 16:50:46.114', 'ogThe quick bro', NULL, NULL, 'KIM_LONG', 'brown fox jump')
+--                 ON CONFLICT (id) DO NOTHING;
+
+            INSERT INTO public.payment_method
+            (id, code, "name", description, is_active, "attributes", is_cash, is_deleted, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, company, department)
+            VALUES('d74f7ea0-53a8-439d-a3af-5b7337129e43'::uuid, 'CASH', 'CASH', 'CASH', true, NULL, true, false, '2024-12-10 15:46:47.890', 'system', NULL, NULL, NULL, NULL, 'KIM_LONG', NULL)
+                ON CONFLICT (id) DO NOTHING;
+
+            INSERT INTO public.payment_method
+            (id, code, "name", description, is_active, "attributes", is_cash, is_deleted, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, company, department)
+            VALUES('3a83e447-8df1-4d33-b90e-4b9c851569ac'::uuid, 'BANK ', 'BANK ', 'BANK ', true, NULL, false, false, '2000-05-02 22:06:30.465', 'ogThe quick brown', '2020-01-20 16:31:30.217', 'jumps over the lazy dogThe quick brown', NULL, NULL, 'KIM_LONG', 'jumps over th')
+                ON CONFLICT (id) DO NOTHING;
+            --- ---------------------------------------------------------------------
+            INSERT INTO public.currency
+            (id, code, "name", symbol, is_active, rate, "attributes", is_deleted, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, company, department)
+            VALUES
+                ('a34cc05c-3051-4589-98ba-1fee551c43fa', 'USD', 'USD', '$', false, 25.00, 'brown fox jumps over th', false, '1984-04-18 16:46:19.032', 'dogThe quick brown f', '1990-02-04 18:12:41.554', 'lazy dogThe quick brown fox jumps over t', NULL, NULL, 'KIM_LONG', 'dogThe quick brown fo')
+                ON CONFLICT (id) DO NOTHING;
+
+            INSERT INTO public.currency
+            (id, code, "name", symbol, is_active, rate, "attributes", is_deleted, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, company, department)
+            VALUES
+                ('cb01db34-ae11-48e3-9d5d-cc31cfa14f8a', 'VND', 'VND', 'đ', true, 1.00, 'the lazy dogT', false, '2008-10-29 08:39:13.457', 'the lazy dogThe quick brown fox jumps', '1995-05-25 21:12:09.354', 'over the lazy dogThe quick brown fox', NULL, NULL, 'KIM_LONG', 'jumps over the lazy dogT')
+                ON CONFLICT (id) DO NOTHING;
+            -------- ---------------------------------------------------------------------
+            INSERT INTO public.contact_type
+            (id, "name", description, is_active, company, department, created_by, created_at, updated_by, updated_at, deleted_by, deleted_at)
+            VALUES('67e5ab9e-31b1-424e-b08f-adcb1a3a6f7f'::uuid, 'Maria', 'fox jumps over the lazy dogThe qu', true, 'quick brown fox jumps o', 'brown ', 'quick brown fox ju', '2020-08-09 00:22:35.029', 'fox jumps over the lazy dogThe quick bro', '1985-10-09 12:50:26.353', NULL, NULL)
+                ON CONFLICT (id) DO NOTHING;
+
+            INSERT INTO public.contact_type
+            (id, "name", description, is_active, company, department, created_by, created_at, updated_by, updated_at, deleted_by, deleted_at)
+            VALUES('5bd05288-6b54-422c-8160-28792c4be316'::uuid, 'Ivy', 'jumps over the lazy dogThe quick bro', true, 'over the lazy dogThe quick brown fo', 'the lazy dogT', 'jumps over the lazy dog', '2001-08-08 09:05:23.139', 'gThe quick brown fox jumps over the lazy do', '1995-06-03 02:16:28.258', NULL, NULL)
+                ON CONFLICT (id) DO NOTHING;
+
+            INSERT INTO public.contact_type
+            (id, "name", description, is_active, company, department, created_by, created_at, updated_by, updated_at, deleted_by, deleted_at)
+            VALUES('30898dc3-3583-46c3-aef1-309014ef33ce'::uuid, 'Alaina', 'The quick brown fox jumps over the lazy d', true, 'jumps over t', 'jumps over the lazy dogThe quick b', 'fox jumps over the lazy', '2016-08-26 08:06:00.073', 'over the lazy dogThe quick brown fox j', '2001-05-04 23:54:18.885', NULL, NULL)
+                ON CONFLICT (id) DO NOTHING;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241203110162-3" author="Hoang Dang">
+        <sql>
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS contract_detail_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110164-1" author="luc.luong">
+        <sql>
+            ALTER TABLE supplier_contract ADD COLUMN IF NOT EXISTS delivery_status VARCHAR(255);
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110164-2" author="luc.luong">
+        <sql>
+            ALTER TABLE supplier_contract ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN default false;
+        </sql>
+    </changeSet>
+    <changeSet id="20241203110164-3" author="luc.luong">
+        <sql>
+            ALTER TABLE "public"."item"
+            ALTER COLUMN "percent_protein" TYPE FLOAT;
+        </sql>
+    </changeSet>
+
+
+
+</databaseChangeLog>

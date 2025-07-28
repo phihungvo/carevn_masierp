@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity WarehouseType.
+    -->
+    <changeSet id="20240918073841" author="jhipster">
+        <validCheckSum>Any</validCheckSum>
+        <sql>
+            ALTER TABLE warehouse_type ADD COLUMN IF NOT EXISTS use_manufacture BOOLEAN DEFAULT FALSE;
+            ALTER TABLE inventory ADD COLUMN IF NOT EXISTS exprie_date DATE;
+            ALTER TABLE inventory ADD COLUMN IF NOT EXISTS order_id UUID;
+            ALTER TABLE inventory ADD COLUMN IF NOT EXISTS manufacture_id UUID;
+            ALTER TABLE inventory ADD COLUMN IF NOT EXISTS package_id UUID;
+        </sql>
+
+    </changeSet>
+</databaseChangeLog>

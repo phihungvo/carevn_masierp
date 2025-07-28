@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240823090432" author="HuuHoang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+                ALTER TABLE uniform ADD COLUMN IF NOT EXISTS code VARCHAR(30);
+                ALTER TABLE uniform_order ADD COLUMN IF NOT EXISTS code VARCHAR(30);
+                ALTER TABLE uniform_release ADD COLUMN IF NOT EXISTS code VARCHAR(30);
+                UPDATE "public"."uniform" SET "name" = 'Áo', "create_at" = '2024-07-28 05:41:49', "create_by" = 'system', "update_at" = '2024-07-28 15:16:13', "update_by" = 'system', "delete_at" = NULL, "delete_by" = NULL, "company" = 'MMS', "department" = 'deck pin', "code" = 'AO' WHERE "id" = '460e470b-ab4a-473b-9dbf-7b487c554572';
+                UPDATE "public"."uniform" SET "name" = 'Quần', "create_at" = '2024-07-28 12:25:19', "create_by" = 'system', "update_at" = '2024-07-28 21:03:44', "update_by" = 'system', "delete_at" = NULL, "delete_by" = NULL, "company" = 'MMS', "department" = 'sellotape trace', "code" = 'QUAN' WHERE "id" = 'f3062973-2366-418d-85ff-dcdc9223e8fb';
+                UPDATE "public"."uniform" SET "name" = 'Nón', "create_at" = '2024-07-28 09:36:27', "create_by" = 'system', "update_at" = '2024-07-28 12:18:33', "update_by" = 'system', "delete_at" = NULL, "delete_by" = NULL, "company" = 'MMS', "department" = 'calmly', "code" = 'NON' WHERE "id" = 'ec59222b-40a4-4d13-866d-995c92329e06';
+                UPDATE "public"."uniform" SET "name" = 'Giày', "create_at" = '2024-07-28 04:47:34', "create_by" = 'system', "update_at" = '2024-07-28 16:10:10', "update_by" = 'system', "delete_at" = NULL, "delete_by" = NULL, "company" = 'MMS', "department" = 'round unknown', "code" = 'GIAY' WHERE "id" = '49a322ae-f1c9-4fd5-b368-6b9bb23d2799';
+                UPDATE "public"."uniform" SET "name" = 'Áo', "create_at" = '2024-07-28 19:20:27', "create_by" = 'system', "update_at" = '2024-07-28 03:07:49', "update_by" = 'system', "delete_at" = NULL, "delete_by" = NULL, "company" = 'KIM_LONG', "department" = 'jumble before', "code" = 'AO' WHERE "id" = 'd8239f52-d14f-422c-ac34-7beb1a1f6d6d';
+                UPDATE "public"."uniform" SET "name" = 'Quần', "create_at" = '2024-07-28 14:22:16', "create_by" = 'system', "update_at" = '2024-07-28 16:08:29', "update_by" = 'system', "delete_at" = NULL, "delete_by" = NULL, "company" = 'KIM_LONG', "department" = 'gosh', "code" = 'QUAN' WHERE "id" = '90a553de-9786-4c27-9b14-ff30bb0ec563';
+                UPDATE "public"."uniform" SET "name" = 'Nón', "create_at" = '2024-07-28 15:08:05', "create_by" = 'system', "update_at" = '2024-07-28 14:39:04', "update_by" = 'system', "delete_at" = NULL, "delete_by" = NULL, "company" = 'KIM_LONG', "department" = 'disruption phooey', "code" = 'NON' WHERE "id" = '934528ca-9d13-4996-be4a-db8f0a06555a';
+                UPDATE "public"."uniform" SET "name" = 'Giày', "create_at" = '2024-07-28 17:32:27', "create_by" = 'system', "update_at" = '2024-07-29 00:17:33', "update_by" = 'system', "delete_at" = NULL, "delete_by" = NULL, "company" = 'KIM_LONG', "department" = 'blindly', "code" = 'GIAY' WHERE "id" = 'bf57542b-fef9-4eaa-9a9d-e9aefb46fdc3';
+
+
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

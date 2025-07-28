@@ -1,0 +1,74 @@
+{
+  "annotations": {
+    "changelogDate": "20240802162950"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "position",
+      "fieldType": "PositionEmployee",
+      "fieldValues": "DIRECTOR,AccountingManager,PersonnelManager,DEPARTMENT_MANAGER"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "requestId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "approvalSign",
+      "fieldType": "ImageBlob"
+    },
+    {
+      "fieldName": "approvalSignContentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rejectNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "result",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "RecruitmentReviewRequest",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

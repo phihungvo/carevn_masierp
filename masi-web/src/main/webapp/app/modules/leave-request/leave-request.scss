@@ -1,0 +1,70 @@
+@import '../../bootstrap-variables';
+
+.modal-request-day-off {
+  .modal-content {
+    min-width: 790px;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: $space-16 0;
+  background-color: $secondary-black-70;
+}
+
+.dayoff-day-type {
+  z-index: 2;
+  position: relative;
+
+  &-input {
+    position: relative;
+
+    &-caret {
+      position: absolute;
+      right: $space-12;
+      top: $space-48;
+    }
+  }
+
+  &-options {
+    background-color: white;
+    position: absolute;
+    right: -$space-16;
+    top: 100%;
+    width: 362px;
+    height: 296px;
+    border-radius: 10px;
+    border: 1px solid $secondary-black-70;
+    padding: $space-16;
+    transition: all 0.1s ease-in-out;
+
+    &.show {
+      display: block;
+      height: 200px;
+    }
+
+    &.hidden {
+      display: none;
+      height: 0;
+    }
+  }
+
+  .input-time-wrapper {
+    input {
+      width: 328px;
+    }
+  }
+}
+
+.modals-detail-leave-request {
+  .modal-content {
+    width: 800px;
+  }
+}
+
+.modal-dayoff-filter-request {
+  .modal-content {
+    overflow: unset !important;
+  }
+}

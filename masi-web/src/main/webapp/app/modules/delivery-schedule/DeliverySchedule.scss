@@ -1,0 +1,45 @@
+.delivery-schedule {
+
+  &__btn-mode {
+    height: calc(16px + 2 * 6px);
+    padding: 6px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    &.--active {
+      box-shadow: 0 0 0 5px #E0ECF9;
+      background-color: #e0ecf96e;
+    }
+  }
+
+
+  &__btn-redirect {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #667085;
+    background-color: #98a2b340;
+
+    font-family: Inter;
+    font-size: 14px;
+    text-underline-position: from-font;
+
+    &.--active {
+      background-color: #4072D0;
+      color: #FFFFFF;
+    }
+
+  }
+
+
+}

@@ -1,0 +1,39 @@
+@import "../../bootstrap-variables";
+
+.modals-filter-customers {
+  .modal-content {
+    width: 400px;
+  }
+}
+
+.modals-create-customers {
+  .modal-content {
+    width: 744px;
+  }
+}
+
+.actions-dropdown {
+  &-toggle {
+    background-color: white;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  .dropdown-item {
+    &:hover {
+      background-color: $secondary-black-90;
+      color: unset;
+    }
+
+    button {
+      font-weight: $font-body-400 !important;
+      font-size: $text-body-16 !important;
+    }
+  }
+
+  .transfer {
+    color: $primary-blue-30;
+  }
+}

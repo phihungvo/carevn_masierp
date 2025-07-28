@@ -1,0 +1,162 @@
+{
+  "annotations": {
+    "changelogDate": "20241127083945"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "registrationNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "registrationDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "handoverNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "handoverDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "handoverBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "userPosition",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "seriesNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "usageDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "invoiceNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "invoiceDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "TextBlob"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "liquidationDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "unit",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "yearOfUse",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "monthOfUse",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "warrantyPeriod",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "manufacturer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isMadeIn",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "specs",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "removalDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "reasonForRemoval",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attribute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "ItemInfo",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

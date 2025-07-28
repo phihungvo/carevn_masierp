@@ -1,0 +1,90 @@
+stages:
+  - develop
+  - staging
+
+.notify_deployment: &notify_deployment
+  before_script:
+    - |
+      # Format message for Telegram
+      MESSAGE="🚀 *New Deployment*
+      *Branch:* \`$CI_COMMIT_REF_NAME\`
+      *Environment:* \`$CI_JOB_STAGE\`
+      *Commit Message:* \`$CI_COMMIT_MESSAGE\`
+      *Author:* \`$CI_COMMIT_AUTHOR\`"
+      # Send to Telegram
+      curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_CHAT_ID" \
+        -d "text=$MESSAGE" \
+        -d "parse_mode=Markdown"
+
+deploy_BE_develop:
+  stage: develop
+  <<: *notify_deployment
+  script:
+    - ssh -tt $DEV_HOST " cd /apps/backend && git fetch origin"
+    - ssh -tt $DEV_HOST " cd /apps/backend && git checkout $CI_COMMIT_SHA"
+    - ssh -tt $DEV_HOST " cd /apps/backend && sh build_packages.sh"
+    - ssh -tt $DEV_HOST " cd /apps/backend && docker compose -f docker-compose.develop.run.yml up -d --build"
+    # Notify deployment success
+    - |
+      curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_CHAT_ID" \
+        -d "text=✅ Backend deployment to DEV completed successfully!" \
+        -d "parse_mode=Markdown"
+  when: manual
+  only:
+    - be-develop
+
+deploy_FE_develop:
+  stage: develop
+  <<: *notify_deployment
+  script:
+    - ssh -tt $DEV_HOST "cd /apps/frontend/masi-web && git fetch origin"
+    - ssh -tt $DEV_HOST " cd /apps/frontend/masi-web && git checkout $CI_COMMIT_SHA"
+    - ssh -tt $DEV_HOST " cd /apps/frontend/masi-web && npm i"
+    - ssh -tt $DEV_HOST " cd /apps/frontend/masi-web && npm run build"
+    # Notify deployment success  
+    - |
+      curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_CHAT_ID" \
+        -d "text=✅ Frontend deployment to DEV completed successfully!" \
+        -d "parse_mode=Markdown"
+  only:
+    - fe-develop
+
+# Tương tự cho staging...
+deploy_BE_stg:
+  stage: staging
+  <<: *notify_deployment
+  script:
+    - ssh -tt $STG_HOST " cd /apps/backend && git fetch origin"
+    - ssh -tt $STG_HOST " cd /apps/backend && git checkout $CI_COMMIT_SHA"
+    - ssh -tt $STG_HOST " cd /apps/backend && sh build_packages.sh"
+    - ssh -tt $STG_HOST " cd /apps/backend && docker compose -f docker-compose.develop.run.yml up -d --build"
+    # Notify deployment success
+    - |
+      curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_CHAT_ID" \
+        -d "text=✅ Backend deployment to STAGING completed successfully!" \
+        -d "parse_mode=Markdown"
+  when: manual
+  only:
+    - be-develop
+
+deploy_FE_stg:
+  stage: staging
+  <<: *notify_deployment
+  script:
+    - ssh -tt $STG_HOST " cd /apps/frontend/masi-web && git fetch origin"
+    - ssh -tt $STG_HOST " cd /apps/frontend/masi-web && git checkout $CI_COMMIT_SHA"
+    - ssh -tt $STG_HOST " cd /apps/frontend/masi-web && npm i"
+    - ssh -tt $STG_HOST " cd /apps/frontend/masi-web && npm run build"
+    # Notify deployment success
+    - |
+      curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_CHAT_ID" \
+        -d "text=✅ Frontend deployment to STAGING completed successfully!" \
+        -d "parse_mode=Markdown"
+  when: manual
+  only:
+    - fe-develop

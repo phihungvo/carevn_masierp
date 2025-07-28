@@ -1,0 +1,18 @@
+
+entity DayOff {
+    id UUID required
+    numberDaysOff Float required
+    year Integer required
+    employeeId UUID required
+    annualLeave UUID required
+    lastUpdated  ZonedDateTime required
+    createdDate ZonedDateTime required
+    isActive Boolean
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass
+
+

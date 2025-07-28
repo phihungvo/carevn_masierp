@@ -1,0 +1,103 @@
+@import './modules/asset/asset.scss';
+
+.ant {
+  &-input {
+    &::placeholder {
+      font-size: 14px !important;
+    }
+
+    &-status-error {
+      border-color: #ff4d4f !important;
+    }
+  }
+
+  &-picker-input {
+    input {
+      padding: unset !important;
+      border: unset !important;
+    }
+
+    ::placeholder {
+      font-size: 14px !important;
+    }
+  }
+
+  &-picker-dropdown {
+    .ant-btn {
+      color: white;
+    }
+  }
+
+  &-tag {
+    padding: 3px 8px;
+    font-weight: 500;
+    margin-inline-end: 0;
+
+    &-processing {
+      background-color: #b2ddff !important;
+    }
+
+    &-success {
+      background-color: #d1fadf !important;
+      color: #027a48 !important;
+    }
+
+    &-error {
+      background-color: #fecdca !important;
+      color: #b42318 !important;
+    }
+  }
+
+  &-card {
+    border-color: #d0d5dd;
+    border-radius: 12px;
+
+    &-body {
+      padding: 12px 20px !important;
+    }
+  }
+
+  &-form {
+    &-item {
+      margin-bottom: 0;
+    }
+  }
+
+  &-btn {
+    font-weight: 600;
+    color: #475467;
+    height: 40px;
+
+    &-color-primary {
+      color: #fff;
+    }
+  }
+
+  &-divider {
+    border: 1px solid #d0d5dd;
+  }
+
+  &-typography {
+    font-size: 18px;
+    font-weight: 600;
+    color: #344054;
+    line-height: 28px;
+  }
+
+  &-form-item-label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #344054;
+    line-height: 20px;
+    padding-bottom: 6px !important;
+  }
+
+  &-picker {
+    width: 100%;
+  }
+}
+
+textarea.ant-input {
+  border-radius: 10px;
+}
+

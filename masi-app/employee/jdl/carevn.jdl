@@ -1,0 +1,152 @@
+/**
+ * The Employee entity.
+ */
+//entity Employee {
+//    /**
+//    * The firstname attribute.
+//    */
+//    id UUID required unique
+//    firstName String
+//    lastName String
+//    email String
+//    phoneNumber String
+//    hireDate ZonedDateTime
+//    salary Long
+//    commissionPct Long
+//    isActive Boolean required
+//}
+
+/**
+ * Time keeping record entity.
+ */
+//entity TimeKeepingRecord {
+//    id UUID required unique
+//    checkIn ZonedDateTime
+//}
+
+//entity TimeKeeping{
+//    id UUID required unique
+//    date LocalDate
+//    firstCheckIn ZonedDateTime
+//    lastCheckIn ZonedDateTime
+//    hoursWorked Float
+//    note String
+//    isAbnormal Boolean
+//    isOverride Boolean
+//    locked Boolean
+//}
+
+entity LeaveRequest{
+    id UUID unique required,
+    status LeaveRequestStatus required,
+    fromDate LocalDate required,
+    toDate LocalDate required,
+    reason String,
+    leaveRequestType LeaveType required,
+    fileAttachment Blob
+    leaveRequestDayType LeaveRequestDayType required,
+    isActive Boolean required
+}
+
+enum LeaveRequestStatus{
+    PENDING,
+    APPROVED,
+    REJECTED,
+    CANCELLED
+}
+
+enum LeaveType{
+    SICK_LEAVE,
+    ANNUAL_LEAVE,
+    MATERNITY_LEAVE,
+    UNPAID_LEAVE
+}
+
+enum LeaveRequestDayType{
+    FULL_DAY,
+    HALF_DAY
+}
+
+//entity TimeKeepingViolation {
+//    id UUID required unique
+//    type TimeKeepingViolationType required
+//    isActive Boolean required
+//}
+
+//enum TimeKeepingViolationType {
+//    ABSENT_WITHOUT_REQUEST,
+//    INSUFFICIENT_WORKING_TIME,
+//    OVERTIME,
+//    MISSING_CHECKOUT,
+//    NO_VIOLATION
+//}
+
+//entity TimeKeepingExplanation {
+//    id UUID required unique
+//    explanation String required
+//    status ExplanationStatus required
+//    reason TimeKeepingViolationType required
+//    createdAt ZonedDateTime required
+//    lastUpdated ZonedDateTime
+//    isActive Boolean required
+//}
+
+//enum ExplanationStatus{
+//    PENDING,
+//    APPROVED,
+//    REJECTED,
+//    CANCELLED
+//}
+
+//entity ExplanationReview {
+//    id UUID required unique
+//    status ReviewStatus required
+//    isActive Boolean required
+//}
+//
+
+entity LeaveRequestReview {
+    id UUID required unique,
+    status ReviewStatus required,
+    reason String,
+    isActive Boolean required
+    createdAt ZonedDateTime
+    lastUpdated ZonedDateTime
+}
+
+enum ReviewStatus {
+    APPROVED,
+    REJECTED
+    AWAITING_REVIEW
+}
+
+//entity ExplanationReview {
+//    id UUID required unique
+//    status ReviewStatus required
+//    reason String
+//    isActive Boolean required
+//    createdAt ZonedDateTime
+//    lastUpdated ZonedDateTime
+//}
+relationship ManyToOne {
+//    TimeKeepingRecord{employee} to Employee
+//    TimeKeeping{employee} to Employee
+//    LeaveRequest{employee} to Employee
+//    LeaveRequest{sensor} to Employee
+//    LeaveRequest{substitute} to Employee
+//    TimeKeepingViolation{employee} to Employee
+//    TimeKeepingViolation{explanation} to TimeKeepingExplanation{violation}
+//    TimeKeepingExplanation{employee} to Employee
+//    ExplanationReview{explanation} to TimeKeepingExplanation
+//    ExplanationReview{sensor} to Employee
+//    ExplanationReview{reviewer} to Employee
+//    ExplanationReview{explanation} to TimeKeepingExplanation {reviews}
+    LeaveRequestReview{leaveRequest} to LeaveRequest{reviews}
+}
+
+//relationship OneToOne {
+//    TimeKeepingViolation{timeKeeping} to TimeKeeping{violation}
+//}
+
+dto * with mapstruct
+service * with serviceClass

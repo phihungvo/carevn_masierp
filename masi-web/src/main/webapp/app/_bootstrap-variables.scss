@@ -1,0 +1,121 @@
+/*
+* Bootstrap overrides https://v4-alpha.getbootstrap.com/getting-started/options/
+* All values defined in bootstrap source
+* https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss can be overwritten here
+* Make sure not to add !default to values here
+*/
+
+// Widths
+$left-bar-width: 100px;
+$left-bar-width-md: 160px;
+$left-bar-width-sm: 70px;
+$menu-item-width: 122px;
+$submenu-item-width: 148px;
+$search-header-width: 284px;
+$modal-timesheet-bulk-width: 744px;
+$modal-timesheet-export-width: 714px;
+
+$card-header-height: 90px;
+
+$menu-item-text-color: #667085;
+
+// Colors
+$primary-background-color: #f2f4f7;
+$secondary-background-color: #fff;
+
+$primary-color: #4072d0;
+$primary-blue-80: #c8d1ff;
+$primary-blue-70: #adbaff;
+$primary-blue-50: #7f8cff;
+$primary-blue-40: #4c69ff;
+$primary-blue-30: #0f58a5;
+
+$secondary-color: #575a5d;
+$secondary-black-00: #231f20;
+$secondary-black-90: #f5f6f6;
+$secondary-black-80: #D0D5DD;
+$secondary-black-70: #d3d5d7;
+$secondary-black-60: #bfc1c5;
+$secondary-black-50: #b2b5ba;
+$secondary-black-40: #9fa3a9;
+$secondary-black-30: #91949a;
+$secondary-black-20: #717478;
+
+$red-error-30: #9f2e23;
+$red-error-40: #c4382a;
+$red-error-50: #f54635;
+$red-invalid: #f04848;
+
+$warning-yellow-30: #8a6116;
+$warning-yellow-40: #c67400;
+$warning-yellow-50: #f89100;
+$warning-yellow-40: #c67400;
+$warning-yellow-90: #ffea8a;
+
+$success-green-20: #007504;
+$success-green-40: #00bb07;
+$success-green-80: #99f79d;
+
+$secondary-border-color: #b2b5ba;
+
+$info-color-90: #ddeeff;
+$info-color-80: #b5dbff;
+$info-color-50: #46a6ff;
+$info-color-40: #3885cc;
+$info-color-30: #2e6ca6;
+$info-color-20: #23537f;
+$info-dot: #00a0ac;
+
+$text-black: #0c0a25;
+
+$calendar-selected: #4c69ff;
+
+// Font Sizes
+$text-body-12: 12px;
+$text-body-14: 14px;
+$text-body-16: 16px;
+$text-body-20: 20px;
+$text-body-24: 24px;
+$text-body-36: 36px;
+$text-body-44: 44px;
+
+// Font Weights
+$font-body-300: 300;
+$font-body-400: 400;
+$font-body-500: 500;
+$font-body-600: 600;
+$font-body-700: 700;
+
+// Sizes & Spaces
+$space-2: 2px;
+$space-4: 4px;
+$space-6: 6px;
+$space-8: 8px;
+$space-10: 10px;
+$space-12: 12px;
+$space-16: 16px;
+$space-20: 20px;
+$space-22: 22px;
+$space-24: 24px;
+$space-28: 28px;
+$space-30: 30px;
+$space-32: 32px;
+$space-34: 34px;
+$space-36: 36px;
+$space-40: 40px;
+$space-48: 48px;
+$space-54: 54px;
+$space-56: 56px;
+$space-64: 64px;
+$space-70: 70px;
+$space-72: 72px;
+$space-74: 74px;
+$space-80: 80px;
+$space-120: 120px;
+
+// Border Radius
+$rounded-4: 4px;
+$rounded-6: 6px;
+$rounded-8: 8px;
+$rounded-10: 10px;
+$rounded-full: 100%;

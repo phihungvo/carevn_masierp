@@ -1,0 +1,21 @@
+@import '../../bootstrap-variables';
+
+.modals-detail-group {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.modals-create-group {
+  .modal-content {
+    width: 1400px;
+  }
+}
+
+.input-checkbox {
+  cursor: pointer;
+}
+
+.title {
+  white-space: nowrap;
+}

@@ -1,0 +1,17 @@
+entity  EmployeeChangeLog {
+    id UUID,
+    changeDate ZonedDateTime,
+    change String,
+    changeBy String,
+}
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass
+
+//trong đó change là json gồm
+//interface Change {
+//    field String
+//    oldValue String,
+//    newValue String,
+//}[]
+

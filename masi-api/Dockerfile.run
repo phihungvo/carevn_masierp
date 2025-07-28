@@ -1,0 +1,6 @@
+FROM masi-shared AS build
+
+WORKDIR /build
+
+COPY ./masi-api/target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]

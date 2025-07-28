@@ -1,0 +1,23 @@
+enum DataType {
+    STRING
+    NUMBER
+    BOOLEAN
+    DATE
+    DATETIME
+}
+
+entity Config {
+    id Long,
+    key String required
+    description String,
+    value String required
+    type DataType required
+    updatedAt ZonedDateTime
+    updatedBy String
+    company String
+}
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct

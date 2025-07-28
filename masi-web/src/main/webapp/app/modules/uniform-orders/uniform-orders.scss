@@ -1,0 +1,43 @@
+@import '../../bootstrap-variables';
+
+.orders-filter-modals {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.modals-detail-uniform-orders {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.modals-create-order {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.modal-order-stock {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.modals-propose-order {
+  .modal-content {
+    width: 744px;
+  }
+}
+
+.modals-approve-sign {
+  .modal-content {
+    width: 483px;
+  }
+}
+
+.modal-reject-order {
+  .modal-content {
+    width: 540px;
+  }
+}

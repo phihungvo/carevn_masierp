@@ -1,0 +1,55 @@
+entity Uom {
+    id UUID,
+    name String,
+
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+entity UomGroup {
+    id UUID,
+    name String,
+
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+entity UomGroupDetails {
+    id UUID,
+    name String,
+    baseQty Integer,
+    altQty Integer
+    active Boolean
+
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+relationship ManyToOne {
+    UomGroupDetails{baseUom(id)} to Uom,
+    UomGroupDetails{altUom(id)} to Uom,
+    UomGroup{baseUom(id)} to Uom
+}
+
+relationship OneToMany {
+    UomGroup to UomGroupDetails
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

@@ -1,0 +1,19 @@
+entity StandardWorkScheduleConfig {
+    id UUID,
+    name String,
+    dayOfWeek Integer,
+    numberOfShifts Integer,
+    workHours Integer,
+    department String,
+    company String,
+    departmentType String
+    updatedAt ZonedDateTime
+    updatedBy String
+
+}
+
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct

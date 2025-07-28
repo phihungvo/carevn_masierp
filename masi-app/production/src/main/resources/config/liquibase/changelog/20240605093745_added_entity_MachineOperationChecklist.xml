@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity MachineOperationChecklist.
+    -->
+    <changeSet id="20240605093745-1" author="jhipster">
+        <createTable tableName="machine_operation_checklist">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="check_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="incinerator_air_duct" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="incinerator_air_duct_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="incinerator" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="incinerator_check_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="drying_oven_air_duct" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="drying_oven_air_duct_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="drying_oven_meter" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="drying_oven_meter_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="drying_oven_wall" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="drying_oven_wall_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="drying_oven_valve" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="drying_oven_valve_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sieve_screen" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="sieve_screen_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="crusher" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="crusher_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="magnet" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="magnet_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mixer" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="mixer_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="packaging_machine" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="packaging_machine_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_updated" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="machine_operation_checklist" columnName="check_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="machine_operation_checklist" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="machine_operation_checklist" columnName="last_updated" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240605093745-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/machine_operation_checklist.csv"
+                  separator=";"
+                  tableName="machine_operation_checklist"
+                  usePreparedStatements="true">
+            <column name="id" type="${uuidType}"/>
+            <column name="check_time" type="date"/>
+            <column name="incinerator_air_duct" type="boolean"/>
+            <column name="incinerator_air_duct_note" type="string"/>
+            <column name="incinerator" type="boolean"/>
+            <column name="incinerator_check_note" type="string"/>
+            <column name="drying_oven_air_duct" type="boolean"/>
+            <column name="drying_oven_air_duct_note" type="string"/>
+            <column name="drying_oven_meter" type="boolean"/>
+            <column name="drying_oven_meter_note" type="string"/>
+            <column name="drying_oven_wall" type="boolean"/>
+            <column name="drying_oven_wall_note" type="string"/>
+            <column name="drying_oven_valve" type="boolean"/>
+            <column name="drying_oven_valve_note" type="string"/>
+            <column name="sieve_screen" type="boolean"/>
+            <column name="sieve_screen_note" type="string"/>
+            <column name="crusher" type="boolean"/>
+            <column name="crusher_note" type="string"/>
+            <column name="magnet" type="boolean"/>
+            <column name="magnet_note" type="string"/>
+            <column name="mixer" type="boolean"/>
+            <column name="mixer_note" type="string"/>
+            <column name="packaging_machine" type="boolean"/>
+            <column name="packaging_machine_note" type="string"/>
+            <column name="is_active" type="boolean"/>
+            <column name="created_at" type="date"/>
+            <column name="last_updated" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

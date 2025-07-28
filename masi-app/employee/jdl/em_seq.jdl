@@ -1,0 +1,13 @@
+enum  Gender{
+	FEMALE
+    MALE
+    NO_PREFERENCE
+}
+
+entity EmployeeIdSequence {
+    currentSequence Integer required
+    gender Gender required
+    workspaceId UUID required
+}
+
+service * with serviceClass

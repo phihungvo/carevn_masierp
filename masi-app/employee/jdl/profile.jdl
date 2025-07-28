@@ -1,0 +1,76 @@
+
+
+
+enum EmployeeStatus{
+    WORKING
+    RESIGNED
+}   
+enum Position {
+    EMPLOYEE
+    TEAM_LEADER
+    SUPERVISOR
+    DIRECTOR
+}
+
+enum  Gender{
+	FEMALE
+    MALE
+    NO_PREFERENCE
+}
+entity EmployeeProfile{
+	employeeCode String required
+    fullName String required
+    gender Gender required
+    workspaceId UUID required
+    citizenId String  required
+    citizenIssueDate LocalDate
+	citizenIssuePlace String
+    residenceAddress String
+    temporaryAddress String
+    birthday LocalDate
+    phone String
+    taxCode String required
+    startWorkDate LocalDate required
+    role String required
+    position Position  required
+    bankCode String
+    bankNumber String
+    contractType String required
+    contractTerm LocalDate required
+    contractNumber String required
+    contractDate LocalDate required
+    contractEndDate LocalDate
+    level String
+    parkingCard String
+    insuranceCard String
+    referrerId UUID	
+    referrerDate LocalDate
+    email String
+    note String
+    status EmployeeStatus
+    createdAt ZonedDateTime required
+    updatedAt ZonedDateTime required
+    isDeleted Boolean required
+    isActive Boolean required
+}
+enum ProfileAttachmentType {
+    CMND
+    HK
+    SYLL
+    DON_XV
+    GKSK
+    GCK
+}
+
+entity ProfileAttachment {
+    id UUID required
+    employeeProfileId UUID required
+    type ProfileAttachmentType required
+    path String required
+    createdAt ZonedDateTime required
+    updatedAt ZonedDateTime required
+    isDeleted Boolean required
+}
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass

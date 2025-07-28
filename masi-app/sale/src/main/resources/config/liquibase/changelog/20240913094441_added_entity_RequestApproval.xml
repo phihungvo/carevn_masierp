@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity RequestApproval.
+    -->
+    <changeSet id="20240913094441-1" author="jhipster">
+        <validCheckSum>any</validCheckSum>
+        <createTable tableName="request_approval">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="index" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="document_id" type="${uuidType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="employee_id" type="${uuidType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="result" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="approved_sign" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="approved_sign_name" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="reject_note" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_date" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="request_approval" columnName="created_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="request_approval" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="request_approval" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+    <changeSet id="1729842430996-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+
+        <sql>
+            alter table customer
+                alter column customer_code drop not null;
+            alter table customer
+                alter column company_name drop not null;
+            alter table customer
+                alter column address drop not null;
+            alter table customer
+                alter column tax_code drop not null;
+            alter table customer
+                alter column first_name drop not null;
+            alter table customer
+                alter column last_name drop not null;
+            alter table customer
+                alter column birthday drop not null;
+            alter table customer
+                alter column phone_number drop not null;
+            alter table customer
+                alter column email drop not null;
+            alter table customer
+                alter column position drop not null;
+            alter table customer
+                alter column customer_owner drop not null;
+            alter table customer
+                alter column contract_signed drop not null;
+            alter table customer
+                alter column customer_status drop not null;
+        </sql>
+    </changeSet>
+    <changeSet id="1730112009403-1" author="[BE] Huu Hoang">
+        <sql>
+            alter table contract
+                add column if not exists quotation_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="1730112009444-1" author="[BE] Huu Hoang">
+        <sql>
+            alter table request_approval
+                add column if not exists type VARCHAR(255);
+        </sql>
+    </changeSet>
+
+
+<!--    <changeSet id="20241118053026-2" author="Hoang Dang">-->
+<!--        <sql>-->
+<!--            ALTER TABLE delivery_detail-->
+<!--            DROP COLUMN IF EXISTS attachment;-->
+
+<!--            ALTER TABLE delivery_detail-->
+<!--                ADD COLUMN IF NOT EXISTS attachment Json;-->
+<!--        </sql>-->
+<!--    </changeSet>-->
+
+<!--    <changeSet id="20241118053027-2" author="Hoang Dang">-->
+<!--        <sql>-->
+<!--            ALTER TABLE delivery_schedule-->
+<!--            DROP COLUMN IF EXISTS attribute;-->
+
+<!--            ALTER TABLE delivery_schedule-->
+<!--                ADD COLUMN IF NOT EXISTS attribute Json;-->
+
+<!--            ALTER TABLE delivery_schedule-->
+<!--            DROP COLUMN IF EXISTS attachment;-->
+
+<!--            ALTER TABLE delivery_schedule-->
+<!--                ADD COLUMN IF NOT EXISTS attachment Json;-->
+<!--        </sql>-->
+<!--    </changeSet>-->
+</databaseChangeLog>

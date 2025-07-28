@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240723024111" author="HoangDang">
+        <addColumn tableName="production_standard">
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="manufacture_order">
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="work_order">
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="quality_check_sample">
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="work_center">
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="product_routing">
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="product_maintain">
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="product_package">
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+            alter table sample_disposal drop column if exists reviewer_sign;
+            alter table sample_disposal drop column if exists reviewer_sign_content_type;
+            alter table sample_disposal
+                add column reviewer_sign_file varchar(100);
+        </sql>
+
+    </changeSet>
+
+</databaseChangeLog>

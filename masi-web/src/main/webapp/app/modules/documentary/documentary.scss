@@ -1,0 +1,33 @@
+@import '../../bootstrap-variables';
+
+.orders-filter-modals {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.modals-detail-documentary,
+.modals-create-documentary,
+.modals-update-documentary {
+  .modal-content {
+    width: 1100px;
+  }
+}
+
+.modals-propose-order {
+  .modal-content {
+    width: 744px;
+  }
+}
+
+.modals-approve-sign {
+  .modal-content {
+    width: 483px;
+  }
+}
+
+.modal-reject-order {
+  .modal-content {
+    width: 540px;
+  }
+}

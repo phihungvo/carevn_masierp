@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity SuppliesItem.
+    -->
+    <changeSet id="20241106095442" author="jhipster">
+        <sql>
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS address_service VARCHAR (250);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241106095443" author="jhipster">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            INSERT INTO vat_rate (id, code, name, value, company, created_by, created_at)
+            VALUES ('f38d1766-ac1f-4978-abf5-ff7df41d6675', 'VAT010', 'VAT Rate 10%', 10, 'KIM_LONG', 'admin', NOW()),
+                   ('29efd9ad-221a-4343-9704-12bfab647188', 'VAT015', 'VAT Rate 15%', 15, 'KIM_LONG', 'admin', NOW()),
+                   ('bf27f961-4214-4798-b8cf-1f53131326f0', 'VAT020', 'VAT Rate 20%', 20, 'KIM_LONG', 'admin', NOW()),
+                   ('22ae354b-75c9-4586-8b7b-5dd76e06e23d', 'VAT010', 'VAT Rate 10%', 10, 'KIM_LONG', 'admin', NOW()),
+                   ('a2c2b9d2-32dd-4f3a-b147-222615bfb601', 'VAT015', 'VAT Rate 15%', 15, 'KIM_LONG', 'admin', NOW()),
+                   ('cb38e4f1-f825-4276-bb8a-74a9734138e2', 'VAT020', 'VAT Rate 20%', 20, 'KIM_LONG', 'admin', NOW());
+
+            ALTER TABLE item
+                ADD COLUMN
+                    IF NOT EXISTS vat_rate FLOAT;
+            ALTER TABLE item
+                ADD COLUMN
+                    IF NOT EXISTS unit_price FLOAT;
+
+            ALTER TABLE item
+            DROP
+            COLUMN IF EXISTS revenue_group;
+
+            ALTER TABLE item
+                ADD COLUMN
+                    IF NOT EXISTS revenue_group UUID;
+
+            ALTER TABLE item
+                ADD COLUMN
+                    IF NOT EXISTS supplier_id UUID;
+            ALTER TABLE item_category
+                ADD COLUMN
+                    IF NOT EXISTS type_item_category VARCHAR (255);
+            ALTER TABLE item
+                ADD COLUMN
+                    IF NOT EXISTS item_type VARCHAR (255);
+--            ALTER TABLE item
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS debt_employees jsonb;
+
+            ALTER TABLE item
+                ADD COLUMN IF NOT EXISTS is_active Boolean;
+
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS birthday DATE;
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS payment_term_number INTEGER;
+
+        </sql>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+
+</databaseChangeLog>

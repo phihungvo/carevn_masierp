@@ -1,0 +1,25 @@
+@import '../../bootstrap-variables';
+
+.page_transfer-assets {
+  .ant {
+    &-input {
+      border-color: #D0D5DD !important;
+
+      &-status-error {
+        border-color: #ff4d4f !important;
+      }
+    }
+
+    &-input,
+    &-picker,
+    &-select-selector {
+      border-radius: 8px !important;
+    }
+  }
+}
+
+.page_container_depreciation {
+  .card-header {
+    padding-top: 0
+  }
+}

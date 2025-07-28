@@ -1,0 +1,147 @@
+{
+  "annotations": {
+    "changelogDate": "20240923085051"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "InventoryTransactionStatus",
+      "fieldValues": "NEW,APPROVED,REJECTED,CANCELLED,COMPLETED"
+    },
+    {
+      "fieldName": "transactionDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "invoiceDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "receiverId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "driverId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "deliveryLocation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "vehicleNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "trailerNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "transactionType",
+      "fieldType": "TransactionType",
+      "fieldValues": "IN,OUT,STOCK_CHECK"
+    },
+    {
+      "fieldName": "warehouseId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "supplierId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "customerId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "orderId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "manufactureId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purpose",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updateAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updateBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deleteAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deleteBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "InventoryTransactions",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "inventoryTransactionDetails",
+      "otherEntityRelationshipName": "inventoryTransactions",
+      "relationshipName": "inventoryTransactionDetails",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "inventoryCheck",
+      "otherEntityRelationshipName": "inventoryTransactions",
+      "relationshipName": "inventoryCheck",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,50 @@
+.pagination-v2 {
+
+  .page {
+
+    &-item {
+
+      &.active {
+        .page-link {
+          color: #4072D0;
+          border: 1px solid #4072D0;
+        }
+      }
+
+      &.disabled {
+        .page-link {
+          background-color: #f0f0f0;
+          cursor: not-allowed;
+        }
+      }
+
+    }
+
+    &-link {
+      font-size: 14px;
+      font-family: Inter;
+      font-weight: 600;
+      line-height: 20px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: #344054;
+      background-color: #FFFFFF;
+      border: 1px solid #D0D5DD;
+    }
+
+  }
+
+  .first-last {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      width: 10px;
+      height: 10px;
+    }
+
+  }
+
+}

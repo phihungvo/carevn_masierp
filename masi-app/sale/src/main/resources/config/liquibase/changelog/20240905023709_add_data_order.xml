@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity QualityIndex.
+    -->
+
+    <changeSet id="20240905023709" author="Hoang Dang" failOnError="false" >
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+            DO $$
+            BEGIN
+    -- Check and add delivery_term_from column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='masi_order' AND column_name='delivery_term_from') THEN
+            ALTER TABLE masi_order ADD COLUMN delivery_term_from DATE;
+            END IF;
+
+    -- Check and add delivery_term_to column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='masi_order' AND column_name='delivery_term_to') THEN
+            ALTER TABLE masi_order ADD COLUMN delivery_term_to DATE;
+            END IF;
+
+    -- Check and add pay_term column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='masi_order' AND column_name='pay_term') THEN
+            ALTER TABLE masi_order ADD COLUMN pay_term VARCHAR(255);
+            END IF;
+
+    -- Check and add pay_condition column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='masi_order' AND column_name='pay_condition') THEN
+            ALTER TABLE masi_order ADD COLUMN pay_condition VARCHAR(255);
+            END IF;
+
+    -- Check and add delivery_location column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='masi_order' AND column_name='delivery_location') THEN
+            ALTER TABLE masi_order ADD COLUMN delivery_location VARCHAR(255);
+            END IF;
+
+    -- Check and add monetary_unit column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='masi_order' AND column_name='monetary_unit') THEN
+            ALTER TABLE masi_order ADD COLUMN monetary_unit VARCHAR(255);
+            END IF;
+
+    -- Check and add exchange_rate column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='masi_order' AND column_name='exchange_rate') THEN
+            ALTER TABLE masi_order ADD COLUMN exchange_rate FLOAT;
+            END IF;
+
+
+                -- Check and add material_order_id column
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='masi_order' AND column_name='material_order_id') THEN
+            ALTER TABLE masi_order ADD COLUMN material_order_id VARCHAR(255);
+            END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='contract_material' AND column_name='order_id') THEN
+            ALTER TABLE contract_material ADD COLUMN order_id UUID;
+            END IF;
+
+
+            END $$;
+
+
+
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

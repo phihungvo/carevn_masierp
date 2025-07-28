@@ -1,0 +1,63 @@
+@import '../../bootstrap-variables';
+
+table.custom-table {
+  margin-bottom: 0px !important;
+}
+
+.modals-create-price-list {
+  .modal-content {
+    width: 744px;
+  }
+}
+
+.modal-in-approve-pl {
+  .modal-content {
+    width: 528px;
+  }
+}
+
+.modals-approve-pl {
+  .modal-content {
+    width: 575px;
+  }
+}
+
+.modal-reject-pl {
+  .modal-content {
+    width: 520px;
+  }
+}
+
+.modals-detail-price-list {
+  .modal-content {
+    width: 744px;
+  }
+}
+
+.quotation-delivery-date {
+  .rmdp-container {
+    width: 120px !important;
+  }
+
+  img {
+    display: none !important;
+  }
+}
+
+.price-list-approve-sign-modals,
+.price-list-approve-sign-success-modals,
+.price-list-reject-success-modals,
+.price-list-reject-internal-modals {
+  .modal-content {
+    width: 500px;
+  }
+}
+
+.mb {
+  border: 1px solid #bfc1c5;
+  margin-bottom: 8px;
+}
+
+.mt {
+  margin-top: 24px;
+}

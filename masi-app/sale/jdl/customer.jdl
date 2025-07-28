@@ -1,0 +1,32 @@
+//Manage Customer
+entity Customer {
+	id UUID required unique
+    customerCode String required unique, // kiểm tra mỗi khi tạo mới
+    companyName String
+    address String required
+    taxCode String
+    firstName String required,
+    lastName String required,
+    birthday LocalDate required,
+    phoneNumber String required,
+    email String required,
+    position String
+    customerOwner UUID // id của employee, cách gọi giữa các microservice làm sau
+    contractSigned LocalDate 
+    contractFrom LocalDate
+    contractTo LocalDate
+    customerStatus CustomerStatus required // vô hiệu/kích hoạt tạo mới mặc định kích hoạt
+    lastUpdated ZonedDateTime required
+    createdDate ZonedDateTime required
+    isDeleted Boolean required // xoá mềm khách hàng
+}
+
+enum CustomerStatus {
+	ENABLED,
+    DISABLED,
+    FOWARDED
+}
+dto * with mapstruct
+service * with serviceClass
+
+paginate * with pagination

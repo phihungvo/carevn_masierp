@@ -1,0 +1,20 @@
+entity VatRate {
+    id UUID,
+    code String,
+    name String,
+    value Float,
+
+    company String,
+    department String,
+    createdBy String required,
+    createdAt ZonedDateTime required,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime,
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

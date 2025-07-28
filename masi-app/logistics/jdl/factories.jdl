@@ -1,0 +1,34 @@
+entity Factories {
+    id UUID required,
+    code String ,
+    name String ,
+    typeFactory TypeFactory ,
+    departmentId UUID ,
+    description String,
+    canDelete Boolean,
+    normalizedName String,
+    address String,
+    employeeOwnerId UUID,
+    attribute String,
+    note TextBlob,
+    isActive Boolean,
+    company String,
+    department String,
+    isDeleted Boolean,
+    createdBy String,
+    createdDate ZonedDateTime,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime
+}
+
+enum TypeFactory {
+    TEST1,
+    TEST2
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

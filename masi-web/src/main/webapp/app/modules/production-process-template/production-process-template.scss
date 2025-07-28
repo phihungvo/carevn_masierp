@@ -1,0 +1,39 @@
+@import "../../bootstrap-variables";
+
+.modals-template-update-success {
+  .modal-content {
+    width: 552px;
+  }
+}
+
+.col-left-template {
+  padding-right: $space-24;
+  border-right: 1px solid $secondary-black-40;
+}
+
+.col-right-template {
+  padding-left: $space-24;
+  width: 100%;
+}
+
+.template-input-reason {
+  width: 283px;
+  padding: unset !important;
+  border: 0px !important;
+  border-radius: unset !important;
+  border-bottom: 1px solid $secondary-black-40 !important;
+}
+
+.unit-wrapper {
+  position: relative;
+}
+
+.unit-input {
+  position: absolute;
+  width: 80px;
+  top: 32px;
+  right: 12px;
+  border-left: none !important;
+  border-top-left-radius: unset !important;
+  border-bottom-left-radius: unset !important;
+}

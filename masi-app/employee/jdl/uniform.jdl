@@ -1,0 +1,161 @@
+entity UniformFormDetail{
+    id UUID,
+    quantity Integer,
+
+    // createAt, createBy, updateAt, updateBy, deleteAt, deleteBy, company
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+entity UniformStock{
+    id UUID
+    stock Integer required
+
+    // createAt, createBy, updateAt, updateBy, deleteAt, deleteBy, company
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+    department String
+
+}
+
+entity Uniform{
+    id UUID
+    name String
+
+    // createAt, createBy, updateAt, updateBy, deleteAt, deleteBy, company
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+    department String
+}
+
+//Đợi duyệt, Đã duyệt, Từ chối, Đã hủy
+enum UniformOrderStatus {
+    WAITING
+    APPROVED
+    REJECTED
+    CANCELLED
+}
+
+enum UniformOrderProcessStatus {
+    WAITING
+    APPROVED
+    REJECTED
+}
+
+entity UniformOrder {
+    id UUID required unique
+    name String required
+    quantity Integer required
+    date ZonedDateTime required
+    status UniformOrderStatus required
+    // createAt, createBy, updateAt, updateBy, deleteAt, deleteBy, company
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+// xet duyet don hang mua/may dong phuc
+
+entity UniformOrderProcess {
+    id UUID required unique
+    approverId UUID,
+    reason String,
+    status UniformOrderProcessStatus,
+    fileId String
+
+    // createAt, createBy, updateAt, updateBy, deleteAt, deleteBy, company
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+//Xuất đồng phục - Các phần tử biểu mẫu
+//Ngày
+//Nhân viên
+//Đồng phục
+//Số lượng
+//Ghi chú
+//Ký nhận
+//Loại xuất :Xuất bán, Xuất ứng, Xuất thâm niên, Xuất cấp khác
+//Chi phí
+//Đã hoàn ứng
+
+enum UniformReleaseType {
+    SALE //Xuất bán
+    SUPPORT //Xuất ứng
+    SENIORITY //Xuất thâm niên
+    OTHER //Xuất cấp khác
+}
+
+entity UniformRelease {
+    id UUID required unique
+    date ZonedDateTime required
+    employeeId UUID required
+    quantity Integer required
+    note String
+    signature ImageBlob
+    type UniformReleaseType required
+    cost Float required
+    isReturned Boolean required //Đã hoàn ứng
+
+    // createAt, createBy, updateAt, updateBy, deleteAt, deleteBy, company
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+entity UniformReturn {
+    id UUID required unique
+    date ZonedDateTime required
+    employeeId UUID required
+    quantity Integer required
+
+    // createAt, createBy, updateAt, updateBy, deleteAt, deleteBy, company
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+
+relationship OneToMany{
+    Uniform to UniformFormDetail
+    Uniform to UniformStock
+    UniformRelease to UniformFormDetail
+    UniformOrder to UniformFormDetail
+    UniformOrder to UniformOrderProcess
+    UniformReturn to UniformFormDetail
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

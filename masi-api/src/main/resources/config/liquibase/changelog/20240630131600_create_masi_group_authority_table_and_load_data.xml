@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <changeSet id="20240630131600-1" author="truongdd">
+        <createTable tableName="masi_group_authority">
+            <column name="group_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="group_authority" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="masi_group_authority" columnNames="group_id, group_authority"/>
+        <addForeignKeyConstraint baseTableName="masi_group_authority" baseColumnNames="group_id"
+                                 referencedTableName="masi_group" referencedColumnNames="id"
+                                 constraintName="fk_group_authority_group_id"/>
+        <addForeignKeyConstraint baseTableName="masi_group_authority" baseColumnNames="group_authority"
+                                 referencedTableName="masi_authority" referencedColumnNames="name"
+                                 constraintName="fk_group_authority_group_authority" onDelete="CASCADE"/>
+
+        <loadData tableName="masi_group_authority" file="config/liquibase/data/20240630131300_group_authority.csv" separator=";" usePreparedStatements="true">
+            <column name="group_id" type="uuid"/>
+            <column name="group_authority" type="varchar(50)"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

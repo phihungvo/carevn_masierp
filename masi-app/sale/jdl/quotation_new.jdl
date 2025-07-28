@@ -1,0 +1,87 @@
+entity Quotation {
+    id UUID required unique
+    name String required,
+    status QuotationStatus required,
+    description String required,
+
+    fileId String, // trả về list thì không cần map
+    fileName String,
+    rejectNote String, // trả về list thì không cần map
+    approverId UUID,
+
+    //
+    company String,
+    lastUpdated ZonedDateTime required
+    updatedBy String required
+    createdDate ZonedDateTime required
+    createdBy String required
+    isDeleted Boolean required
+    deletedDate ZonedDateTime
+    deletedBy String
+}
+enum QuotationStatus {
+    NEW, WAITING_APPROVAL, APPROVED, CUSTOMER_APPROVED, NEED_UPDATE, SENT, REJECTED, CANCELLED
+}
+
+entity QuotationDetail{
+    id UUID,
+    deliveryLocation String,
+    deliveryDate ZonedDateTime,
+    packaging String,
+    minimumWeight Float,
+    weight Float,
+    priceType String,
+    paymentMethod String,
+    productId UUID,
+    note String,
+    materialCriteria String
+
+    company String,
+    lastUpdated ZonedDateTime required
+    updatedBy String required
+    createdDate ZonedDateTime required
+    createdBy String required
+    isDeleted Boolean required
+    deletedDate ZonedDateTime
+    deletedBy String
+}
+
+//quotation:
+//-name:
+//-company
+//QuotationDetail:
+//-delivery_location
+//-packaging
+//-minimum_weight
+//-weight
+//-delivery_date:
+//-price_type
+//-payment_method :
+//-product_id
+//-note
+//-Material Criteria
+
+entity QuotationExport {
+    id UUID required unique,
+    fileId String,
+    fileName String,
+
+    company String
+    lastUpdated ZonedDateTime required
+    updatedBy String required
+    createdDate ZonedDateTime required
+    createdBy String required
+    isDeleted Boolean required
+    deletedDate ZonedDateTime
+    deletedBy String
+}
+relationship OneToMany {
+    Quotation to QuotationExport,
+    Quotation to QuotationDetail
+}
+
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

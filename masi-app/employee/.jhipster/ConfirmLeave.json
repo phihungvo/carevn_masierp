@@ -1,0 +1,50 @@
+{
+  "annotations": {
+    "changelogDate": "20240715102101"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "submissionDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "recruitmentSolution",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hrSolution",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "leaveDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "ConfirmLeave",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "confirmLeaveAttachment",
+      "otherEntityRelationshipName": "confirmLeave",
+      "relationshipName": "confirmLeaveAttachment",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

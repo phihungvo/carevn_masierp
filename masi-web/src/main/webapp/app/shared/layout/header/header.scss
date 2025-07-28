@@ -1,0 +1,340 @@
+@import '../../../bootstrap-variables';
+$header-color: #000;
+$header-color-secondary: #bbb;
+$header-color-hover: darken($header-color, 20%);
+
+/* ==========================================================================
+Development Ribbon
+========================================================================== */
+.ribbon {
+  background-color: rgba(170, 0, 0, 0.5);
+  left: -3.5em;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  overflow: hidden;
+  position: absolute;
+  top: 40px;
+  white-space: nowrap;
+  width: 15em;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0.75;
+
+  a {
+    color: $text-black;
+    display: block;
+    font-weight: 400;
+    margin: 1px 0;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 5px #444;
+    pointer-events: none;
+  }
+}
+
+/* ==========================================================================
+Navbar styles
+========================================================================== */
+
+.navbar-custom {
+  background-color: $primary-background-color;
+  margin-left: $left-bar-width;
+  padding: $space-16;
+  transition: margin-left 0.2s;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  .nav-link {
+    color: $text-black;
+  }
+
+  .navbar-toggler {
+    border: none;
+    background-color: $secondary-black-80;
+    padding: $space-4;
+  }
+}
+
+.navbar-brand {
+  overflow: hidden;
+}
+
+.jh-navbar .navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navbar-version {
+  font-size: 0.65em;
+  color: $header-color-secondary;
+  padding: 0 0 0 10px;
+}
+
+.brand-logo {
+  &:hover {
+    text-decoration: none;
+  }
+
+  .brand-icon {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin: 3px 0;
+
+    img {
+      margin-bottom: 14px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  margin-left: 0.25rem;
+  color: $header-color;
+
+  &:hover {
+    color: $header-color-hover;
+    text-decoration: none;
+  }
+}
+
+.loading-bar {
+  height: 3px;
+  background-color: #009cd8;
+  position: absolute;
+  top: 0px;
+  z-index: 1031;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: $space-16;
+
+  span {
+    font-size: $text-body-16;
+    font-weight: $font-body-400;
+    line-height: 18.75px;
+    letter-spacing: -0.5px;
+  }
+
+  img {
+    width: $space-24;
+    height: $space-24;
+    border-radius: $rounded-full;
+  }
+}
+
+.notification-icon {
+  color: $secondary-border-color;
+  width: $space-24;
+  height: $space-24;
+  margin-right: $space-32;
+}
+
+.notification-style {
+  position: relative;
+  padding: 5px 0px;
+  width: 300px;
+  max-height: 650px;
+  overflow: auto;
+
+  .notification-header {
+    color: $primary-color;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0px;
+  }
+
+  .notification-item-wrapper {
+    &.unread {
+      background-color: rgba($color: $info-dot, $alpha: 0.08) !important;
+    }
+  }
+
+  .notification-item {
+    border-bottom: 1px solid rgb(220, 220, 220);
+    padding: 10px;
+    font-size: 14px;
+
+    &-header {
+      font-weight: 700;
+      width: 265px;
+      overflow: hidden;
+      display: inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    div {
+      display: -webkit-box; /* Use flexbox layout */
+      -webkit-box-orient: vertical; /* Set the orientation to vertical */
+      -webkit-line-clamp: 2; /* Limit to 2 lines */
+      line-clamp: 2;
+      overflow: hidden; /* Hide overflow content */
+      text-overflow: ellipsis; /* Add ellipsis */
+      max-width: 275px; /* Set a maximum width */
+      line-height: 1.5; /* Set line height for spacing */
+      height: 3em; /* Set height to accommodate 2 lines */
+    }
+  }
+
+  .notification-load-more {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-background-color;
+    }
+  }
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-search {
+    position: relative;
+    max-width: $search-header-width;
+    height: $space-24;
+    border-radius: $rounded-4;
+    border: 1px;
+    border-color: $secondary-black-40;
+
+    &-input {
+      background-color: $primary-background-color;
+      height: 100%;
+
+      &::placeholder {
+        color: $secondary-black-50;
+        font-size: $text-body-14;
+        font-weight: $font-body-400;
+        line-height: 16.41px;
+        letter-spacing: -0.5px;
+      }
+    }
+
+    img {
+      position: relative;
+      color: $secondary-black-50;
+    }
+  }
+
+  &-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-search {
+    // justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .btn-toggle-sidebar {
+      background-color: #e4e7ec;
+      padding: 8px;
+      border-radius: 8px;
+
+      img {
+        color: #475467;
+      }
+
+      .flipped-180 {
+        transform: scaleX(-1);
+        transition: transform 0.2s ease-in;
+      }
+
+      svg {
+        color: $text-black;
+      }
+    }
+  }
+}
+
+.switch-company {
+  &_btn {
+    border: 1px solid #a1c9ef;
+    border-radius: 30px;
+    background-color: #ffffff;
+    padding: 4px 4px 4px 12px;
+    margin-right: 22px;
+    cursor: pointer;
+
+    span {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+  }
+
+  &_modal {
+    &-header {
+      border: none;
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &-item {
+        width: 100%;
+        border: 1px solid #a1c9ef;
+        border-radius: 8px;
+        background: #f1f6fd;
+        padding: 8px 12px;
+        cursor: pointer;
+
+        &-left {
+          width: 100%;
+
+          span {
+            &:first-child {
+              font-size: 14px;
+              font-weight: 500;
+              color: #344054;
+            }
+            &:last-child {
+              font-size: 14px;
+              color: #344054;
+            }
+          }
+        }
+
+        input[type='checkbox'] {
+          border-radius: 50% !important;
+        }
+
+        &-checkbox {
+          margin-top: 0px;
+        }
+      }
+    }
+
+    &-footer {
+      &-close,
+      &-confirm {
+        height: 44px;
+        width: 50%;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}

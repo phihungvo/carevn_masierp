@@ -1,0 +1,26 @@
+entity Workspace {
+    name String required unique
+    description String
+    isActive Boolean
+    createdAt ZonedDateTime
+    lastUpdated ZonedDateTime
+}
+
+entity Employee {
+    id UUID required unique
+    firstName String
+    lastName String
+    email String
+    phoneNumber String
+    hireDate ZonedDateTime
+    salary Long
+    commissionPct Long
+    isActive Boolean required
+}
+
+relationship OneToMany {
+    Workspace to Employee{workspace(name)}
+}
+
+dto * with mapstruct
+service * with serviceClass

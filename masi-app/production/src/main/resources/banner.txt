@@ -1,0 +1,10 @@
+  ${AnsiColor.GREEN}   _____                __      __ _   _ ${AnsiColor.DEFAULT}        ${AnsiColor.RED} __  __              _  ______  _____   _____  
+  ${AnsiColor.GREEN}  / ____|               \ \    / /| \ | |${AnsiColor.DEFAULT}        ${AnsiColor.RED}|  \/  |            (_)|  ____||  __ \ |  __ \ 
+  ${AnsiColor.GREEN} | |      __ _  _ __  ___\ \  / / |  \| |${AnsiColor.DEFAULT} ______ ${AnsiColor.RED}| \  / |  __ _  ___  _ | |__   | |__) || |__) |
+  ${AnsiColor.GREEN} | |     / _` || '__|/ _ \\ \/ /  | . ` |${AnsiColor.DEFAULT}|______|${AnsiColor.RED}| |\/| | / _` |/ __|| ||  __|  |  _  / |  ___/ 
+  ${AnsiColor.GREEN} | |____| (_| || |  |  __/ \  /   | |\  |${AnsiColor.DEFAULT}        ${AnsiColor.RED}| |  | || (_| |\__ \| || |____ | | \ \ | |     
+  ${AnsiColor.GREEN}  \_____|\__,_||_|   \___|  \/    |_| \_|${AnsiColor.DEFAULT}        ${AnsiColor.RED}|_|  |_| \__,_||___/|_||______||_|  \_\|_|     
+                                                                                                
+
+${AnsiColor.BRIGHT_BLUE}:: JHipster 🤓  :: Running Spring Boot ${spring-boot.version} :: Startup profile(s) ${spring.profiles.active} ::
+:: ITbeesolutons ::${AnsiColor.DEFAULT}

@@ -1,0 +1,96 @@
+entity InventoryTransactions {
+    id UUID ,
+    code String,
+    status InventoryTransactionStatus,
+    transactionDate ZonedDateTime ,
+    invoiceDate ZonedDateTime ,
+    employeeId UUID ,
+    receiverId UUID ,
+    driverId UUID , // tài xế
+    deliveryLocation  String,
+    totalPrice BigDecimal,
+    vehicleNumber Integer,
+    trailerNumber Integer,
+    transactionType TransactionType ,
+    warehouseId UUID ,
+    supplierId UUID,
+    customerId UUID,
+    orderId UUID,
+    manufactureId UUID,
+    notes String,
+    purpose String,
+
+    // Audit fields
+    createAt ZonedDateTime
+    createBy String
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String,
+    department String
+}
+
+enum InventoryTransactionStatus {
+    NEW,
+    APPROVED,
+    REJECTED,
+    CANCELLED,
+    COMPLETED
+}
+
+entity InventoryTransactionDetails {
+    id UUID ,
+    code String,
+    itemId String,
+    packingId UUID,
+    quantity Integer ,
+    remain Integer,
+    unitPrice BigDecimal ,
+    notes String
+
+    // audit fields
+    createAt ZonedDateTime
+    createBy String
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+entity InventoryCheck{
+    id UUID,
+    code String,
+    employeeId UUID,
+    checkDate ZonedDateTime,
+    notes String,
+    result Boolean,
+
+    // Audit fields
+    createAt ZonedDateTime
+    createBy String
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+enum TransactionType {
+    IN,
+    OUT,
+    STOCK_CHECK
+}
+
+relationship OneToMany {
+    InventoryTransactions to InventoryTransactionDetails
+    InventoryTransactions to InventoryCheck
+}
+
+// DTOs and Pagination
+dto * with mapstruct
+paginate * with pagination
+service * with serviceClass
+filter *
+// Services

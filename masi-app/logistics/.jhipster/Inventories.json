@@ -1,0 +1,173 @@
+{
+  "annotations": {
+    "changelogDate": "20241111081123"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "receiverUserId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "deliveryDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "inventoriesTypeId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "dateCreate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "customerId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "customerRecipientId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "invoiceId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purchasePrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "salePrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "inputDepartmentId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "incomingWarehouseId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "outgoingWarehouseId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "orderId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "supplierRequestId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "taxCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "series",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currencyCodeRate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "exchangeRate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "isEmptiness",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "emptinessId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "file",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attribute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "StatusEntity",
+      "fieldValues": "NEW,APPROVED,REJECTED,CANCELLED,COMPLETED"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "Inventories",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

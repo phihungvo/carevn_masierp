@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity RequestApprovalDetail.
+    -->
+    <changeSet id="20241015023216" author="Hoang Dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+            ALTER TABLE type_request_approval_pages
+                ADD COLUMN
+                    IF NOT EXISTS note Jsonb;
+
+            ALTER TABLE type_request_approval_pages
+                ADD COLUMN
+                    IF NOT EXISTS is_department Boolean;
+
+            ALTER TABLE type_request_approval_pages
+                ADD COLUMN
+                    IF NOT EXISTS is_nominate Boolean;
+        </sql>
+
+    </changeSet>
+    <changeSet id="1729236558097-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table documentary
+            alter
+            column content type text;
+            alter table documentary
+            alter
+            column archive_location type text;
+            alter table documentary
+            alter
+            column reject_note type text;
+        </sql>
+    </changeSet>
+    <changeSet id="1729236558292-2" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            ALTER TABLE leave_regime_request
+                ADD COLUMN IF NOT EXISTS from_time timestamp;
+            ALTER TABLE leave_regime_request
+                ADD COLUMN IF NOT EXISTS to_time timestamp;
+        </sql>
+    </changeSet>
+    <changeSet id="1729488611207-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table leave_request
+                add column if not exists total_day_off float4 default 0;
+            alter table leave_regime_request
+                add column if not exists total_day_off float4 default 0;
+        </sql>
+    </changeSet>
+    <changeSet id="1729762922696-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table documentary
+                add column if not exists attachments jsonb default '[]'::jsonb;
+        </sql>
+    </changeSet>
+    <changeSet id="1729837917086-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table profile_attachment
+                alter column path drop not null;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

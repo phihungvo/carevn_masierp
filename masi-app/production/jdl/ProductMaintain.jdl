@@ -1,0 +1,34 @@
+entity ProductMaintain {
+    id UUID required unique
+    productBatchCode String required,
+    productBatchName String required,
+    manufactureDate LocalDate required,
+    expiredDate LocalDate required
+    isDeleted Boolean required
+    createdAt ZonedDateTime required
+    lastUpdatedAt ZonedDateTime required
+}
+
+entity ProductPackage {
+    id UUID required unique
+    packageCode String required,
+    quantity Float required,
+    unit String required
+    isDeleted Boolean required
+    createdAt ZonedDateTime required
+    lastUpdatedAt ZonedDateTime required
+}
+relationship ManyToOne {
+    // quan he 1-n giua ProductPackage va WorkOrder
+    ProductPackage to WorkOrder with builtInEntity
+}
+//relationship OneToMany {
+//     quan he 1-n giua ProductMaintain va ProductPackage
+//    ProductPackage to ProductMaintain
+//=> functional specs khong co de cap, co gi them vao sau
+//}
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass
+

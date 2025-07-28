@@ -1,0 +1,51 @@
+@import '../../bootstrap-variables';
+
+.modal-factories-filter {
+  .modal-content {
+    width: 290px;
+    overflow: unset !important;
+  }
+}
+.incoming-factories-create-modal {
+  .modal-content {
+    width: 800px;
+  }
+}
+
+.factories-detail-modal {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.factories-upload-modal {
+  .modal-content {
+    width: 434px;
+  }
+}
+
+.confirm-leave-modal {
+  .modal-content {
+    width: 744px;
+    overflow: unset !important;
+  }
+}
+
+.modals-import-factories {
+  .modal-content {
+    width: 484px;
+  }
+}
+
+.factories-filter-modals {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.incoming-factories-create-modal,
+.incoming-factories-update-modal {
+  .modal-content {
+    width: 830px;
+  }
+}

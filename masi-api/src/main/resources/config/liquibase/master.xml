@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="floatType" value="float4" dbms="postgresql"/>
+    <property name="clobType" value="clob" dbms="postgresql"/>
+    <property name="blobType" value="bytea" dbms="postgresql"/>
+    <property name="uuidType" value="uuid" dbms="postgresql"/>
+    <property name="datetimeType" value="datetime" dbms="postgresql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240619130810_deleteData_user.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240619130810_loadData_user.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240619130810_loadData_userAuthority.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240621180000_backup_MasiERP.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240630115200_add_new_masi_user_table_and_load_data.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240630125500_rename_masi_user_authority_column_name.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240630125800_create_masi_group_table_and_load_date.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240630130200_create_masi_user_group_table_and_load_data.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240630130700_insert_new_masi_authorities.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240630130702_insert_new_masi_group_authorities_part_2.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240630131600_create_masi_group_authority_table_and_load_data.xml"
+             relativeToChangelogFile="false"/>
+    <include file="/config/liquibase/changelog/20240710131600_rename_col.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240712020825_added_entity_Company.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240713020825_added_detail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240719020825_added_constrain.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240719020830_added_data.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240722020830_add_signature_for_user.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240822020830_add_data.xml"
+             relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

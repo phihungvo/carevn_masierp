@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ItemInfo.
+    -->
+    <changeSet id="20241127083945-1" author="jhipster">
+        <createTable tableName="item_info">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="registration_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="registration_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="handover_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="handover_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="handover_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_position" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="series_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="usage_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="invoice_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="invoice_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="note" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="liquidation_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="unit" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="year_of_use" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="month_of_use" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="warranty_period" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="manufacturer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_made_in" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="specs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="removal_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="reason_for_removal" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="attribute" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="item_info" columnName="registration_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_info" columnName="handover_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_info" columnName="usage_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_info" columnName="invoice_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_info" columnName="liquidation_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_info" columnName="removal_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_info" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_info" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_info" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20241127083945-2" author="jhipster">
+        <sql>
+
+            ALTER TABLE item_info
+                 DROP COLUMN IF EXISTS attribute;
+            ALTER TABLE item_info
+                ADD COLUMN IF NOT EXISTS attribute jsonb;
+
+            ALTER TABLE item_info
+                ADD COLUMN IF NOT EXISTS inventory_storage_id UUID;
+
+            ALTER TABLE item_info
+                ADD COLUMN IF NOT EXISTS item_sub_category_id UUID;
+
+            ALTER TABLE item_info
+                ADD COLUMN IF NOT EXISTS handover_by_id UUID;
+
+
+            ALTER TABLE item_info
+                ADD COLUMN IF NOT EXISTS user_name VARCHAR(225);
+
+        </sql>
+    </changeSet>
+
+<!--    <changeSet id="20241127083945-3" author="jhipster">-->
+<!--        <sql>-->
+<!--&#45;&#45;             DROP TABLE IF EXISTS item_asset_depreciation;-->
+<!--&#45;&#45;             DROP TABLE IF EXISTS item_liquidation;-->
+
+<!--&#45;&#45;             ALTER TABLE item_liquidation_detail-->
+<!--&#45;&#45;                 ADD COLUMN IF NOT EXISTS item_liquidation_id UUID;-->
+<!--&#45;&#45;-->
+<!--&#45;&#45;             ALTER TABLE item_asset_depreciation_detail-->
+<!--&#45;&#45;                 ADD COLUMN IF NOT EXISTS item_asset_depreciation_id UUID;-->
+
+<!--        </sql>-->
+<!--    </changeSet>-->
+
+    <changeSet id="20241127083945-4" author="jhipster">
+        <sql>
+            ALTER TABLE item_info
+            DROP COLUMN IF EXISTS warranty_period;
+
+            ALTER TABLE item_info
+                ADD COLUMN IF NOT EXISTS warranty_period TIMESTAMP;
+
+
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>

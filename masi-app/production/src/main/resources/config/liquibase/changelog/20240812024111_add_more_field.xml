@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+    - Thêm field "Số cân"
+- Field cấc loại cá độc: Bỏ ô chọn lý do khi tick "Không"
+- Thêm dropdown "Chọn loại nguyên liệu" với ds option : Thân cá, Đầu cá, Khác
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240812024111" author="Huu Hoang" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            alter table work_center
+                add column if not exists last_checked_at timestamp;
+            alter table receive_material_checklist
+                add column if not exists material_type varchar (100);
+            alter table receive_material_checklist
+                add column if not exists weight varchar (100);
+        </sql>
+        <sql>
+                alter table production_standard
+                    alter quantity drop not null;
+        </sql>
+    </changeSet>
+    <changeSet id="20240812024122" author="Huu Hoang" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            alter  table work_order
+                add column if not exists checklist_type varchar (100);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

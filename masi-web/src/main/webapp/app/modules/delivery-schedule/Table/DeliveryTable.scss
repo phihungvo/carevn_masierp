@@ -1,0 +1,80 @@
+@import 'react-big-calendar/lib/sass/styles';
+@import 'react-big-calendar/lib/addons/dragAndDrop/styles';
+
+.table-v2 .table-v2__delivery-schedule {
+  font-weight: 400;
+
+  .pre-line {
+    white-space: pre-line;
+  }
+
+  &--day {
+    background-color: #FFFFFF !important;
+    color: #475467 !important;
+    
+    &.--content {
+      padding: 0 !important;
+
+      .delivery-schedule__table-btn {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: white;
+        padding: 15px 20px !important;
+      }
+    }
+
+    &.--today {
+      background-color: #E0ECF9 !important;
+    }
+  
+    &.--bg-yellow {
+      background-color: #FFD700 !important;
+    }
+
+    &.--text-red {
+      color: #D92D20 !important;
+    }
+
+    &.--weekend {
+      color: #D92D20 !important;
+    }
+  }
+
+  &.--last-row {
+    //styleName: Text sm/Semibold;
+    font-weight: 600;
+    line-height: 20px;
+    color: #344054;
+  }
+
+}
+
+.delivery-schedule__table {
+  &-btn {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: white;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.--sticky-one-column {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.--sticky-two-column {
+  position: sticky;
+  left: 141.5px;
+  z-index: 1;
+}

@@ -1,0 +1,80 @@
+entity Contact{
+    id UUID,
+    supplierId UUID,
+    name String,
+    email String,
+    phone String,
+    birthDate LocalDate
+    position String
+    contactInfo String
+    isActive Boolean
+
+    company String,
+    department String,
+    createdBy String required,
+    createdAt ZonedDateTime required,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime,
+}
+
+entity ContactType{
+    id UUID,
+    name String,
+    description String,
+    isActive Boolean
+
+    company String,
+    department String,
+    createdBy String required,
+    createdAt ZonedDateTime required,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime,
+}
+
+enum ContactGiftStatus{
+    SENT,              // Quà đã được gửi
+    DELIVERED,         // Quà đã được nhận
+    ACCEPTED,          // Quà được chấp nhận
+    REJECTED,          // Quà bị từ chối
+    IN_TRANSIT,        // Quà đang trên đường gửi
+    DAMAGED,           // Quà bị hư hỏng
+    LOST,              // Quà bị mất
+    PENDING            // Quà đang chờ xác nhận hoặc trạng thái chưa được cập nhật
+}
+
+entity ContactGift {
+	id UUID
+    name String
+    description String
+    giftName String
+    value Integer
+    isGiving Boolean
+    status ContactGiftStatus
+    expectedDate ZonedDateTime // ngay tang du kien
+    dateOfGiving ZonedDateTime // ngay tang thuc te
+
+    company String,
+    department String,
+    createdBy String required,
+    createdAt ZonedDateTime required,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime,
+}
+
+relationship OneToMany {
+    ContactType to Contact
+    Contact to ContactGift
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *
+
+

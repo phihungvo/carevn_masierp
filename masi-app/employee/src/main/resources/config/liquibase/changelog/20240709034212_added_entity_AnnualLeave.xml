@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity AnnualLeave.
+    -->
+    <changeSet id="20240709034212-1" author="jhipster">
+        <validCheckSum>ANY</validCheckSum>
+        <createTable tableName="annual_leave">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="leave_after_probation" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="leave_per_year" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="carry_forward_month" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_updated" type="${datetimeType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="${datetimeType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="work_place" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="annual_leave" columnName="last_updated" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="annual_leave" columnName="created_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="annual_leave" columnName="updated_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240709034212-1-data" author="jhipster" context="faker">
+        <validCheckSum>ANY</validCheckSum>
+        <loadData
+            file="config/liquibase/fake-data/annual_leave.csv"
+            separator=";"
+            tableName="annual_leave"
+            usePreparedStatements="true">
+            <column name="id" type="${uuidType}"/>
+            <column name="leave_after_probation" type="numeric"/>
+            <column name="leave_per_year" type="numeric"/>
+            <column name="carry_forward_month" type="numeric"/>
+            <column name="last_updated" type="date"/>
+            <column name="created_date" type="date"/>
+            <column name="work_place" type="string"/>
+            <column name="updated_at" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

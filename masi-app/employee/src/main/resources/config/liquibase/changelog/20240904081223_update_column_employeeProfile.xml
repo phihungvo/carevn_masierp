@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240904081222" author="Hoang Dang">
+        <validCheckSum>ANY</validCheckSum>
+
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+            ALTER TABLE employee_profile
+                ADD COLUMN
+                    IF NOT EXISTS pin VARCHAR (500);
+
+            DO
+            $$
+            BEGIN
+    IF
+            NOT EXISTS (
+        SELECT 1
+        FROM pg_constraint
+        WHERE conname = 'unique_pin'
+    ) THEN
+            ALTER TABLE employee_profile
+                ADD CONSTRAINT unique_pin UNIQUE (pin);
+            END IF;
+            END $$;
+        </sql>
+
+    </changeSet>
+    <changeSet id="1728631393186-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table uniform_release
+                add column if not exists warehouse_id uuid;
+        </sql>
+    </changeSet>
+    <changeSet id="1728871983083-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table workspace
+            alter
+            column  name type text;
+            alter table workspace
+            alter
+            column  description type text;
+            alter table workspace
+            alter
+            column normalized_name type text;
+
+            alter table documentary
+            alter
+            column  content type text;
+            alter table documentary
+            alter
+            column  archive_location type text;
+            alter table documentary
+            alter
+            column  reject_note type text;
+            alter table uniform_stock
+                add column if not exists warehouse_id uuid;
+            alter table uniform_stock
+                add column if not exists warehouse_name varchar (255);
+            alter table employee_profile
+                add column if not exists account_status varchar (100);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

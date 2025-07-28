@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20240809032950"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "changeDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "change",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "changeBy",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "EmployeeChangeLog",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity DeliverySchedule.
+    -->
+    <changeSet id="20240917071737-1" author="jhipster">
+        <validCheckSum>any</validCheckSum>
+        <createTable tableName="delivery_schedule">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="delivery_date" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="expected_receive_date" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="order_id" type="${uuidType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="content" type="text">
+                <constraints nullable="true"/>
+            </column>
+            <column name="quantity" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="unit_id" type="${uuidType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="price" type="decimal(21,2)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="total" type="decimal(21,2)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="payment_method" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="receiver_name" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="delivery_location" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="note" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="company" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="status" type="nvarchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="delivery_schedule" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="delivery_schedule" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="delivery_schedule" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+</databaseChangeLog>

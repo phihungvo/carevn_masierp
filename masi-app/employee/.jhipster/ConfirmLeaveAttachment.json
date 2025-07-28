@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20240731063607"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fileId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "ConfirmLeaveAttachment",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "confirmLeave",
+      "otherEntityRelationshipName": "confirmLeaveAttachment",
+      "relationshipName": "confirmLeave",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,41 @@
+
+
+entity SupplierGroup{
+    id UUID
+    name String
+
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+entity Suppliers{
+    id UUID
+    code String
+    name String
+    email String
+    address String
+    phone String
+    note String
+
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+relationship OneToMany {
+    SupplierGroup to Suppliers
+}
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

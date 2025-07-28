@@ -1,0 +1,38 @@
+
+enum TimesheetReviewStatus{
+    PENDING
+    APPROVED
+    REJECTED
+}
+
+entity PersonalMonthlyTimesheet{
+    id UUID required unique
+    status TimesheetReviewStatus required 
+    createdDate ZonedDateTime required
+    lastUpdated ZonedDateTime required
+}
+
+entity TimeKeeping {
+  id UUID required unique
+  date LocalDate
+  firstCheckIn ZonedDateTime
+  lastCheckIn ZonedDateTime
+  hoursWorked Float
+  note String
+  isAbnormal Boolean
+  isDayOff Boolean
+  isOverride Boolean
+  locked Boolean
+  createdAt ZonedDateTime required
+  lastUpdatedAt ZonedDateTime required
+}
+
+relationship ManyToOne {
+    PersonalMonthlyTimesheet to Employee with builtInEntity
+    PersonalMonthlyTimesheet{timeKeepings} to TimeKeeping
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass

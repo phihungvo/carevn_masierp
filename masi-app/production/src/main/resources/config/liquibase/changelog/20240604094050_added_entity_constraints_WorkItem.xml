@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity WorkItem.
+    -->
+    <changeSet id="20240604094050-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="receive_material_checklist_id"
+                                 baseTableName="work_item"
+                                 constraintName="fk_work_item__receive_material_checklist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="receive_material_checklist"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="additive_material_checklist_id"
+                                 baseTableName="work_item"
+                                 constraintName="fk_work_item__additive_material_checklist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="additive_material_checklist"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="machine_operation_checklist_id"
+                                 baseTableName="work_item"
+                                 constraintName="fk_work_item__machine_operation_checklist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="machine_operation_checklist"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="steaming_process_checklist_id"
+                                 baseTableName="work_item"
+                                 constraintName="fk_work_item__steaming_process_checklist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="steaming_process_checklist"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="metal_detection_checklist_id"
+                                 baseTableName="work_item"
+                                 constraintName="fk_work_item__metal_detection_checklist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metal_detection_checklist"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="mixing_report_checklist_id"
+                                 baseTableName="work_item"
+                                 constraintName="fk_work_item__mixing_report_checklist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mixing_report_checklist"
+                                 />
+    </changeSet>
+</databaseChangeLog>

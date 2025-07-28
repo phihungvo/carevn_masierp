@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity FileAttachment.
+    -->
+    <changeSet id="20240730044318-1" author="jhipster">
+        <validCheckSum>ANY</validCheckSum>
+        <createTable tableName="file_attachment">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="path" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="file_size" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mime_type" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="belong_to" type="uuid">
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="file_attachment" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="file_attachment" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="file_attachment" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+    <changeSet id="20240730044318-2" author="Huu Hoang" failOnError="false">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            alter table file_attachment
+                add column if not exists entity_id uuid;
+            alter table file_attachment
+                add column if not exists entity_name varchar (255);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,130 @@
+@import "../../bootstrap-variables";
+
+.btn-filter {
+  font-size: $text-body-14 !important;
+  border-radius: $rounded-8 !important;
+  border: 1px solid $secondary-black-40 !important;
+  font-weight: $font-body-400 !important;
+  gap: $space-8 !important;
+  padding-inline: $space-8 !important;
+  background-color: unset !important;
+  color: $text-black !important;
+
+  &:hover {
+    background-color: $secondary-black-90 !important;
+  }
+}
+
+.filter {
+  position: relative;
+
+  .rmdp-input {
+    cursor: pointer !important;
+    position: absolute;
+    width: 88px;
+    height: 48px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .rmdp-wrapper {
+    transform: translate(-40%, 0%);
+  }
+}
+
+:root {
+  --calendar-day: #212121;
+}
+
+.date-picker {
+  height: 100%;
+  margin-bottom: 0 !important;
+
+  &.invalid {
+    .rmdp-input {
+      border-color: $red-invalid !important;
+    }
+  }
+
+  &-input {
+    height: 40px;
+    margin: 0;
+    position: relative;
+  }
+
+  & > input {
+    opacity: 0;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    right: $space-12;
+    transform: translateY(-50%);
+  }
+
+  .rmdp-container {
+    height: 100% !important;
+    width: 100%;
+    position: absolute;
+  }
+
+  .rmdp-input {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.rmdp-week-day {
+  font-weight: $font-body-400 !important;
+  color: #666666 !important;
+}
+
+.rmdp-day:hover span {
+  background-color: $primary-blue-70 !important;
+  color: var(--calendar-day) !important;
+}
+
+.rmdp-day.rmdp-range {
+  color: var(--calendar-day);
+  background-color: $primary-blue-70;
+  box-shadow: none;
+}
+
+.rmdp-day.rmdp-range.start,
+.rmdp-day.rmdp-range.end {
+  background-color: $primary-blue-70;
+  color: white;
+
+  & span {
+    background-color: $primary-blue-40 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: none !important;
+    color: white !important;
+  }
+}
+
+.rmdp-day.rmdp-today span {
+  background-color: unset !important;
+  color: var(--calendar-day) !important;
+  border: 1px solid $text-black;
+
+  &:hover {
+    background-color: $primary-blue-70 !important;
+    color: var(--calendar-day) !important;
+  }
+}
+
+.rmdp-day-hidden {
+  &:hover {
+    span {
+      background-color: unset !important;
+      color: var(--calendar-day) !important;
+    }
+  }
+}

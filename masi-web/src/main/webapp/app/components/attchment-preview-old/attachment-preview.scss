@@ -1,0 +1,82 @@
+@import "../../bootstrap-variables";
+
+.preview {
+  position: relative;
+  width: 220px;
+  height: 141px;
+  border-radius: $rounded-4;
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-bg {
+    background-color: $primary-blue-80;
+  }
+
+  &-actions {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+
+  &-action-item {
+    background: #00000036;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    &--contrast {
+      background: #d5d5d5c8;
+    }
+  }
+
+  &-close {
+    background: #d5d5d53b;
+    opacity: 0.2;
+    color: white;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    padding: 0px 8px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  &-text {
+    position: absolute;
+    bottom: 0;
+    color: black;
+    width: 220px;
+    padding: $space-8 $space-16;
+    border-radius: 0px 0px $rounded-4 $rounded-4;
+    background-color: $primary-blue-70;
+
+    span {
+      width: 19px;
+      height: 19px;
+      border-radius: $rounded-4;
+      background-color: $primary-blue-50;
+    }
+
+    p {
+      font-size: $text-body-16;
+      font-weight: $font-body-400;
+      letter-spacing: -0.5px;
+    }
+  }
+}

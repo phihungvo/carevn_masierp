@@ -1,0 +1,3 @@
+id;company;current_sequence;java_format;document_type
+22e79057-818e-4fab-8a6d-3f1ecae27b75;MMS;1;IC-%04d;INCOMING_INVOICE
+62e79057-818e-4fab-8a6d-3f1ecae27222;KIM_LONG;1;IC-%04d;INCOMING_INVOICE

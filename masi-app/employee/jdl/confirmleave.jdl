@@ -1,0 +1,20 @@
+entity ConfirmLeave {
+    id UUID required
+    submissionDate LocalDate
+    reason String
+    recruitmentSolution String
+    hrSolution String
+    leaveDate LocalDate
+}
+
+entity ConfirmLeaveAttachment {
+    id UUID required
+    fileId UUID required
+}
+relationship OneToMany {
+    ConfirmLeave to ConfirmLeaveAttachment
+}
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass
+

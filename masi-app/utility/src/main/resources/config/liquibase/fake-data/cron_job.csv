@@ -1,0 +1,2 @@
+id;action;name;every_minute;at_minute;at_hour;at_day_of_month;at_month;at_day_of_week;enabled;last_run;next_run;description;status;updated_at;updated_by
+1;jack once aside;yellow out;8329;16526;3071;24077;3299;8879;false;2024-08-22T19:47:06;2024-08-22T13:32:38;creative;ERROR;2024-08-22T03:07:08;yuck taut

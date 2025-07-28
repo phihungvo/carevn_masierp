@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240904081218" author="Hoang Dang">
+        <validCheckSum>ANY</validCheckSum>
+
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+            ALTER TABLE uniform_stock DROP CONSTRAINT IF EXISTS unique_uniform_id;
+        </sql>
+
+    </changeSet>
+    <changeSet id="20240904081219" author="Laffy (generated)">
+        <validCheckSum>ANY</validCheckSum>
+
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+            update public.employee_profile set company = 'MMS' where id in
+                                                                     ('d6cd8ee1-1dec-4db8-9f2c-7a68ef9a338c',
+                                                                      '7569db99-a59b-4394-aabb-945ac5c877e6',
+                                                                      '4977b7e2-d83f-4f10-9734-a207de592708',
+                                                                      '1ea21b81-5130-44b3-8baa-cd243ebba8bb',
+                                                                      'ae6d06a1-8e11-4e2a-aab6-1da0ee8c61fe');
+        </sql>
+
+    </changeSet>
+    <changeSet id="1727669675916-1" author="[BE] Huu Hoang">
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('bd064c82-72cc-4d36-9ea6-b6b44c01bae2', 'Quản lý kho', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'MMS', 'f', 'QUAN_LY_KHO') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('b9f5a99a-5705-4087-a2bf-182a14e55c78', 'Quản lý kho', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'MMS', 'f', 'QUAN_LY_KHO') on CONFLICT do nothing;
+        </sql>
+    </changeSet>
+
+    <changeSet id="1727680622099-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table employee_id_sequence add column if not exists java_format varchar(100);
+            update employee_id_sequence set java_format = 'F%04d' where workspace_id = 'KIM_LONG' and gender = 'FEMALE';
+            update employee_id_sequence set java_format = 'M%04d' where workspace_id = 'KIM_LONG' and gender = 'MALE';
+            update employee_id_sequence set java_format = 'F%04d' where workspace_id ='MMS' and  gender = 'FEMALE';
+            update employee_id_sequence set java_format = 'M%04d' where workspace_id ='MMS' and gender = 'MALE';
+        </sql>
+        <sql>
+
+            truncate table annual_leave;
+            update employee_profile
+            set gender = 'FEMALE'
+            where id in ('999e1416-a92a-459a-add7-611278b61b35', '84b36e89-155e-4c4c-9b61-85cbc8f73589');
+            INSERT INTO "public"."annual_leave" ("id", "leave_after_probation", "leave_per_year", "carry_forward_month",
+                                                 "last_updated", "created_date", "work_place", "updated_at", "company",
+                                                 "department")
+            VALUES ('01c48b15-395f-4944-8deb-dfb60c15ac68', 1, 1, 1, '2024-09-30 08:19:25.688522',
+                    '2024-09-30 08:19:25.699255', 'FACTORY', NULL, 'KIM_LONG', '') on CONFLICT do nothing;
+            INSERT INTO "public"."annual_leave" ("id", "leave_after_probation", "leave_per_year", "carry_forward_month",
+                                                 "last_updated", "created_date", "work_place", "updated_at", "company",
+                                                 "department")
+            VALUES ('5be1ca7c-3d75-4ff1-872a-6ea095ca9b56', 1, 1, 1, '2024-09-30 08:19:25.734714',
+                    '2024-09-30 08:19:25.736487', 'OFFICE', NULL, 'KIM_LONG', '') on CONFLICT do nothing;
+            INSERT INTO "public"."annual_leave" ("id", "leave_after_probation", "leave_per_year", "carry_forward_month",
+                                                 "last_updated", "created_date", "work_place", "updated_at", "company",
+                                                 "department")
+            VALUES ('01c48b15-395f-4944-8deb-dfb60c15ac62', 1, 1, 1, '2024-09-30 08:19:25.688522',
+                    '2024-09-30 08:19:25.699255', 'FACTORY', NULL, 'MMS', '') on CONFLICT do nothing;
+            INSERT INTO "public"."annual_leave" ("id", "leave_after_probation", "leave_per_year", "carry_forward_month",
+                                                 "last_updated", "created_date", "work_place", "updated_at", "company",
+                                                 "department")
+            VALUES ('5be1ca7c-3d75-4ff1-872a-6ea095ca9b52', 1, 1, 1, '2024-09-30 08:19:25.734714',
+                    '2024-09-30 08:19:25.736487', 'OFFICE', NULL, 'MMS', '') on CONFLICT do nothing;
+        </sql>
+    </changeSet>
+    <!--    <changeSet id="20240904081222" author="Hoang Dang">-->
+    <!--        <sqlFile dbms="postgresql"-->
+    <!--                 encoding="UTF-8"-->
+    <!--                 endDelimiter=";"-->
+    <!--                 path="data/mmsem.sql"-->
+    <!--                 relativeToChangelogFile="true"-->
+    <!--                 splitStatements="true"-->
+    <!--                 stripComments="true"/>-->
+
+    <!--    </changeSet>-->
+    <changeSet id="1727687053413-1" author="[BE] Huu Hoang">
+        <sql>
+            -- chỉnh lỗi cccd và sdt thiếu số 0 ở đầu
+            update employee_profile
+            set phone = concat('0', phone)
+--             phone not st
+            where company = 'MMS'
+              and phone not like '0%';
+            update employee_profile
+            set citizen_id = concat('0', citizen_id)
+            where citizen_id is not null
+              and citizen_id not like '0%';
+            -- end
+-- sửa lỗi sai loại hợp đồng
+            update employee_profile
+            set contract_type = 'UNDEFINED_TERM'
+            where id in ('1ea21b81-5130-44b3-8baa-cd243ebba8bb', 'd6cd8ee1-1dec-4db8-9f2c-7a68ef9a338c',
+                         '999e1416-a92a-459a-add7-611278b61b35', 'af23439e-f1fc-43aa-a85f-eb2d538af0eb',
+                         'ab2f0c6f-26ba-40c9-b994-397bb7cdaec2');
+            -- end
+
+            -- sửa lỗi sai mức đóng bảo hiểm 0 thì null
+            update employee_profile
+            set insurance_payment_level = null
+            where insurance_payment_level = 0;
+            -- end
+
+            -- sửa lỗi sai mã số thuế và số tài khoản  có .0
+            update employee_profile
+            set tax_code    = replace(tax_code, '.0', ''),
+                bank_number = replace(bank_number, '.0', '')
+            where company = 'MMS'
+              and citizen_id is not null;
+            -- end
+--             start with 000 to 0
+            update employee_profile
+            set phone = REGEXP_REPLACE(phone, '^0+', '0')
+            where phone is not null
+              and company = 'MMS';
+
+            update employee_profile
+            set citizen_id = REGEXP_REPLACE(citizen_id, '^0+', '0')
+            where citizen_id is not null;
+            --               ace    phone not st
+
+        </sql>
+    </changeSet>
+    <changeSet id="1727749247599-1" author="[BE] Huu Hoang">
+        <sql>
+            INSERT INTO "public"."employee" ("id", "first_name", "last_name", "email", "phone_number", "hire_date", "salary", "commission_pct", "is_active", "workspace_id", "full_name") VALUES ('b31bc2ac-cb2d-400b-8d84-69b916ccda8e', 'admin', 'admin', 'admin@gmail.com', '0867.641.431', '2024-09-09 00:00:00', 0, 0, 'f', 'dc80959e-4c61-44d5-8a2a-d9a368413c0c', 'admin@gmail.com') on CONFLICT do nothing;
+            INSERT INTO "public"."employee" ("id", "first_name", "last_name", "email", "phone_number", "hire_date", "salary", "commission_pct", "is_active", "workspace_id", "full_name") VALUES ('ad5bf372-0676-4697-9aa5-064ee988abc0', 'admin', 'admin', 'admin@gmail.com', '0867.641.431', '2024-09-09 00:00:00', 0, 0, 'f', 'dc80959e-4c61-44d5-8a2a-d9a368413c0c', 'admin@gmail.com') on CONFLICT do nothing;
+            INSERT INTO "public"."employee_profile" ("id", "employee_code", "full_name", "gender", "workspace_id", "citizen_id", "citizen_issue_date", "citizen_issue_place", "residence_address", "temporary_address", "birthday", "phone", "tax_code", "start_work_date", "role", "position", "bank_code", "bank_number", "contract_type", "contract_term", "contract_number", "contract_date", "contract_end_date", "level", "parking_card", "insurance_card", "referrer_id", "referrer_date", "email", "note", "status", "created_at", "updated_at", "is_deleted", "is_active", "company", "department", "probation_date_from", "probation_date_to", "official_work_type", "official_work_type_duration", "insurance_payment_level") VALUES ('b31bc2ac-cb2d-400b-8d84-69b916ccda8e', 'F0013', 'AdminMMS', 'FEMALE', 'aa3a8e74-bc22-42c6-90c3-d92807427785', '0', '2021-09-01', 'CCS QLHC Về TTXH', '11 Châu Văn Liêm, la Kring, TP.Pleiku, Gia Lai', NULL, '1995-02-05', '0385.470.457', NULL, '2024-09-26', 'Admin', 'DIRECTOR', NULL, NULL, 'TRIAL', NULL, 'KL.M-103', '2023-12-03', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'WORKING', '2024-09-17 04:09:31.810663', '2024-09-27 01:47:11.862861', 'f', 'f', 'KIM_LONG', NULL, NULL, NULL, NULL, NULL, NULL) on CONFLICT do nothing;
+            INSERT INTO "public"."employee_profile" ("id", "employee_code", "full_name", "gender", "workspace_id", "citizen_id", "citizen_issue_date", "citizen_issue_place", "residence_address", "temporary_address", "birthday", "phone", "tax_code", "start_work_date", "role", "position", "bank_code", "bank_number", "contract_type", "contract_term", "contract_number", "contract_date", "contract_end_date", "level", "parking_card", "insurance_card", "referrer_id", "referrer_date", "email", "note", "status", "created_at", "updated_at", "is_deleted", "is_active", "company", "department", "probation_date_from", "probation_date_to", "official_work_type", "official_work_type_duration", "insurance_payment_level") VALUES ('ad5bf372-0676-4697-9aa5-064ee988abc0', 'F0014', 'AdminKIMLONG', 'FEMALE', 'aa3a8e74-bc22-42c6-90c3-d92807427785', '0', '2021-09-01', 'CCS QLHC Về TTXH', '11 Châu Văn Liêm, la Kring, TP.Pleiku, Gia Lai', NULL, '1995-02-05', '0385.470.457', NULL, '2024-09-26', 'Admin', 'DIRECTOR', NULL, NULL, 'TRIAL', NULL, 'KL.M-103', '2023-12-03', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'WORKING', '2024-09-17 04:09:31.810663', '2024-09-27 01:47:18.309322', 'f', 'f', 'KIM_LONG', NULL, NULL, NULL, NULL, NULL, NULL) on CONFLICT do nothing;
+            update employee_profile
+            set level = replace(level, '.0', '')
+                where level is not null;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,11 @@
+id;status;approval_status_sign;approval_status_sign_content_type;approval_status_note;last_updated;created_date;employee_id
+e61d9331-9e6f-4b94-a5df-78670534371e;REJECTED;../fake-data/blob/hipster.png;image/png;yahoo duh;2024-06-30T16:49:51;2024-07-01T00:56:11;1f2a2313-85ae-4533-90ed-d5569dadd737
+df628e7e-8cd7-48d4-9d30-962ef990d842;PENDING;../fake-data/blob/hipster.png;image/png;wherever;2024-07-01T01:17:20;2024-06-30T15:38:58;e20cacb6-6213-43bb-9de1-da34fa48bceb
+6effe538-deac-4e10-9526-0aabcb895e8c;PENDING;../fake-data/blob/hipster.png;image/png;hmph;2024-06-30T21:02:14;2024-07-01T06:23:15;641604e5-7bd7-4d71-a95a-759da7cb1916
+a4aeb979-2826-4595-aa3d-f4128d4ba8e3;PENDING;../fake-data/blob/hipster.png;image/png;amongst drafty mercerize;2024-06-30T10:49:52;2024-06-30T14:51:55;f75d5a83-5a17-445a-a096-fc920a5a16ab
+e8affc05-4fcc-4552-8beb-ea9d9a719704;REJECTED;../fake-data/blob/hipster.png;image/png;fairly tassel transaction;2024-06-30T11:36:54;2024-07-01T04:05:43;ae0d348f-ea66-47ef-a4c0-f5b7295983b5
+09e1d45e-5111-4b8f-937f-142dda96d717;PENDING;../fake-data/blob/hipster.png;image/png;apropos offensively trust;2024-06-30T20:17:43;2024-07-01T08:17:19;8664b793-474c-462c-9da2-2b63ab0311cd
+1386ac00-cb0a-4cd5-af23-b983048c6d26;PENDING;../fake-data/blob/hipster.png;image/png;hmph unless meaningfully;2024-06-30T14:32:04;2024-06-30T23:12:40;6880726a-ef4b-4887-b66a-11e90744755e
+11884d5e-9d30-4957-8c4a-907184600417;APPROVED;../fake-data/blob/hipster.png;image/png;um;2024-06-30T14:30:55;2024-07-01T03:00:10;8a63d0c8-2288-4c1e-ae08-2edb4dbcf7f6
+d6156c6f-9d3a-45fa-8b3e-ecbe05319ecc;PENDING;../fake-data/blob/hipster.png;image/png;waist along;2024-06-30T09:30:30;2024-06-30T10:00:15;f754bf4b-3a52-405c-941a-6c7bffaaf27d
+6b9973ce-f770-4075-9cba-2dc3944725da;PENDING;../fake-data/blob/hipster.png;image/png;mid eventually;2024-06-30T19:18:11;2024-06-30T09:26:01;b0dd1300-1c8c-47ce-a5fb-c0c87b3be604

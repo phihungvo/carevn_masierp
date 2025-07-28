@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ContractProduct.
+    -->
+    <changeSet id="20240808022442-1" author="jhipster">
+
+        <createTable tableName="contract_material">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_contract" type="${uuidType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_material" type="${uuidType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="double">
+                <constraints nullable="true"/>
+            </column>
+            <column name="quantity" type="double">
+                <constraints nullable="true"/>
+            </column>
+            <column name="unit" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="protein_parameters" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_date" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="contract_material" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="contract_material" columnName="created_date" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20240808022442-2" author="jhipster">
+
+        <createTable tableName="contract_product">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_contract" type="${uuidType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_product" type="${uuidType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="double">
+                <constraints nullable="true"/>
+            </column>
+            <column name="quantity" type="double">
+                <constraints nullable="true"/>
+            </column>
+            <column name="unit" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="protein_parameters" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_date" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="contract_material" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="contract_material" columnName="created_date" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240819020825" author="HuuHoang">
+        <sqlFile dbms="postgresql" encoding="UTF-8" endDelimiter=";" path="sql/fileId.sql"
+                 relativeToChangelogFile="true" splitStatements="true" stripComments="true"/>
+    </changeSet>
+</databaseChangeLog>

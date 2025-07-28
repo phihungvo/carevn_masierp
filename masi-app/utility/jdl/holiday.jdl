@@ -1,0 +1,24 @@
+enum HolidayType {
+    FIXED,
+    FLEXIBLE
+}
+
+enum CalenderType {
+    LUNAR,
+    SOLAR
+}
+entity HolidayConfig {
+    id UUID,
+    name String,
+    type HolidayType,
+    calenderType CalenderType,
+    date LocalDate,
+    description String
+    createdAt ZonedDateTime,
+    updatedAt ZonedDateTime
+}
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct

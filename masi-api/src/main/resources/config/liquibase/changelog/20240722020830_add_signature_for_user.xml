@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240722020830" author="HuuHoang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            UPDATE "masi_user"
+            SET "company_id" = 'KIM_LONG';
+            UPDATE "masi_group"
+            SET "company_id" = 'KIM_LONG';
+
+        </sql>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            ALTER TABLE masi_user
+                ADD COLUMN if not exists signatureId varchar (255);
+            ALTER TABLE masi_user
+                ADD COLUMN if not exists signature_file_name varchar (255);
+        </sql>
+
+    </changeSet>
+    <changeSet id="20240822020831" author="HuuHoang">
+        <validCheckSum>ANY</validCheckSum>
+
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            ALTER TABLE masi_user
+                ADD COLUMN if not exists signatureId varchar (255);
+            ALTER TABLE masi_user
+                ADD COLUMN if not exists signature_file_name varchar (255);
+        </sql>
+
+    </changeSet>
+    <changeSet id="20240822020832" author="HuuHoang">
+        <validCheckSum>ANY</validCheckSum>
+
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="true"
+             stripComments="true">
+            ALTER TABLE masi_authority
+                ADD COLUMN if not exists action varchar (255);
+            ALTER TABLE masi_authority
+                ADD COLUMN if not exists resource varchar (255);
+            ALTER TABLE masi_group
+                ADD COLUMN if not exists workspace_id varchar (255);
+        </sql>
+        <sql>
+            alter table masi_user
+                add column if not exists signature_id varchar (100);
+            alter table masi_user
+                add column if not exists signature_file_name varchar (255);
+        </sql>
+        <sql>
+            alter table masi_group_user DROP CONSTRAINT IF EXISTS fk_group_user_user_id;
+--             fk_group_user_group_id
+            alter table masi_group_user DROP CONSTRAINT IF EXISTS fk_group_user_group_id;
+            alter table masi_group_user
+                add CONSTRAINT fk_group_user_group_id FOREIGN KEY (group_id) REFERENCES masi_group (id) ON DELETE CASCADE;
+        </sql>
+    </changeSet>
+
+    <changeSet id="1726827311169-1" author="[BE] Huu Hoang" failOnError="false">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            alter table masi_group
+            drop
+            constraint if exists ux_group_name;
+        </sql>
+        <sql>
+            INSERT INTO "public"."masi_user_authority" ("user_id", "user_authority")
+            VALUES ('d6cd8ee1-1dec-4db8-9f2c-7a68ef9a338c', 'ROLE_ADMIN'),
+                   ('7569db99-a59b-4394-aabb-945ac5c877e6', 'ROLE_USER'),
+                   ('4977b7e2-d83f-4f10-9734-a207de592708', 'ROLE_USER'),
+                   ('1ea21b81-5130-44b3-8baa-cd243ebba8bb', 'ROLE_USER'),
+                   ('ae6d06a1-8e11-4e2a-aab6-1da0ee8c61fe',
+                    'ROLE_USER') on conflict(user_id, user_authority) do nothing;
+        </sql>
+
+    </changeSet>
+    <changeSet id="1726827311169-5" author="[BE] Huu Hoang" failOnError="false">
+        <sql>
+            INSERT INTO "masi_authority" ("name", "description")
+            VALUES ('ROLE_WAREHOUSE_MANAGER', 'Quản lý kho') on conflict(name) do nothing;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

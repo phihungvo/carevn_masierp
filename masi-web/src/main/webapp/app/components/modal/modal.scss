@@ -1,0 +1,137 @@
+@import '../../bootstrap-variables';
+
+.modal {
+  display: flex !important;
+  align-items: center;
+
+  &-content {
+    // padding: $space-8 $space-12;
+    box-shadow: 0px 4px 16px 0px #2e2e2e1f;
+    width: 100%;
+    max-height: calc(100vh - 40px);
+  }
+
+  &-header {
+    padding: $space-16;
+  }
+
+  &-body {
+    padding: $space-16;
+
+    h6 {
+      text-align: left;
+      margin: 0;
+      color: #344054;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+  }
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $rounded-full;
+    gap: $space-40;
+
+    h3 {
+      margin: 0;
+      max-width: 500px;
+
+      color: #475467;
+
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+      text-align: left;
+    }
+
+    h5 {
+      margin: 0;
+      max-width: 500px;
+    }
+
+    .modal-close {
+      margin-top: 0;
+    }
+  }
+
+  &-footer {
+    border-top: none;
+    padding: 16px;
+    gap: 16px;
+
+    &.footer-space-between {
+      justify-content: space-between;
+    }
+
+    .btn {
+      min-width: 97.5px;
+      height: 40px;
+      padding: 6px 14px;
+      margin: 0px;
+      gap: 8px;
+
+      border-radius: 8px;
+      border: 1px solid #98a2b3;
+
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      text-align: left;
+    }
+  }
+
+  &-backdrop {
+    background-color: $secondary-black-90;
+  }
+
+  &-close {
+    // position: absolute;
+    width: $space-20;
+    height: $space-20;
+    padding: $space-4;
+    right: $space-16;
+    top: $space-16;
+    z-index: 2;
+
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &-dialog {
+    max-width: 60%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+button.btn.button-cancel.btn-outline.button-cancel {
+  color: #475467;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  height: 40px;
+  width: 100px;
+  border: 1px solid #98A2B3;
+}
+
+.button-primary {
+  background: #4072D0;
+  padding: 6px 14px;
+  border-radius: 8px;
+  height: 40px;
+  width: 100px;
+}
+
+.divider-modal-footer {
+  width: 100%;
+  height: 1px;
+  background-color: #d3d5d7;
+}

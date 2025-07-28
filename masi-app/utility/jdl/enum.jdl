@@ -1,0 +1,25 @@
+enum EnumStatus {
+    ACTIVE
+    INACTIVE
+}
+
+entity EntityEnum {
+    id UUID
+    code String
+    name String
+    entity String
+    status EnumStatus
+
+    updatedAt ZonedDateTime
+    createdAt ZonedDateTime
+    updatedBy String
+    createdBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+}
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct
+

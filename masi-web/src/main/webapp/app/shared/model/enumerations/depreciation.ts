@@ -1,0 +1,14 @@
+export enum DEPRECIATION_TYPE {
+    INTERNAL = 'INTERNAL',
+    OUTSIDE = 'OUTSIDE',
+    CUSTOMER = 'CUSTOMER',
+    EMPLOYEE = 'EMPLOYEE',
+    OTHER = 'OTHER',
+}
+
+export enum DEPRECIATION_STATUS {
+    NEW = 'NEW',
+    PENDING = 'PENDING',
+    APPROVED = 'APPROVED',
+    REJECT = 'REJECT',
+}

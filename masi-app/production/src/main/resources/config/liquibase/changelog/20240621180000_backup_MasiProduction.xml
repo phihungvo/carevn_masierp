@@ -1,0 +1,80 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="itbee (generated)" id="1718969225681-0">
+        <sql>
+            TRUNCATE TABLE quality_check_sample CASCADE;
+        </sql>
+        <sql>
+            TRUNCATE TABLE manufacture_order CASCADE;
+        </sql>
+        <sql>
+            TRUNCATE TABLE production_standard CASCADE;
+        </sql>
+    </changeSet>
+<!--    <changeSet author="itbee (generated)" id="1718969225681-1">-->
+<!--        <insert tableName="quality_check_sample">-->
+<!--            <column name="id" value="93d87cce-1751-4a9b-880f-b61ab567a141"/>-->
+<!--            <column name="sampling_date" valueDate="2024-06-24"/>-->
+<!--            <column name="sample_no" value="M-01"/>-->
+<!--            <column name="product_type" value="Bột cá biển"/>-->
+<!--            <column name="sample_weight" valueNumeric="300.0"/>-->
+<!--            <column name="customer" value="Hải Long"/>-->
+<!--            <column name="reason" value="Kiểm nghiệm trước khi xuất hàng"/>-->
+<!--            <column name="sample_release_date" valueDate="2024-06-23"/>-->
+<!--            <column name="internal_hum" value="10"/>-->
+<!--            <column name="internal_tvn" value="150"/>-->
+<!--            <column name="internal_ash" value="23"/>-->
+<!--            <column name="internal_protein" value="60"/>-->
+<!--            <column name="external_hum" value="10"/>-->
+<!--            <column name="external_tvn" value="150"/>-->
+<!--            <column name="external_ash" value="22"/>-->
+<!--            <column name="external_protein" value="59"/>-->
+<!--            <column name="sampling_employee_id" value="664dc7ad-3ab9-479c-832c-28efc9f69bcf"/>-->
+<!--            <column name="status" value="VALID"/>-->
+<!--            <column name="note"/>-->
+<!--            <column name="created_at" valueDate="2024-06-21T02:20:42.141604"/>-->
+<!--            <column name="last_updated" valueDate="2024-06-21T02:20:42.141605"/>-->
+<!--            <column name="is_active" valueBoolean="true"/>-->
+<!--            <column name="disposal_id"/>-->
+<!--        </insert>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="itbee (generated)" id="1718969225681-2">-->
+<!--        <insert tableName="manufacture_order">-->
+<!--            <column name="id" value="63149dba-3914-4c21-bccb-8e6ac63f514f"/>-->
+<!--            <column name="name" value="kkkkk"/>-->
+<!--            <column name="from_date" valueDate="2024-06-28"/>-->
+<!--            <column name="to_date" valueDate="2024-06-29"/>-->
+<!--            <column name="status" value="NEW"/>-->
+<!--            <column name="order_id" value="bfca9db6-698a-48ac-8aae-4dd79a170a19"/>-->
+<!--            <column name="is_active" valueBoolean="true"/>-->
+<!--            <column name="created_at" valueDate="2024-06-21T03:53:25.11678"/>-->
+<!--            <column name="last_updated" valueDate="2024-06-21T03:53:25.116782"/>-->
+<!--        </insert>-->
+<!--        <insert tableName="manufacture_order">-->
+<!--            <column name="id" value="7e76589d-2410-4022-8ee5-5b3a3f2d4be1"/>-->
+<!--            <column name="name" value="Định mức cá tươi"/>-->
+<!--            <column name="from_date" valueDate="2024-06-23"/>-->
+<!--            <column name="to_date" valueDate="2024-06-24"/>-->
+<!--            <column name="status" value="CANCELLED"/>-->
+<!--            <column name="order_id" value="056065e2-d8be-4b73-b5f1-19f1ac5fb265"/>-->
+<!--            <column name="is_active" valueBoolean="false"/>-->
+<!--            <column name="created_at" valueDate="2024-06-21T01:58:52.898854"/>-->
+<!--            <column name="last_updated" valueDate="2024-06-21T03:53:43.719047"/>-->
+<!--        </insert>-->
+<!--    </changeSet>-->
+<!--    <changeSet author="itbee (generated)" id="1718969225681-3">-->
+<!--        <insert tableName="production_standard">-->
+<!--            <column name="id" value="e687e80c-862f-4e57-be13-e8b6c00b0e8a"/>-->
+<!--            <column name="name" value="Định mức cá tươi"/>-->
+<!--            <column name="quantity" valueNumeric="200000.0"/>-->
+<!--            <column name="production_powder_qty" valueNumeric="50000.0"/>-->
+<!--            <column name="unit" value="Kg"/>-->
+<!--            <column name="start_date" valueDate="2024-06-23"/>-->
+<!--            <column name="due_date" valueDate="2024-06-24"/>-->
+<!--            <column name="workspace" value=""/>-->
+<!--            <column name="is_deleted" valueBoolean="false"/>-->
+<!--            <column name="created_at" valueDate="2024-06-21T01:49:20.922379"/>-->
+<!--            <column name="last_updated_at" valueDate="2024-06-21T01:49:20.92238"/>-->
+<!--        </insert>-->
+<!--    </changeSet>-->
+</databaseChangeLog>

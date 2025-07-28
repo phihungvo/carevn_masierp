@@ -1,0 +1,50 @@
+relationship OneToMany {
+    Contract to ContractFile
+}
+
+entity Contract {
+    id UUID required unique
+    status ContractStatus required,
+    contractName String required,
+    contractValid LocalDate required,
+    contractType ContractType required,
+    contractOwner UUID required,
+    contractTotal Float required
+    proteinPercent String required,
+    approvalSign ImageBlob
+    rejectNote String
+    lastUpdated  ZonedDateTime required
+    createdDate ZonedDateTime required
+    isDeleted Boolean required
+    isActive Boolean required
+}
+
+entity ContractFile {
+    id UUID required unique
+    contractFilePath String required,
+    contractIndexFilePath String required,
+    lastUpdated  ZonedDateTime required
+    createdDate ZonedDateTime required
+    isDeleted Boolean required
+}
+enum ContractStatus {
+    DRAFT,
+    WAITING_APPROVAL,
+    APPROVED,
+    FINISHED,
+    WAITING_LIQUIDATION,
+    LIQUIDATED,
+    CANCELLED,
+    DELETED
+}
+
+enum ContractType {
+    NEW,
+    PRICE_UP,
+    PRICE_DOWN,
+    EXTEND
+}
+dto * with mapstruct
+service * with serviceClass
+
+paginate * with pagination

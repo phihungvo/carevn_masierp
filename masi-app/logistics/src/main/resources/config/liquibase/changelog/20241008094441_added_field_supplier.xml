@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity SuppliesItem.
+    -->
+    <changeSet id="20241008094441" author="jhipster">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS bank_info text;
+            ALTER TABLE supplies_request
+                ADD COLUMN IF NOT EXISTS vat INTEGER;
+            ALTER TABLE supplies_request
+                ADD COLUMN IF NOT EXISTS total_amount_after_vat decimal (21,2);
+        </sql>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+
+</databaseChangeLog>

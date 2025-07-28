@@ -1,0 +1,74 @@
+@import "../../bootstrap-variables";
+
+.dropdown-custom {
+  .dropdown-menu {
+    border: none;
+    box-shadow: 0px 4px 12px 0px rgba(46, 46, 46, 0.08);
+    max-height: 400px;
+    overflow: auto;
+
+    button {
+      padding: $space-16;
+      color: $text-black;
+      position: relative;
+      transition: all 0.1s ease-in;
+
+      &:hover {
+        background-color: $secondary-black-90;
+      }
+
+      &:active,
+      &:focus {
+        background-color: $secondary-black-90;
+      }
+
+      &::after {
+        content: "";
+        width: calc(100% - $space-32);
+        border-bottom: solid 1px $secondary-black-50;
+        position: absolute;
+        left: $space-16;
+        bottom: 0;
+        z-index: 1;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .btn-outline {
+    background-color: white;
+    color: $text-black;
+    font-size: $text-body-14;
+    font-weight: $font-body-400;
+    gap: $space-8;
+    border-radius: $rounded-8 !important;
+    padding-inline: $space-8 !important;
+  }
+}
+
+.actions-dropdown {
+  &-toggle {
+    background-color: white;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  .dropdown-item {
+    &:hover {
+      background-color: $secondary-black-90;
+      color: unset;
+    }
+
+    button {
+      font-weight: $font-body-400 !important;
+      font-size: $text-body-16 !important;
+    }
+  }
+}

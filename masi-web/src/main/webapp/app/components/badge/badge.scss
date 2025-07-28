@@ -1,0 +1,183 @@
+@import '../../bootstrap-variables';
+
+.badge {
+  padding: $space-4 $space-6 $space-2 $space-6;
+  border-radius: $rounded-10 !important;
+  font-size: $text-body-12;
+  font-weight: $font-body-500;
+  line-height: 18px;
+  background-color: $secondary-black-70;
+  color: $text-black;
+
+  &-right {
+    left: 30px;
+  }
+
+  &-success {
+    // background-color: $success-green-80 !important;
+    // color: $secondary-black-00;
+
+    background-color: #d1fadf !important;
+    color: #027a48;
+  }
+
+  &-error {
+    // background-color: $red-error-50 !important;
+    // color: white;
+    background-color: #fee4e2 !important;
+    color: #d92d20;
+  }
+
+  &-warning {
+    // background-color: $warning-yellow-90 !important;
+    // color: $text-black;
+
+    background-color: #fef0c7 !important;
+    color: #b54708;
+  }
+
+  &-primary {
+    background-color: $info-color-80 !important;
+    color: $text-black;
+  }
+
+  &-error-secondary {
+    background-color: #feeded !important;
+    color: #bb1d32;
+  }
+}
+
+.dot {
+  min-width: $space-8;
+  min-height: $space-8;
+  background-color: #717478;
+  border-radius: $rounded-full;
+  display: inline-block;
+  margin-right: $space-4;
+
+  &-success {
+    background-color: $success-green-20;
+  }
+
+  &-error {
+    background-color: $red-error-30;
+  }
+
+  &-warning {
+    background-color: $warning-yellow-30;
+  }
+
+  &-primary {
+    background-color: $info-dot !important;
+  }
+
+  &-error-secondary {
+    background-color: #842828 !important;
+  }
+}
+
+.badge-v2 {
+  padding: 2px 8px;
+  border-radius: 16px !important;
+  font-size: $text-body-12;
+  font-weight: 500;
+  line-height: 18px;
+  background-color: white !important;
+  color: $text-black;
+  text-align: center !important;
+
+  &-success {
+    background-color: #d1fadf !important;
+    color: #027a48;
+  }
+
+  &-error {
+    background-color: #fef3f2 !important;
+    color: #b42318;
+  }
+
+  &-warning {
+    background-color: $warning-yellow-90 !important;
+    color: $text-black;
+  }
+
+  &-primary {
+    background-color: #f0f9ff !important;
+    color: #026aa2;
+  }
+
+  &-error-secondary {
+    background-color: #feeded !important;
+    color: #bb1d32;
+  }
+
+  &-blue {
+    background-color: #e0eaff !important;
+    color: #3538cd;
+  }
+
+  &-gray {
+    background-color: #f2f4f7 !important;
+    color: #344054;
+  }
+
+  &-outline {
+    background-color: white !important;
+
+    &.badge-v2-success {
+      color: $success-green-80 !important;
+      border: 1px solid $success-green-80 !important;
+    }
+  }
+}
+
+.pr {
+  &-waiting_approve {
+    color: #b54708;
+    background-color: #fef0c7 !important;
+  }
+  &-approved {
+    color: #027a48;
+    background-color: #d1fadf !important;
+  }
+  &-rejected {
+    color: #b42318;
+    background-color: #fee4e2 !important;
+  }
+  &-completed {
+    color: #039855;
+    border: 1px solid #039855;
+  }
+  &-new {
+    color: #3538cd;
+    background-color: #e0eaff !important;
+  }
+  &-cancelled {
+    color: #344054;
+    background-color: #f2f4f7 !important;
+  }
+  &-expired {
+    color: #b42318;
+    background-color: #fef3f2 !important;
+  }
+  &-contract-complete {
+    color: #365fbf;
+    background-color: #f1f6fd !important;
+  }
+  &-liquidation {
+    color: #027a48;
+    background-color: #ecfdf3 !important;
+  }
+  &-primary {
+    color: #026aa2;
+    background-color: #f0f9ff !important;
+  }
+  &-processing {
+    color: #026aa2;
+    background-color: #b2ddff !important;
+  }
+  &-closed {
+    color: #b42318;
+    background-color: #fecdca !important;
+  }
+}

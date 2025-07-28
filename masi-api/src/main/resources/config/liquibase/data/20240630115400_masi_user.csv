@@ -1,0 +1,5 @@
+id;user_name;password_hash;first_name;last_name;email;image_url;activated;lang_key;created_by;last_modified_by;is_super_admin;employee_id
+84b36e89-155e-4c4c-9b61-85cbc8f73589;admin;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;Administrator;Administrator;admin@localhost;;true;en;system;system;true;84b36e89-155e-4c4c-9b61-85cbc8f73589
+bff22f7b-7bbd-45e8-bb3f-d39c125d5cde;user;$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K;User;User;user@localhost;;true;en;system;system;false;bff22f7b-7bbd-45e8-bb3f-d39c125d5cde
+999e1416-a92a-459a-add7-611278b61b35;linhqtt;$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K;Linh;Quảng Thị Thùy;linhqtt@localhost;"";true;en;system;system;true;999e1416-a92a-459a-add7-611278b61b35
+ab2f0c6f-26ba-40c9-b994-397bb7cdaec2;haptb;$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K;Hà;Phan Thị Bích;haptb@localhost;"";true;en;system;system;true;ab2f0c6f-26ba-40c9-b994-397bb7cdaec2

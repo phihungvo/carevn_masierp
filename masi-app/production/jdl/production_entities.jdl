@@ -1,0 +1,17 @@
+entity ProductionStandard {
+    id UUID required unique
+    name String required
+    quantity Float required
+    productionPowderQty Float required
+    unit String required
+    startDate LocalDate required
+    dueDate LocalDate required
+    workspace String required
+    isDeleted Boolean required
+    createdAt ZonedDateTime required
+    lastUpdatedAt ZonedDateTime required
+}
+
+dto * with mapstruct
+service * with serviceClass
+

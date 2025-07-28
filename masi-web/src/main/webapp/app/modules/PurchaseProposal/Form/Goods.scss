@@ -1,0 +1,19 @@
+.goods {
+  &__link-contract {
+    border: 1px solid #E4E7EC;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+    &--id {
+      color: #365FBF;
+      margin-left: 16px;
+    }
+  }
+
+}

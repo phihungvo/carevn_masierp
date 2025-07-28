@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240718024112" author="HuuHoang">
+        <sql dbms="postgresql"
+        endDelimiter="\nGO"
+        splitStatements="true"
+        stripComments="true">
+            ALTER TABLE uniform_stock ADD CONSTRAINT unique_uniform_id UNIQUE (uniform_id);
+
+    <!-- CREATE DATABASE IF NOT EXISTS 'MasiSale';
+    CREATE DATABASE IF NOT EXISTS 'MasiTest'; -->
+</sql>
+    </changeSet>
+
+</databaseChangeLog>

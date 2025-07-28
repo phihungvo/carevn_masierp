@@ -1,0 +1,29 @@
+entity RelatedCosts {
+    id UUID,
+    invoiceId UUID,
+    paymentMethodId UUID,
+    paymentMethodCode String,
+    paymentMethodName String,
+    vatId UUID,
+    vat Double,
+    vatAmount BigDecimal,
+    totalAmount BigDecimal,
+    debtDays Double,
+    note String
+
+    isDeleted Boolean,
+    createdAt ZonedDateTime required
+    createdBy String required
+    updatedAt ZonedDateTime
+    updatedBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+    company String
+    department String
+}
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

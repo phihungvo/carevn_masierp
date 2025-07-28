@@ -1,0 +1,45 @@
+entity Notification {
+    id UUID required,
+    content String,
+    title String,
+    entityName String,
+    entityId String,
+    entityType String,
+    createdAt ZonedDateTime required,
+    createdBy String required
+    //..
+}
+
+entity NotificationRecipient {
+    id UUID required,
+    notificationId UUID required,
+    recipientId UUID required,
+    read Boolean required,
+    readAt ZonedDateTime,
+
+}
+relationship OneToMany {
+    Notification to NotificationRecipient
+}
+
+// db to storage file
+
+entity FileAttachment {
+    id UUID required,
+    name String required,
+    path String required,
+    fileSize Long required,
+    mimeType String required,
+    createdAt ZonedDateTime required,
+    createdBy String required
+    updatedAt ZonedDateTime,
+    updatedBy String
+    deletedAt ZonedDateTime,
+    deletedBy String
+    company String
+}
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct

@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20241125093527"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "index",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "defaultApproverId",
+      "fieldType": "UUID"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "MasiEmployee",
+  "name": "TypeRequestApprovalPageDetail",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "typeRequestApprovalPage",
+      "otherEntityRelationshipName": "typeRequestApprovalPageDetail",
+      "relationshipName": "typeRequestApprovalPage",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

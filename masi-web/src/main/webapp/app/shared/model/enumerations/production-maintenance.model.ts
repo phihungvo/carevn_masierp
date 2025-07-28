@@ -1,0 +1,4 @@
+export enum PRODUCTION_MAINTENANCE_STATUS {
+  CANCELED = 'CANCELED',
+  NEW = 'NEW',
+}

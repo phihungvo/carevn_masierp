@@ -1,0 +1,53 @@
+package com.masi.logistics.repository.rowmapper;
+
+import com.masi.logistics.domain.ItemAssetDepreciation;
+import com.masi.logistics.domain.enumeration.StatusEntity;
+import com.masi.logistics.domain.enumeration.TypePageDepreciation;
+import io.r2dbc.spi.Row;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.util.UUID;
+import java.util.function.BiFunction;
+import org.springframework.stereotype.Service;
+
+/**
+ * Converter between {@link Row} to {@link ItemAssetDepreciation}, with proper type conversions.
+ */
+@Service
+public class ItemAssetDepreciationRowMapper implements BiFunction<Row, String, ItemAssetDepreciation> {
+
+    private final ColumnConverter converter;
+
+    public ItemAssetDepreciationRowMapper(ColumnConverter converter) {
+        this.converter = converter;
+    }
+
+    /**
+     * Take a {@link Row} and a column prefix, and extract all the fields.
+     * @return the {@link ItemAssetDepreciation} stored in the database.
+     */
+    @Override
+    public ItemAssetDepreciation apply(Row row, String prefix) {
+        ItemAssetDepreciation entity = new ItemAssetDepreciation();
+        entity.setId(converter.fromRow(row, prefix + "_id", UUID.class));
+        entity.setCode(converter.fromRow(row, prefix + "_code", String.class));
+        entity.setAttribute(converter.fromRow(row, prefix + "_attribute", String.class));
+        entity.setName(converter.fromRow(row, prefix + "_name", String.class));
+        entity.setStatus(converter.fromRow(row, prefix + "_status", StatusEntity.class));
+        entity.setDepreciationDate(converter.fromRow(row, prefix + "_depreciation_date", LocalDate.class));
+        entity.setAccountingDate(converter.fromRow(row, prefix + "_accounting_date", LocalDate.class));
+        entity.setEmployeeId(converter.fromRow(row, prefix + "_employee_id", UUID.class));
+        entity.setDescription(converter.fromRow(row, prefix + "_description", String.class));
+        entity.setTypePageDepreciation(converter.fromRow(row, prefix + "_type_page_depreciation", TypePageDepreciation.class));
+        entity.setIsDeleted(converter.fromRow(row, prefix + "_is_deleted", Boolean.class));
+        entity.setCreatedAt(converter.fromRow(row, prefix + "_created_at", ZonedDateTime.class));
+        entity.setCreatedBy(converter.fromRow(row, prefix + "_created_by", String.class));
+        entity.setUpdatedAt(converter.fromRow(row, prefix + "_updated_at", ZonedDateTime.class));
+        entity.setUpdatedBy(converter.fromRow(row, prefix + "_updated_by", String.class));
+        entity.setDeletedAt(converter.fromRow(row, prefix + "_deleted_at", ZonedDateTime.class));
+        entity.setDeletedBy(converter.fromRow(row, prefix + "_deleted_by", String.class));
+        entity.setCompany(converter.fromRow(row, prefix + "_company", String.class));
+        entity.setDepartment(converter.fromRow(row, prefix + "_department", String.class));
+        return entity;
+    }
+}

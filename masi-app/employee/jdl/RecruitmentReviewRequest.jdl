@@ -1,0 +1,26 @@
+entity RecruitmentReviewRequest {
+    id UUID required unique
+    position PositionEmployee
+    employeeId UUID required
+    requestId UUID required
+    company String required
+    approvalSign ImageBlob
+    approvalSignContentType String
+    rejectNote String
+    createdDate ZonedDateTime
+    updatedBy String
+    updatedAt ZonedDateTime
+    result Boolean
+    isDeleted Boolean
+}
+
+enum PositionEmployee {
+    DIRECTOR,
+    AccountingManager,
+    PersonnelManager,
+    DEPARTMENT_MANAGER
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

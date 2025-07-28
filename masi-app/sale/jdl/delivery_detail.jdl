@@ -1,0 +1,21 @@
+entity DeliveryDetail {
+    id UUID,
+    deliveryId UUID,
+    contractMaterialId UUID,
+    quantity Integer,
+    uomId UUID,
+    price BigDecimal,
+    createdAt ZonedDateTime,
+    updatedAt ZonedDateTime
+    createdBy String
+    updatedBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+
+    attachment String
+}
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct

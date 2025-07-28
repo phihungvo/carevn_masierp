@@ -1,0 +1,61 @@
+enum TypeRequestApproval {
+    Sequentially,
+    Parallel
+}
+
+entity TypeRequestApprovalPages {
+    id UUID required unique,
+    pageName String,
+    type TypeRequestApproval,
+    numberOfReviewers Integer,
+
+    company String,
+    department String,
+    isDeleted Boolean,
+    createdBy String,
+    createdDate ZonedDateTime,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime
+}
+
+entity TypeRequestApprovalPageDetail {
+    id UUID required unique,
+    index Integer,
+    approverId UUID,
+    typeRequestApprovalPageId UUID,
+}
+
+relationship OneToMany {
+    TypeRequestApprovalPages to TypeRequestApprovalPageDetail
+}
+
+entity RequestApprovalDetail {
+    id UUID required unique,
+    index Integer,
+    documentId UUID required,
+    employeeId UUID required,
+    isApproved Boolean,
+    approvedSign String,
+    approvedSignName String,
+    rejectNote String,
+    entityName String,
+
+    company String,
+    department String,
+    isDeleted Boolean,
+    createdBy String,
+    createdDate ZonedDateTime,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime
+}
+
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

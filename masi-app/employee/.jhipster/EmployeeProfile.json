@@ -1,0 +1,173 @@
+{
+  "annotations": {
+    "changelogDate": "20240709105452"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "employeeCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fullName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "FEMALE,MALE,NO_PREFERENCE"
+    },
+    {
+      "fieldName": "workspaceId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "citizenId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "citizenIssueDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "citizenIssuePlace",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "residenceAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "temporaryAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "birthday",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "startWorkDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "position",
+      "fieldType": "Position",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EMPLOYEE,TEAM_LEADER,SUPERVISOR,DIRECTOR"
+    },
+    {
+      "fieldName": "bankCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contractType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contractTerm",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contractNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contractDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contractEndDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "level",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "parkingCard",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insuranceCard",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referrerId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "referrerDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "EmployeeStatus",
+      "fieldValues": "WORKING,RESIGNED"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "EmployeeProfile",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

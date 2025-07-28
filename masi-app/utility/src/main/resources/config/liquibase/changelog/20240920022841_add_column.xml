@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Config.
+    -->
+    <changeSet id="20240920022841" author="jhipster" failOnError="false">
+        <validCheckSum>any</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+            ALTER TABLE cron_job
+                ADD COLUMN IF NOT EXISTS url_db VARCHAR (500);
+            ALTER TABLE cron_job
+                ADD COLUMN IF NOT EXISTS user_db VARCHAR (500);
+            ALTER TABLE cron_job
+                ADD COLUMN IF NOT EXISTS pw_db VARCHAR (500);
+
+
+            INSERT INTO "public"."cron_job" ("id", "action", "name", "every_minute", "at_minute", "at_hour",
+                                             "at_day_of_month", "at_month", "at_day_of_week", "enabled", "last_run",
+                                             "next_run", "description", "status", "updated_at", "updated_by", "zone_id",
+                                             "url_db", "user_db", "pw_db")
+            VALUES (6, 'UPDATE_DATA_TIMEKEEPING', 'Cập nhật dữ liệu máy chấm công', NULL, 5, 0, NULL, NULL, NULL, 't',
+                    '2011-09-15 14:34:10', '2019-05-27 03:24:51', 'COMPLETED', 'COMPLETED', '2020-12-18 12:59:23',
+                    'system', 'Asia/Ho_Chi_Minh', 'jdbc:postgresql://192.168.1.19:5432/biosecurity-boot', 'basso',
+                    '123123');
+
+        </sql>
+    </changeSet>
+    <changeSet id="1729075267459-1" author="[BE] Huu Hoang" failOnError="false">
+
+        <validCheckSum>
+            any
+        </validCheckSum>
+        <sql>
+            alter table cron_job
+                add column if not exists zoneOffset float4 default 7.0; -- UTC+7
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="1729075267459-2" author="[BE] Hoang Dang" failOnError="false">
+        <validCheckSum>
+            any
+        </validCheckSum>
+        <sql>
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('0cbdcbff-6144-4629-a3bd-6f5488f58c70', 'Giờ làm việc thứ 2', 1, 2, 8, NULL, 'KIM_LONG', 'FACTORY',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('6c578fee-7062-460f-bba6-eefd1fbd92c7', 'Giờ làm việc thứ 3', 2, 2, 8, NULL, 'KIM_LONG', 'FACTORY',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('56583bb8-0b56-45dd-95ee-6b6aa5978383', 'Giờ làm việc thứ 4', 3, 2, 8, NULL, 'KIM_LONG', 'FACTORY',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('7c11b34b-1cb3-4364-9275-e7da75d3ac46', 'Giờ làm việc thứ 5', 4, 2, 8, NULL, 'KIM_LONG', 'FACTORY',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('7b978800-1639-4700-be31-4d18e466eeee', 'Giờ làm việc thứ 6', 5, 2, 8, NULL, 'KIM_LONG', 'FACTORY',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('05602db5-ba94-4e76-a526-2d2cbf287e19', 'Giờ làm việc thứ 8', 7, 2, 8, NULL, 'KIM_LONG', 'FACTORY',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('1f152a99-ff76-40ff-b317-371d71db5291', 'Giờ làm việc thứ 7', 6, 2, 8, NULL, 'KIM_LONG', 'FACTORY',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('2cc0482e-7ed9-4ec4-8b36-29a82a703d62', 'Giờ làm việc thứ 2', 1, 2, 8, NULL, 'MMS', 'OFFICE', NULL,
+                    NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('2611192c-d5ff-45dd-bd1f-0ab25bc98da8', 'Giờ làm việc thứ 3', 2, 2, 8, NULL, 'MMS', 'OFFICE', NULL,
+                    NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('4dd8c0a2-d71e-41b0-966d-bd7fbcdc97ba', 'Giờ làm việc thứ 4', 3, 2, 8, NULL, 'MMS', 'OFFICE', NULL,
+                    NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('b6b949e6-6a2a-4889-930b-9303acb74444', 'Giờ làm việc thứ 5', 4, 2, 8, NULL, 'MMS', 'OFFICE', NULL,
+                    NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('ab4542f0-139d-47bc-b07f-79c8ad736177', 'Giờ làm việc thứ 6', 5, 2, 8, NULL, 'MMS', 'OFFICE', NULL,
+                    NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('7da5ea88-a95e-4412-9539-3fac42855960', 'Giờ làm việc thứ 7', 6, 2, 8, NULL, 'MMS', 'OFFICE', NULL,
+                    NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('a551bef2-4414-43d7-8dae-a07e32367bba', 'Giờ làm việc thứ 8', 7, 2, 8, NULL, 'MMS', 'OFFICE', NULL,
+                    NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('53026fca-4d39-4be9-b1bc-09471bbcb341', 'Giờ làm việc thứ 2', 1, 2, 8, NULL, 'KIM_LONG', 'OFFICE',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('78d3940e-de9c-4719-8d95-72a44e02bcc4', 'Giờ làm việc thứ 3', 2, 2, 8, NULL, 'KIM_LONG', 'OFFICE',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('42b33853-e603-48fd-83b1-a9cd5707ef61', 'Giờ làm việc thứ 4', 3, 2, 8, NULL, 'KIM_LONG', 'OFFICE',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('0f46c563-a200-4608-8bca-a97fdeab3077', 'Giờ làm việc thứ 5', 4, 2, 8, NULL, 'KIM_LONG', 'OFFICE',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('912a79eb-beae-4998-9ae9-a41774b0a8bd', 'Giờ làm việc thứ 6', 5, 2, 8, NULL, 'KIM_LONG', 'OFFICE',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('d2e836cf-b502-425c-bedb-8edc83b8e044', 'Giờ làm việc thứ 7', 6, 1, 4, NULL, 'KIM_LONG', 'OFFICE',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+            INSERT INTO "public"."standard_work_schedule_config" ("id", "name", "day_of_week", "number_of_shifts",
+                                                                  "work_hours", "department", "company",
+                                                                  "department_type", "updated_at", "updated_by")
+            VALUES ('f8251d11-39e2-4c2d-8748-80970b412df3', 'Giờ làm việc thứ 8', 7, 0, 0, NULL, 'KIM_LONG', 'OFFICE',
+                    NULL, NULL) ON CONFLICT DO NOTHING;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,22 @@
+
+
+entity UniformOrderStock{
+    id UUID
+    code String
+    uniformOrderId UUID
+
+
+    // createAt, createBy, updateAt, updateBy, deleteAt, deleteBy, company
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

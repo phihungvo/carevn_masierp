@@ -1,0 +1,11 @@
+@import '../../bootstrap-variables';
+
+.nav-tabs .nav-link {
+  color: #000;
+  font-weight: 700;
+
+  &.active {
+    color: #000;
+    font-weight: 700;
+  }
+}

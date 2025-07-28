@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240718024112" author="HuuHoang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+        endDelimiter=";"
+        splitStatements="false"
+        stripComments="true">
+            insert into employee (id, first_name, last_name, email, phone_number, hire_date, salary, commission_pct, is_active) values
+    ('63946348-aea6-410d-894b-7924e14a1492', 'Ni', 'Thạch Kiên Mi', 'ni.thach-kien-mi366@yahoo.com', '0369675706', '2020-08-14 05:51:12', 10160860, 0, true),
+    ('ed3c4f9b-44c7-44ce-b03c-7bb28b91adf2', 'Na', 'Thạch', 'na.thach668@hotmail.com', '0381220115', '2022-03-07 09:20:01', 40101322, 67, true),
+    ('3250f8d2-ba45-4806-9100-4cfc3feb3076', 'Dương', 'Thạch', 'duong.thach204@`outlook.com', '0339352881', '2022-05-12 12:43:31', 13932991, 58, true),
+    ('29a2e0e4-04ef-4acd-b9a6-7590bde1ca54', 'Hồng', 'Sơn', 'hong.son711@gmail.com', '0336269476', '2019-08-31 00:14:05', 31766653, 62, true),
+    ('c51d98b8-5099-4b4b-badc-b6cbeabc45d2', 'Rine', 'Sơn Sa', 'rine.son-sa717@`outlook.com', '0309304682', '2019-12-01 16:57:11', 40703506, 58, true),
+    ('73feaef5-7f0a-4124-8898-b079914f05f8', 'Quỳnh', 'Nguyễn Cao', 'quynh.nguyen-cao146@`outlook.com', '0360265995', '2021-03-05 11:18:11', 38075250, 81, true)
+    ON CONFLICT DO NOTHING;
+    CREATE EXTENSION IF NOT EXISTS unaccent;
+    CREATE EXTENSION IF NOT EXISTS  dblink ;
+    DO $$
+        BEGIN
+        IF NOT EXISTS (
+            SELECT
+            FROM   pg_catalog.pg_database
+            WHERE  datname = 'MasiSale'
+        ) THEN
+            PERFORM dblink_exec('dbname=' || current_database() || ' user=' || current_user, 'CREATE DATABASE "MasiSale"');
+        END IF;
+        END
+    $$;
+    <!-- CREATE DATABASE IF NOT EXISTS 'MasiSale';
+    CREATE DATABASE IF NOT EXISTS 'MasiTest'; -->
+</sql>
+    </changeSet>
+
+</databaseChangeLog>

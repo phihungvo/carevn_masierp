@@ -1,0 +1,11 @@
+id;request_status;product_name;unit;quantity;unit_price;total_price;supplier;note;create_date;updated_date;is_deleted
+1e58bbcf-1237-4f50-8a32-1708046b38db;APPROVED;gee;PIECE;30120.72;23557.63;8759.53;bah intently jaw;gently um psst;2024-06-30T19:09:31;2024-07-01T06:51:10;true
+5578a437-bdf5-4820-b940-02fec448bfe3;FINISHED;ack boldly;KG;20070.41;6256.57;394.46;arm throughout bountiful;what;2024-06-30T12:43:59;2024-07-01T00:22:31;false
+a0f1f892-92e1-4cc8-af2d-84637a7dbb51;REJECTED;characterize the;KG;22408;25961.74;11868.29;oof for;phew unbearably strident;2024-07-01T04:28:46;2024-06-30T21:34:16;false
+9f902e1b-acc0-4127-a242-4fae9baca116;APPROVED;hmph since boo;KG;14014.26;1299.14;30012.19;ack noted;persevere;2024-06-30T11:53:41;2024-07-01T00:56:02;true
+67c80932-8436-46ea-a7a8-1b355e3540b8;DELIVERING;lest;PIECE;13686.73;14832.55;13785.82;via frantically;apropos;2024-06-30T09:36:18;2024-06-30T23:52:37;false
+7739e2d8-3473-4d81-ae6a-eceade3eb538;REJECTED;ick fishbone;TON;31235.51;21096.51;26367.58;rectangular;onto before;2024-07-01T01:04:45;2024-06-30T17:09:57;true
+0e13c80e-ed85-432c-94d0-81697f2d2f44;DELIVERING;relent;PIECE;25934.34;13544.61;20338.59;inside;mmm;2024-07-01T07:22:57;2024-06-30T15:19:30;false
+8290787f-2b09-490a-8510-d9e4f50df115;APPROVED;furthermore gah as;PIECE;10182.31;20191.17;9679.81;furthermore;plain but consequently;2024-06-30T12:38:23;2024-06-30T10:51:46;false
+6ea8454e-5c2b-4f21-824e-cdbe6391f9bc;APPROVED;off abstain;KG;9950.38;10068.82;13000.37;to slop;huzzah meanwhile brr;2024-06-30T14:03:50;2024-07-01T02:36:49;false
+ffbcad10-3469-4d95-a85a-d1882c5694ab;NEW;cease doubling so;TON;8267.36;15181.57;7835.89;thump;underneath;2024-06-30T14:43:05;2024-06-30T16:16:14;true

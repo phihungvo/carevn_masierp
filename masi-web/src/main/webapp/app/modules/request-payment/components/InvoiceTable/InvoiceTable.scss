@@ -1,0 +1,63 @@
+.invoice_table_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  &_left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    & > span {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21.09px;
+      letter-spacing: -0.5px;
+      text-align: left;
+    }
+
+    .btn_add-invoice {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: none;
+      background: #f1f6fd;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #365fbf;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      text-align: left;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .total-money {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      text-align: left;
+    }
+
+    h5 {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      text-align: left;
+      margin-bottom: 0px !important;
+    }
+  }
+}

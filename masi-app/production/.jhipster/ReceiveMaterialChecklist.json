@@ -1,0 +1,112 @@
+{
+  "annotations": {
+    "changelogDate": "20240605093743"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiProduction",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "checkDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "checkTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "weightNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "transportCondition",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "transportNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkStatus",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "statusNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkSmell",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "smellNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkImpurity",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "impurityNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkPoison",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "poisonNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "receiverId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiProduction",
+  "name": "ReceiveMaterialChecklist",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "workItem",
+      "otherEntityRelationshipName": "receiveMaterialChecklist",
+      "relationshipName": "workItem",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

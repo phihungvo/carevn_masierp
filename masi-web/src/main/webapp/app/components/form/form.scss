@@ -1,0 +1,54 @@
+@import "../../bootstrap-variables";
+
+.form-group {
+  cursor: pointer;
+
+  // &.time-picker {
+  //   position: relative;
+
+  //   input[type="time"]::-webkit-calendar-picker-indicator {
+  //     bottom: 0;
+  //     color: transparent;
+  //     cursor: pointer;
+  //     height: auto;
+  //     left: 0;
+  //     opacity: 0;
+  //     position: absolute;
+  //     right: 0;
+  //     top: 0;
+  //     width: 100%;
+  //   }
+  // }
+}
+
+.form-input.r-select--is-disabled .r-select__control--is-disabled{
+  background-color: $secondary-black-80 !important;
+}
+
+select:disabled {
+  background-color: $secondary-black-80 !important;
+}
+
+.form-check-input:disabled {
+  opacity: 1 ;
+}
+
+.input-time-wrapper {
+  max-width: fit-content;
+  position: relative;
+
+  .close-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: $space-12;
+    cursor: pointer;
+    color: $secondary-black-20;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+      color: $secondary-black-40;
+    }
+  }
+}

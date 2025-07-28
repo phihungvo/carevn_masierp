@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mrp-web
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./deploy/nginx/nginx.develop.conf:/etc/nginx/conf.d/default.conf
+      - ./webpack/environment.develop.js:/webpack/environment.js

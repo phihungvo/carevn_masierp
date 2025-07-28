@@ -1,0 +1,82 @@
+@import '../../bootstrap-variables';
+
+.modal-create-leave-register {
+  .modal-content {
+    width: 820px;
+  }
+}
+
+.modals-propose-leave-register {
+  .modal-content {
+    width: 744px;
+    overflow: unset !important;
+  }
+}
+
+.modals-approve-leave-register {
+  .modal-content {
+    width: 520px;
+  }
+}
+
+.modals-leave-register-reject {
+  .modal-content {
+    width: 520px;
+  }
+}
+
+.modals-filter-leave-register {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.modals-detail-leave-register {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.dayoff-day-type {
+  z-index: 2;
+  position: relative;
+
+  &-input {
+    position: relative;
+
+    &-caret {
+      position: absolute;
+      right: $space-12;
+      top: $space-48;
+    }
+  }
+
+  &-options {
+    background-color: white;
+    position: absolute;
+    right: -$space-16;
+    top: 100%;
+    width: 370px;
+    height: 296px;
+    border-radius: 10px;
+    border: 1px solid $secondary-black-70;
+    padding: $space-16;
+    transition: all 0.1s ease-in-out;
+
+    &.show {
+      display: block;
+      height: 200px;
+    }
+
+    &.hidden {
+      display: none;
+      height: 0;
+    }
+  }
+
+  .input-time-wrapper {
+    input {
+      width: 328px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+enum TimesheetReviewStatus{
+    PENDING
+    APPROVED
+    REJECTED
+}
+
+entity PersonalMonthlyTimesheet{
+    id UUID required unique
+    status TimesheetReviewStatus required 
+    createdDate ZonedDateTime required
+    lastUpdated ZonedDateTime required
+}
+
+entity MonthlyTimeSheetReview{
+    id UUID required unique
+    status TimesheetReviewStatus required
+    note String
+    signature ImageBlob
+    createdDate ZonedDateTime required
+    lastUpdated ZonedDateTime required
+}
+relationship ManyToOne {
+    PersonalMonthlyTimesheet{review} to MonthlyTimeSheetReview
+}
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass

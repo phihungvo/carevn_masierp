@@ -1,0 +1,28 @@
+entity InvoiceSupplies {
+    id UUID,
+    itemId UUID,
+    detail1 String,
+    detail2 String,
+    invoiceId UUID,
+    supplyId UUID,
+    quantity Integer,
+    price BigDecimal,
+    total BigDecimal,
+    tax BigDecimal,
+    description String,
+
+    isDeleted Boolean,
+    createdAt ZonedDateTime required
+    createdBy String required
+    updatedAt ZonedDateTime
+    updatedBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+    company String
+    department String
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

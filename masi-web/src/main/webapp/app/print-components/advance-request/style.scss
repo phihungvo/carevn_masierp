@@ -1,0 +1,126 @@
+.advance-request-print-section {
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .advance-request {
+    &-top {
+      .top-item {
+        &-group {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &-logo {
+          width: 400px;
+          height: 100px;
+        }
+
+        &-contact {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: center;
+        }
+
+        &-text {
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 600;
+          padding-top: 12px;
+
+          &-blue {
+            color: blue;
+
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    &-header {
+      .header-item {
+        &-center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        &-title {
+          font-size: 20px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        &-sub-title {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        &-right {
+          text-align: right;
+
+          font-size: 16px;
+          font-style: italic;
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .content-item {
+        &-text {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        &-group {
+          display: grid;
+          grid-template-columns: 3fr 2fr;
+
+          span {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    &-footer {
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      .footer-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &-text {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        &-sign {
+          height: 60px;
+
+          color: red;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

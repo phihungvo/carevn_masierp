@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ItemSubCategory.
+    -->
+    <changeSet id="20241128001834-1" author="jhipster">
+        <createTable tableName="item_sub_category">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="attribute" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="item_sub_category" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_sub_category" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="item_sub_category" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20241128001834-2" author="jhipster">
+        <sql>
+
+            INSERT INTO "public"."item_sub_category" ("id", "code", "attribute", "name", "is_deleted", "created_at", "created_by", "updated_at", "updated_by", "deleted_at", "deleted_by", "company", "department") VALUES ('5e0e4ed6-03ff-5a34-cde1-e15dc1fbddde', 'ABC-1', 'ABC', 'Nicole Fernandez', 'f', '2009-06-22 23:51:49', 'qNmhSSSoVP', NULL, NULL, NULL, NULL, 'KIM_LONG', NULL) ON CONFLICT ("id") DO NOTHING;
+            INSERT INTO "public"."item_sub_category" ("id", "code", "attribute", "name", "is_deleted", "created_at", "created_by", "updated_at", "updated_by", "deleted_at", "deleted_by", "company", "department") VALUES ('a89a74fc-11f9-38ff-1268-1710c9e3decc', 'ABC-2', 'ABC', 'Ma Anqi', 'f', '2008-04-25 17:56:35', 'RHEbwkFpbG', NULL, NULL, NULL, NULL, 'KIM_LONG', NULL) ON CONFLICT ("id") DO NOTHING;
+            INSERT INTO "public"."item_sub_category" ("id", "code", "attribute", "name", "is_deleted", "created_at", "created_by", "updated_at", "updated_by", "deleted_at", "deleted_by", "company", "department") VALUES ('32cf56cd-0e37-a41c-03b7-4232e0fa2f9e', 'ABC-3', 'ABC', 'Lui Wai Man', 'f', '2019-06-22 01:48:50', 'N2jW6Iyalq', NULL, NULL, NULL, NULL, 'KIM_LONG', NULL) ON CONFLICT ("id") DO NOTHING;
+
+        </sql>
+    </changeSet>
+    <changeSet id="1733113677246-1" author="luc.luong">
+        <sql>
+            ALTER TABLE suppliers ADD COLUMN IF NOT EXISTS payment_term_text text;
+        </sql>
+    </changeSet>
+    <changeSet id="20241128001835-1" author="luc.luong">
+        <sql>
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS delivery_date date;
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS actual_quantity numeric;
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS difference_quantity numeric;
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS supplier_contract_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20241128001835-2" author="luc.luong">
+        <sql>
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS note text;
+            ALTER TABLE delivery_detail ADD COLUMN IF NOT EXISTS address text;
+        </sql>
+    </changeSet>
+    <changeSet id="20241128001836" author="hoang dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE warehouse ADD COLUMN IF NOT EXISTS warehouse_type_page VarChar(50);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241128001837" author="hoang dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE item ADD COLUMN IF NOT EXISTS is_separation BOOLEAN DEFAULT TRUE;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241128001838" author="hoang dang">
+        <sql>
+            ALTER TABLE item ADD COLUMN IF NOT EXISTS percent_protein Float;
+
+            ALTER TABLE payment_request
+                ADD COLUMN IF NOT EXISTS reimbursement_date TIMESTAMPTZ;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

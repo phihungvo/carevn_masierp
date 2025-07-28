@@ -1,0 +1,55 @@
+{
+  "annotations": {
+    "changelogDate": "20240605093746"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiProduction",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiProduction",
+  "name": "MachineGroup",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "machineCheckRecord",
+      "otherEntityRelationshipName": "machineGroup",
+      "relationshipName": "machineCheckRecord",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "machineOperationChecklist",
+      "otherEntityRelationshipName": "machineGroup",
+      "relationshipName": "machineOperationChecklist",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

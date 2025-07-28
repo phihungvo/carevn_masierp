@@ -1,0 +1,11 @@
+entity TemplateContract {
+    id UUID required unique
+    nameFile String required
+    company String required
+    department String
+    isDeleted Boolean
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

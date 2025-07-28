@@ -1,0 +1,26 @@
+entity IncomingInvoice {
+    id UUID,
+    invoiceNo String,
+    invoiceDate ZonedDateTime,
+    employeeId UUID,
+    departmentId UUID,
+    content String,
+    totalAmount BigDecimal,
+    note String,
+    attachments String,
+
+
+}
+
+
+entity DocumentCodeSequence {
+    id UUID,
+    company String
+    currentSequence Integer
+    javaFormat String
+    documentType String
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination except DocumentCodeSequence

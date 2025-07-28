@@ -1,0 +1,284 @@
+
+//entity ManufactureOrder { //lenh san xuat
+//	id UUID required unique,
+//    name String required,
+//    fromDate LocalDate required,
+//    toDate LocalDate required,
+//    status MoStatus required,
+//    orderId UUID required, //do Order o service khac nen chi can id
+//    isActive Boolean required
+//    createdAt ZonedDateTime
+//    lastUpdated ZonedDateTime
+//}
+//
+//enum MoStatus {
+//	CREATED,
+//    PENDING,
+//    APPROVED,
+//    REJECTED,
+//    CANCELLED
+//}
+
+//entity Order {
+//	id UUID required unique
+//    name String
+//}
+
+//relationship OneToOne {
+//    WorkOrder to WorkItem
+//    WorkItem {receiveMaterialChecklist} to ReceiveMaterialChecklist
+//    WorkItem {additiveMaterialChecklist} to AdditiveMaterialChecklist
+//    WorkItem {machineOperationChecklist} to MachineOperationChecklist
+//    WorkItem {steamingProcessChecklist} to SteamingProcessChecklist
+//    WorkItem {metalDetectionChecklist} to MetalDetectionChecklist
+//    WorkItem {mixingReportChecklist} to MixingReportChecklist
+//}
+
+//relationship OneToMany {
+////	Order to ManufactureOrder
+//    ManufactureOrder to WorkOrder
+//}
+
+//entity WorkOrder { //cong doan san xuat
+//	id UUID required unique
+//    fromDate LocalDate required,
+//    toDate LocalDate,
+//    status WoStatus required,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime
+//    lastUpdated ZonedDateTime
+//}
+
+//enum WoStatus {
+//    NEW,
+//    COMPLETED,
+//    RUNNING,
+//    STOP
+//}
+
+
+//entity WorkItem {
+//	id UUID required unique,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime
+//}
+//
+//
+//entity ReceiveMaterialChecklist {
+//	id UUID required unique
+//    checkDate LocalDate required,
+//    checkTime ZonedDateTime required,
+//    weightNumber String required,
+//    transportCondition Boolean required,
+//    transportNote String
+//    checkStatus Boolean required,
+//    statusNote String
+//    checkSmell Boolean required,
+//    smellNote String
+//    checkImpurity Boolean required,
+//    impurityNote String
+//    checkPoison Boolean required,
+//    poisonNote String
+//    receiverId UUID required,
+//    note String,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime,
+//}
+//
+//entity AdditiveMaterialChecklist {
+//	id UUID required unique
+//    checkDate LocalDate required,
+//    checkTime ZonedDateTime required,
+//    weightNumber String required,
+//	checkImpurity Boolean required,
+//    impurityNote String
+//    weightMaterial Float required,
+//    bicabonatLotNumber String required,
+//    bicacbonatWeight Float required,
+//    receiverId UUID required,
+//    note String,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime,
+//}
+//
+//entity MachineOperationChecklist {
+//	id UUID required unique
+//    dateCheck LocalDate required,
+//    timeCheck Instant required,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime,
+//}
+
+//entity Machine {
+//	id UUID required unique
+//    name String required,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime
+//}
+
+//entity MachineGroup {
+//    id UUID required unique
+//    name String required,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime,
+//}
+//
+//entity MachineCheckRecord {
+//	id UUID required unique
+//    status Boolean required,
+//    statusNote String,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime,
+//}
+//
+//relationship OneToMany {
+//	MachineOperationChecklist to MachineGroup
+//    MachineGroup to MachineCheckRecord
+//}
+//
+//entity SteamingProcessChecklist {
+//	id UUID required unique
+//    checkDate LocalDate required,
+//    checkTime ZonedDateTime required,
+//    weightNumber String required,
+//    steamerAtm	String required,
+//    steamerTemp Float required,
+//    steamerTime ZonedDateTime required,
+//    tub1Atm String required,
+//    tub1Temp Float required,
+//    tub1Time ZonedDateTime required,
+//    tub2Atm String required,
+//    tub2Temp Float required,
+//    tub2Time ZonedDateTime required,
+//    finProductNo String required,
+//    receiverId UUID required,
+//    note String,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime,
+//}
+
+entity MetalDetectionChecklist {
+	id UUID required unique
+    checkDate LocalDate required,
+    finProductNo String required,
+    magnetBegin Boolean required,
+    magnetBeginNote String
+    magnetEnd Boolean required,
+    magnetEndNote String
+    screen4Begin Boolean required,
+    screen4BeginNote String
+    screen4End Boolean required,
+    screen4EndNote String
+    screen3Begin Boolean required,
+    screen3BeginNote String
+    screen3End Boolean required,
+    screen3EndNote String
+    checkedBy UUID required,
+    auditedBy UUID required,
+    note String,
+    isActive Boolean required,
+    createdAt ZonedDateTime
+    lastUpdated ZonedDateTime,
+}
+//
+//entity MixingReportChecklist {
+//	id UUID required unique
+//    dateCheck LocalDate required,
+//    finProduct1No String required,
+//    finProduct1Weight Float required,
+//    finProduct2No String required,
+//    finProduct2Weight Float required,
+//    bhtNo String required,
+//    bhtWeight Float required,
+//    bhtWeightPrd Float required,
+//    weightPrdNo String required,
+//    checkImpurity Boolean required,
+//    checkImpurityNote String
+//    checkSmell Boolean required,
+//    checkSmellNote String
+//    checkColor Boolean required,
+//    checkColorNote String
+//    checkEmployeeId String required,
+//    note String,
+//    isActive Boolean required,
+//    createdAt ZonedDateTime
+//    lastUpdated ZonedDateTime,
+//}
+
+//entity QualityCheckSample {
+//    id UUID required unique
+//    samplingDate LocalDate required,
+//    sampleNo String required,
+//    productType String required,
+//    sampleWeight Float required,
+//    customer String required,
+//    reason String
+//    sampleReleaseDate LocalDate
+////    samplingReporterId UUID required,
+//    internalHum String required,
+//    internalTvn String required,
+//    internalAsh String required,
+//    internalProtein String required,
+//    externalHum String required,
+//    externalTvn String required,
+//    externalAsh String required,
+//    externalProtein String required,
+//    samplingEmployeeId UUID required,
+//    status QcSampleStatus,
+//    note String,
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime,
+//    isActive Boolean required,
+//}
+//
+//enum QcSampleStatus {
+//    NEW,
+//    VALID,
+//    AWAITING_DISPOSE,
+//    DISPOSED
+//}
+//
+//entity SampleDisposal {
+//    id UUID required unique
+//    requestDate LocalDate required,
+//    involveEmployee String required,
+//    position String required,
+//    disposalNote String required,
+//    quantityStt Integer required,
+//    quantitySampleName String required,
+//    quantitySampleNo String required,
+//    quantity Float required,
+//    quantitySaveDate LocalDate required,
+//    quantityReleaseDate LocalDate required,
+//    disposalMethod String required,
+//    disposalResult String required,
+//    reviewerId UUID required,
+//    requesterId UUID required,
+//    reviewerApproved Boolean
+//    reviewerNote String
+//    createdAt ZonedDateTime,
+//    lastUpdated ZonedDateTime,
+//    reviewerSign ImageBlob
+//    isActive Boolean required,
+//}
+
+//relationship OneToOne {
+//    QualityCheckSample {disposal} to SampleDisposal {sample}
+//}
+
+// Set pagination options
+paginate * with pagination
+//paginate Order with pagination
+//paginate WorkOrder with pagination
+
+// Set service options to all except few
+dto * with mapstruct
+service * with serviceClass
+

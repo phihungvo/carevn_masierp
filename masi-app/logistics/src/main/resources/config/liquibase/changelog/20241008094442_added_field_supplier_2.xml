@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity SuppliesItem.
+    -->
+    <changeSet id="20241008094442" author="jhipster">
+        <sql>
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS tax_code VARCHAR(250);
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS contact text;
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS payment_term timestamp;
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS short_name VARCHAR(250);
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS fax VARCHAR(250);
+            ALTER TABLE suppliers
+                ADD COLUMN IF NOT EXISTS is_active BOOLEAN;
+        </sql>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+
+</databaseChangeLog>

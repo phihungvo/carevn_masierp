@@ -1,0 +1,18 @@
+.rp {
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  &__header {
+    margin-bottom: 10px;
+  }
+
+  &__footer {
+    > :nth-child(n + 1) {
+      flex-basis: 50%;
+    }
+  }
+}

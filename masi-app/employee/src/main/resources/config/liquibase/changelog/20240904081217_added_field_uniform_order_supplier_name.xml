@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240904081217" author="Hoang Dang">
+        <validCheckSum>any</validCheckSum>
+        <sql dbms="postgresql"
+        endDelimiter=";"
+        splitStatements="false"
+        stripComments="true">
+            ALTER TABLE uniform_order_stock ADD COLUMN IF NOT EXISTS warehouse_id UUID;
+            ALTER TABLE uniform_release ADD COLUMN IF NOT EXISTS warehouse_id UUID;
+
+        </sql>
+
+    </changeSet>
+    <changeSet id="20240916081222" author="HuuHoang" runOnChange="true" failOnError="false">
+        <validCheckSum>any</validCheckSum>
+
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('aa3a8e74-bc22-42c6-90c3-d92807427785', 'Kinh doanh', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'OFFICE', 'KIM_LONG', 'f', 'KINH_DOANH') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('3a426a94-4a05-4161-83a8-8a591ad15e67', 'Kế toán', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'OFFICE', 'KIM_LONG', 'f', 'KE_TOAN') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('17d3222b-9cf2-4976-82df-d9ca04005533', 'Sản xuất', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'KIM_LONG', 'f', 'SAN_XUAT') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('e4baaf47-66aa-4514-9e96-fcf0dd16972e', 'Log * PUR', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'KIM_LONG', 'f', 'LOGPUR') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('ac60ae02-4473-4cdf-97b8-ac7ae43f13de', 'Trộn bột', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'KIM_LONG', 'f', 'MIXING_FLOUR') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('07b87edc-bda3-48e8-9909-71acbcd41af2', 'Bốc xếp', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'KIM_LONG', 'f', 'LOADING_UNLOADING') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('20826ec3-d27d-43fa-a9d1-52c5051465f5', 'Tài xế', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'KIM_LONG', 'f', 'DRIVER') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('b62afa66-d150-458c-9f69-b36f8362d5fe', 'Hành chính nhân sự', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'OFFICE', 'MMS', 'f', 'HCNS') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('3391deeb-3dc5-43e6-adb9-b171e69750d9', 'Kinh doanh', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'OFFICE', 'MMS', 'f', 'KINH_DOANH') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('bc31589f-d608-48ca-9a57-47a299b7db12', 'Kế toán', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'OFFICE', 'MMS', 'f', 'KE_TOAN') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('7965d758-24ce-42d8-a1d7-1050c2136076', 'Sản xuất', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'MMS', 'f', 'SAN_XUAT') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('af6edd45-a233-41fd-9ebe-f97ade389538', 'Log * PUR', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'MMS', 'f', 'LOGPUR') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('3217a51c-fe79-4d63-83d3-c3de59c2fef8', 'Trộn bột', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'MMS', 'f', 'MIXING_FLOUR') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('00c09bf3-0d40-4e50-9076-6c48877a3dcc', 'Bốc xếp', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'MMS', 'f', 'LOADING_UNLOADING') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('6c3be25b-f062-4910-8911-fa9b02c15d12', 'Tài xế', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'FACTORY', 'MMS', 'f', 'DRIVER') on CONFLICT do nothing;
+            INSERT INTO "public"."workspace" ("id", "name", "description", "is_active", "created_at", "last_updated",
+                                              "workspace_type", "company", "can_delete", "normalized_name")
+            VALUES ('c6c30b1a-dfc0-4b73-b523-6c94491fcab5', 'Hành chính nhân sự', '', 't', '2024-09-09 02:26:06',
+                    '2024-08-26 02:27:25.928757', 'OFFICE', 'KIM_LONG', 'f', 'HCNS') on CONFLICT do nothing;
+            INSERT INTO workspace (id, name, workspace_type, description, is_active, created_at,  company, can_delete,
+                                   normalized_name)
+            VALUES(
+                      '98c1272d-496a-4bfa-885b-d4f9fcda01d5', 'Ban Giám Đốc', 'OFFICE', '', True,  '2024-09-13T09:13:15.089452', 'KIM_LONG', False, 'BAN_GIAM_DOC'),
+                  ('dc80959e-4c61-44d5-8a2a-d9a368413c0c', 'Kho &amp; Mua Hàng', 'OFFICE', '', True,  '2024-09-13T09:13:15.089452', 'KIM_LONG', False, 'KHO_&amp;_MUA_HANG') on CONFLICT do nothing;
+
+
+        </sql>
+        <sqlFile dbms="postgresql"
+                 encoding="UTF-8"
+                 endDelimiter=";"
+                 path="data/newem.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"/>
+
+    </changeSet>
+    <changeSet id="1728376702982-1" author="[BE] Huu Hoang">
+        <validCheckSum>
+            alter table workspace alter column description type text using description::text;
+            alter table workspace alter column name type text using name::text;
+        </validCheckSum>
+    </changeSet>
+</databaseChangeLog>

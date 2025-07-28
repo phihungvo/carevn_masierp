@@ -1,0 +1,78 @@
+{
+  "annotations": {
+    "changelogDate": "20240823023215"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiUtility",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "action",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "everyMinute",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "atMinute",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "atHour",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "atDayOfMonth",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "atMonth",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "atDayOfWeek",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "lastRun",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "nextRun",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "CronJobStatus",
+      "fieldValues": "RUNNING,STOPPED,PAUSED,ERROR"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "MasiUtility",
+  "name": "CronJob",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

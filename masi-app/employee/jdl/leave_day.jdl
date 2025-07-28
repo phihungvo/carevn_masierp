@@ -1,0 +1,24 @@
+entity LeaveDay {
+    id UUID required unique,
+    leaveRequestId UUID required,
+    employeeId UUID required,
+    date LocalDate required,
+    leaveRequestDayType LeaveRequestDayType required
+    leaveType LeaveType required,
+    isLocked Boolean required
+}
+
+enum LeaveType{
+    SICK_LEAVE,
+    ANNUAL_LEAVE,
+    MATERNITY_LEAVE,
+    UNPAID_LEAVE
+}
+
+enum LeaveRequestDayType{
+    FULL_DAY,
+    HALF_DAY
+}
+
+dto LeaveDay with mapstruct
+service LeaveDay with serviceClass

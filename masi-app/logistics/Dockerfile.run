@@ -1,0 +1,5 @@
+FROM masi-shared AS build
+
+WORKDIR /build
+COPY ./masi-app/logistics/target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]

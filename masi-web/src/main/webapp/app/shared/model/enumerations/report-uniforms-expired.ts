@@ -1,0 +1,4 @@
+export enum EUniformStatus  {
+  ALLOCATED='ALLOCATED',
+  UNALLOCATED='UNALLOCATED'
+}

@@ -1,0 +1,121 @@
+{
+  "annotations": {
+    "changelogDate": "20240605093749"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiProduction",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "checkDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "finProductNo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "magnetBegin",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "magnetBeginNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "magnetEnd",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "magnetEndNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "screen4Begin",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "screen4BeginNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "screen4End",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "screen4EndNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "screen3Begin",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "screen3BeginNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "screen3End",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "screen3EndNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkedBy",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "auditedBy",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiProduction",
+  "name": "MetalDetectionChecklist",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "workItem",
+      "otherEntityRelationshipName": "metalDetectionChecklist",
+      "relationshipName": "workItem",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

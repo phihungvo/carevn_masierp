@@ -1,0 +1,44 @@
+entity PaymentRequest {
+    id UUID,
+    code String,
+    order Integer,
+    createdBy UUID,
+    createdDate ZonedDateTime,
+    type RequestTypeEnum,
+    departmentId UUID,
+    company String,
+    content String,
+    attachments String,
+    totalAmount BigDecimal,
+    paidAmount BigDecimal,
+    remainingAmount BigDecimal,
+    paymentDate ZonedDateTime,
+    note String,
+    status RequestStatus
+}
+
+entity PaymentDetail {
+    id UUID,
+    paymentRequestId UUID,
+    invoiceId UUID
+}
+
+enum RequestTypeEnum{
+    PAYMENT,
+    ADVANCEMENT,
+    REIMBURSEMENT
+}
+
+enum RequestStatus {
+    NEW,
+    WAITING_APPROVE,
+    APPROVED,
+    REJECTED,
+    IN_PROGRESS,
+    COMPLETED
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

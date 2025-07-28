@@ -1,0 +1,22 @@
+isDeleted Boolean,
+createdAt ZonedDateTime required
+createdBy String required
+updatedAt ZonedDateTime
+updatedBy String
+deletedAt ZonedDateTime
+deletedBy String
+company String
+department String
+
+
+
+
+
+
+
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

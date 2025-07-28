@@ -1,0 +1,63 @@
+{
+  "annotations": {
+    "changelogDate": "20240525045021"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TimeKeepingViolationType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ABSENT_WITHOUT_REQUEST,INSUFFICIENT_WORKING_TIME,OVERTIME,MISSING_CHECKOUT,NO_VIOLATION"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastUpdatedAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "TimeKeepingViolation",
+  "relationships": [
+    {
+      "otherEntityName": "timeKeeping",
+      "otherEntityRelationshipName": "violation",
+      "relationshipName": "timeKeeping",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "timeKeepingExplanation",
+      "otherEntityRelationshipName": "violation",
+      "relationshipName": "explanation",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

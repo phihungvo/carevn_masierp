@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Inventories.
+    -->
+    <changeSet id="20241111081123-1" author="jhipster">
+        <createTable tableName="inventories">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="receiver_user_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="delivery_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="inventories_type_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_create" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_recipient_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="invoice_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="address" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="purchase_price" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sale_price" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_amount" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="input_department_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="incoming_warehouse_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="outgoing_warehouse_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="order_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="supplier_request_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="tax_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="series" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="currency_code_rate" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="exchange_rate" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_emptiness" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="emptiness_id" type="${uuidType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="file" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="attribute" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_deleted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="company" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="department" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="inventories" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="inventories" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="inventories" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20241111081123-2" author="hoang dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+
+            DROP TABLE IF EXISTS inventory;
+
+            DROP TABLE IF EXISTS inventory_check;
+
+
+            DROP TABLE IF EXISTS inventory_in_out_check;
+
+
+            DROP TABLE IF EXISTS inventory_transaction_details;
+
+
+            DROP TABLE IF EXISTS inventory_transactions;
+
+
+-- /////////
+
+            ALTER TABLE inventories
+                DROP COLUMN IF EXISTS file;
+
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS file Json;
+
+            ALTER TABLE inventories
+                DROP COLUMN IF EXISTS attribute;
+
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS attribute Json;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241111081123-3" author="hoang dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS purchase_contract_id UUID;
+
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS production_id UUID;
+
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS warehouse_type VARCHAR(225);
+
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS is_review BOOLEAN DEFAULT true;
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241111081123-4" author="hoang dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS created_by_employee_id UUID;
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS created_date_by_employee DATE;
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS context VARCHAR(255);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS issue_date DATE;
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS contract_id VARCHAR(255);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS contract_code VARCHAR(255);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS contract_content VARCHAR(255);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS contract_date DATE;
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS supplier_id UUID;
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS tax_number VARCHAR(50);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS tel VARCHAR(50);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS payment_method VARCHAR(100);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS currency VARCHAR(50);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS exchange_rate FLOAT;
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS warehouse_id VARCHAR(255);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS note TEXT;
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS vat_percentage DECIMAL(5, 2);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS total_vat DECIMAL(18, 2);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS total_paid DECIMAL(18, 2);
+            ALTER TABLE supplies_request ADD COLUMN IF NOT EXISTS attached_files JSONB;
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241111081123-5" author="hoang dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS is_invoice BOOLEAN DEFAULT false;
+
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS total_quantity NUMERIC;
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241111081123-6" author="hoang dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE inventories
+                ADD COLUMN IF NOT EXISTS payment_request_id UUID;
+
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

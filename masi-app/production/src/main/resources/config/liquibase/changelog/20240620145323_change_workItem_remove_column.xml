@@ -1,0 +1,42 @@
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet author="liquibase-docs" id="20240620145323-1">
+        <dropColumn tableName="work_item">
+            <column name="receive_material_checklist_id"/>
+            <column name="additive_material_checklist_id"/>
+            <column name="machine_operation_checklist_id"/>
+            <column name="steaming_process_checklist_id"/>
+            <column name="metal_detection_checklist_id"/>
+            <column name="mixing_report_checklist_id"/>
+        </dropColumn>
+    </changeSet>
+
+    <changeSet author="liquibase-docs" id="20240620145323-2">
+        <addColumn tableName="additive_material_checklist">
+            <column name="work_item_id" type="${uuidType}"/>
+        </addColumn>
+        <addColumn tableName="receive_material_checklist">
+            <column name="work_item_id" type="${uuidType}"/>
+        </addColumn>
+        <addColumn tableName="steaming_process_checklist">
+            <column name="work_item_id" type="${uuidType}"/>
+        </addColumn>
+        <addColumn tableName="metal_detection_checklist">
+            <column name="work_item_id" type="${uuidType}"/>
+        </addColumn>
+        <addColumn tableName="mixing_report_checklist">
+            <column name="work_item_id" type="${uuidType}"/>
+        </addColumn>
+        <addColumn tableName="machine_operation_checklist">
+            <column name="work_item_id" type="${uuidType}"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

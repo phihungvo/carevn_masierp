@@ -1,0 +1,53 @@
+{
+  "annotations": {
+    "changelogDate": "20240601140624"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "explanation",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ExplanationStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDING,APPROVED,REJECTED,CANCELLED"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "TimeKeepingViolationType",
+      "fieldTypeDocumentation": "Time keeping record entity.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ABSENT_WITHOUT_REQUEST,INSUFFICIENT_WORKING_TIME,OVERTIME,MISSING_CHECKOUT,NO_VIOLATION"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "TimeKeepingExplanation",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

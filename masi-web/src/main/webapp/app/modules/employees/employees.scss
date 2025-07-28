@@ -1,0 +1,156 @@
+@import '../../bootstrap-variables';
+
+.modal-employees-filter {
+  .modal-content {
+    width: 290px;
+    overflow: unset !important;
+  }
+}
+
+.employee-detail-modal {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.employee-upload-modal {
+  .modal-content {
+    width: 400px;
+  }
+}
+
+.employee-upload {
+  &-container {
+    cursor: pointer;
+    margin-bottom: $space-12;
+    width: 320px;
+    height: 62px;
+    padding: $space-12 $space-12 $space-12 $space-16;
+    border-radius: $space-8;
+    border: 1px solid $secondary-black-60;
+  }
+
+  &-label {
+    position: relative;
+    font-weight: $font-body-400;
+    font-size: $text-body-16;
+    line-height: 18.75px;
+    letter-spacing: -0.5px;
+
+    &-required {
+      top: -4px;
+      left: -8px;
+      color: #ff1212;
+      font-weight: $font-body-400;
+      font-size: $text-body-14;
+      position: absolute;
+    }
+  }
+
+  &-sub {
+    font-size: $text-body-12;
+    font-weight: $font-body-400;
+    line-height: 14.06px;
+    letter-spacing: -0.5px;
+    color: #b3b3b3;
+  }
+}
+.confirm-leave-modal {
+  .modal-content {
+    width: 744px;
+    overflow: unset !important;
+  }
+}
+
+.modal-employees-filter {
+  .modal-content {
+    width: 600px;
+    transform: translate(-12%);
+    overflow: unset !important;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 16px;
+  justify-items: center;
+  padding: 20px 0px 20px 0px;
+  margin: auto;
+
+  .list-image {
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 8px;
+
+      .image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 14px;
+        border: 1px solid #d4d4d4;
+      }
+
+      .image-footer {
+        margin-top: 4px;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 3000px) {
+  .container {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 32px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 2500px) {
+  .container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 2000px) {
+  .container {
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1600px) {
+  .container {
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1222px) {
+  .container {
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin: auto;
+    padding: 20px;
+  }
+}
+
+.error {
+  color: $red-error-50;
+}

@@ -1,0 +1,99 @@
+{
+  "annotations": {
+    "changelogDate": "20240701092235"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiSale",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "requestStatus",
+      "fieldType": "RequestStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "NEW,WAITING_APPROVAL,APPROVED,REJECTED,DELIVERING,FINISHED"
+    },
+    {
+      "fieldName": "productName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "unit",
+      "fieldType": "Unit",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "KG,TON,PIECE"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "unitPrice",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "supplier",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiSale",
+  "name": "PurchaseRequest",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "purchaseRequestFile",
+      "otherEntityRelationshipName": "purchaseRequest",
+      "relationshipName": "purchaseRequestFile",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "purchaseDelivery",
+      "otherEntityRelationshipName": "purchaseRequest",
+      "relationshipName": "purchaseDelivery",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "purchaseReview",
+      "otherEntityRelationshipName": "purchaseRequest",
+      "relationshipName": "purchaseReview",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240813094046" author="HuuHoang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+        endDelimiter=";"
+        splitStatements="true"
+        stripComments="true">
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS delivery_location_en VARCHAR(500);
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS packaging_en VARCHAR(500);
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS price_type_en VARCHAR(500);
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS payment_method_en VARCHAR(500);
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS material_criteria_en VARCHAR(500);
+            ALTER TABLE material ADD COLUMN IF NOT EXISTS name_en VARCHAR(500);
+            truncate table material;
+
+
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

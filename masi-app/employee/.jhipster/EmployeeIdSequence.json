@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20240711024112"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "currentSequence",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "FEMALE,MALE,NO_PREFERENCE"
+    },
+    {
+      "fieldName": "workspaceId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "EmployeeIdSequence",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,121 @@
+{
+  "annotations": {
+    "changelogDate": "20240709034214"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "requestDescription",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "position",
+      "fieldType": "Position",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EMPLOYEE,TEAM_LEADER,SUPERVISOR,DIRECTOR"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "wage",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "level",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "recruitmentPurposes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "requestNotes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValues": "FEMALE,MALE,NO_PREFERENCE"
+    },
+    {
+      "fieldName": "approvalSign",
+      "fieldType": "ImageBlob"
+    },
+    {
+      "fieldName": "rejectNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "RecruitmentStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "WAITING_APPROVAL,APPROVED,REJECTED"
+    },
+    {
+      "fieldName": "contractType",
+      "fieldType": "ContractType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "TRIAL,FIXED_TERM,UNDEFINED_TERM,SEASONAL"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "RecruitmentRequest",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "interviewSchedule",
+      "otherEntityRelationshipName": "recruitmentRequest",
+      "relationshipName": "interviewSchedules",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

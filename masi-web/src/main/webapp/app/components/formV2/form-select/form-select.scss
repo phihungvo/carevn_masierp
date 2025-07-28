@@ -1,0 +1,25 @@
+@import '../../../bootstrap-variables';
+
+.form-group-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px !important;
+
+  min-width: 80px;
+
+  .form-label-v2 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+
+    margin-bottom: 0px !important;
+
+    color: #344054;
+  }
+
+  select:disabled {
+    background-color: $secondary-black-80 !important;
+  }
+}

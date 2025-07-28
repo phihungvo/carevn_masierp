@@ -1,0 +1,58 @@
+
+
+entity SuppliesRequest {
+    id UUID required
+    code String,
+    requestNumber String required, // Số CT
+    requestDate LocalDate required, // Ngày CT
+    requestByEmployeeId UUID ,
+    departmentId UUID ,
+    requestStatus RequestStatus required, // Trạng thái: Mới, Đợi duyệt, Đã duyệt, Từ chối, Đang giao, Hoàn tất
+    totalAmount BigDecimal required, // Tổng tiền thanh toán
+    note String,
+
+    company String,
+    department String,
+    isDeleted Boolean,
+    createdBy String,
+    createdDate ZonedDateTime,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime
+}
+
+entity SuppliesItem {
+    id UUID required,
+    idSuppliesRequest UUID required,
+    idItem UUID required,
+    idUom UUID ,
+    suppliesId UUID ,
+    quantity Integer required,
+    price BigDecimal ,
+
+    company String,
+    department String,
+    isDeleted Boolean,
+    createdBy String,
+    createdDate ZonedDateTime,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime
+}
+
+enum RequestStatus {
+    NEW,
+    WAITING_APPROVE,
+    APPROVED,
+    REJECTED,
+    IN_PROGRESS,
+    COMPLETED
+}
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

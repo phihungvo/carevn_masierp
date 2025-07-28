@@ -1,0 +1,147 @@
+{
+  "annotations": {
+    "changelogDate": "20240605093745"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiProduction",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "checkTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "incineratorAirDuct",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "incineratorAirDuctNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "incinerator",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "incineratorCheckNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dryingOvenAirDuct",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dryingOvenAirDuctNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dryingOvenMeter",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dryingOvenMeterNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dryingOvenWall",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dryingOvenWallNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dryingOvenValve",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dryingOvenValveNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sieveScreen",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "sieveScreenNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "crusher",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "crusherNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "magnet",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "magnetNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mixer",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "mixerNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "packagingMachine",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "packagingMachineNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiProduction",
+  "name": "MachineOperationChecklist",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "workItem",
+      "otherEntityRelationshipName": "machineOperationChecklist",
+      "relationshipName": "workItem",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

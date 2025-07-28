@@ -1,0 +1,102 @@
+{
+  "annotations": {
+    "changelogDate": "20241127083951"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attribute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "TextBlob"
+    },
+    {
+      "fieldName": "inventoriesStorageId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "TextBlob"
+    },
+    {
+      "fieldName": "costInformation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amortizedCostInformation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amortizationAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "amortizationRate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "accumulatedAmortizationAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "recipe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "ItemAssetDepreciationDetail",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

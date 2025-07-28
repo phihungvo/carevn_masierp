@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ReleaseWarehouse.
+    -->
+    <changeSet id="20240924021556" author="jhipster">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE "public"."manufacture_order"
+                ALTER COLUMN "order_id" DROP NOT NULL;
+
+            alter table manufacture_order
+                add column if not exists production_quantity Float;
+
+            alter table product_package
+                add column if not exists is_sew Boolean;
+
+            alter table product_package
+                add column if not exists material_id UUID;
+
+            alter table work_order
+                add column if not exists manufacture_order_type varchar;
+
+            ALTER TABLE product_package
+            DROP
+            CONSTRAINT fk_product_package__work_order_id;
+
+
+        </sql>
+
+    </changeSet>
+
+    <changeSet id="20240924021556-2" author="Hoang Dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>
+            ALTER TABLE manufacture_order
+                ADD COLUMN IF NOT EXISTS attributes Json;
+
+            ALTER TABLE manufacture_order
+                ADD COLUMN IF NOT EXISTS created_by UUID;
+
+            ALTER TABLE manufacture_order
+                ADD COLUMN IF NOT EXISTS product_package_id UUID;
+
+            ALTER TABLE manufacture_order
+                ADD COLUMN IF NOT EXISTS product_maintain_id UUID;
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

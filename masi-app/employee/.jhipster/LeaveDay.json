@@ -1,0 +1,53 @@
+{
+  "annotations": {
+    "changelogDate": "20240626035758"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "leaveRequestId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "leaveRequestDayType",
+      "fieldType": "LeaveRequestDayType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "FULL_DAY,HALF_DAY"
+    },
+    {
+      "fieldName": "leaveType",
+      "fieldType": "LeaveType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SICK_LEAVE,ANNUAL_LEAVE,MATERNITY_LEAVE,UNPAID_LEAVE"
+    },
+    {
+      "fieldName": "isLocked",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "LeaveDay",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

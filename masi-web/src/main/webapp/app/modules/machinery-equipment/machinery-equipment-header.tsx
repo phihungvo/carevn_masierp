@@ -1,0 +1,34 @@
+import AuthGuard from 'app/components/guards/auth-guard';
+import InputSearch from 'app/components/input/input-search';
+import { Action, PermissionResource } from 'app/shared/model/permission.model';
+import React from 'react';
+import { Button } from 'reactstrap';
+
+interface IMachineryEquipmentHeader {
+  setSearchText: (value: string) => void;
+  toggleFilter: () => void;
+  toggleCreate: () => void;
+}
+export default function MachineryEquipmentHeader(props: IMachineryEquipmentHeader) {
+  const { setSearchText, toggleFilter, toggleCreate } = props;
+  return (
+    <div className="card-header-container">
+      <div className="card-header-extra">
+        <InputSearch
+          className="card-header-extra"
+          onChange={e => {
+            setSearchText(e.target.value);
+          }}
+        />
+      </div>
+      <div className="card-header-extra">
+        <Button className="btn-filter" onClick={toggleFilter}>
+          Lọc <img src="content/images/vuesax/linear/sort.svg" alt="filter" />
+        </Button>
+          <Button color="primary" onClick={toggleCreate}>
+            Tạo mới
+          </Button>
+      </div>
+    </div>
+  );
+}

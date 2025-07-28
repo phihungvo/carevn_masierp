@@ -1,0 +1,19 @@
+@import '../../../bootstrap-variables';
+
+#menus-left {
+  left: 0px;
+  height: 100vh;
+  background-color: white;
+  z-index: 0;
+}
+
+.menus-left-container {
+  max-height: calc(100vh - 92px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box !important;
+}
+
+.menus-left-container::-webkit-scrollbar-track {
+  background: white;
+}

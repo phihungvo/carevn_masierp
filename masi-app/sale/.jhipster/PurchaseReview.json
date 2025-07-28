@@ -1,0 +1,60 @@
+{
+  "annotations": {
+    "changelogDate": "20240701092238"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiSale",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PurchaseReviewStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "APPROVED,PENDING,REJECTED"
+    },
+    {
+      "fieldName": "approvalStatusSign",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "approvalStatusNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "MasiSale",
+  "name": "PurchaseReview",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "purchaseRequest",
+      "otherEntityRelationshipName": "purchaseReview",
+      "relationshipName": "purchaseRequest",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

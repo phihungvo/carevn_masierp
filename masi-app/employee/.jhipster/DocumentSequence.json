@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20240823090431"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "entityName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currentSequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "DocumentSequence",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

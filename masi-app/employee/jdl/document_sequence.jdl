@@ -1,0 +1,10 @@
+entity DocumentSequence{
+    entityName String,
+    currentSequence Integer,
+    company String,
+    department String,
+    isActive Boolean
+}
+
+dto * with mapstruct
+service * with serviceClass

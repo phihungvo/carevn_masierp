@@ -1,0 +1,72 @@
+entity Shift {
+  id UUID required,
+  idStandardWorkScheduleConfig UUID,
+  shiftName String,
+  durationHours Integer,
+
+  hourStartTime Integer,
+  minuteStartTime Integer,
+  secondStartTime Integer,
+
+  hourEndTime Integer,
+  minuteEndTime Integer,
+  secondEndTime Integer,
+
+  company String,
+  department String,
+  isDeleted Boolean,
+  createdBy String,
+  createdDate ZonedDateTime,
+  updatedBy String,
+  updatedAt ZonedDateTime,
+  deletedBy String,
+  deletedAt ZonedDateTime
+}
+
+
+entity EmployeeShiftDetail {
+  id  UUID required,
+  date LocalDate required,
+  timeKeepingId UUID,
+  checkInTime Instant,
+  checkOutTime Instant,
+  completionPercent Float,
+
+  company String,
+  department String,
+  isDeleted Boolean,
+  createdBy String,
+  createdDate ZonedDateTime,
+  updatedBy String,
+  updatedAt ZonedDateTime,
+  deletedBy String,
+  deletedAt ZonedDateTime
+}
+
+
+entity EmployeeShift {
+  id  UUID required,
+  employeeId UUID required,
+  shiftId UUID required,
+
+  company String,
+  department String,
+  isDeleted Boolean,
+  createdBy String,
+  createdDate ZonedDateTime,
+  updatedBy String,
+  updatedAt ZonedDateTime,
+  deletedBy String,
+  deletedAt ZonedDateTime
+}
+
+
+filter *
+service all with serviceClass
+paginate * with pagination
+dto * with mapstruct
+
+
+
+
+

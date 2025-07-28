@@ -1,0 +1,56 @@
+.ps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &_header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    & > span {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21.09px;
+      letter-spacing: -0.5px;
+      text-align: left;
+    }
+
+    .btn_add-person-sign {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: none;
+      background: #f1f6fd;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #365fbf;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      text-align: left;
+    }
+  }
+}
+
+.modal-voucher-request-payment-create,
+.modal-voucher-request-payment-detail,
+.modal-voucher-request-payment-update,
+.modal-voucher-request-of-advance-create,
+.modal-voucher-request-of-advance-detail,
+.modal-voucher-request-of-advance-update,
+.modal-voucher-advance-repayment-create,
+.modal-voucher-advance-repayment-detail,
+.modal-voucher-advance-repayment-update,
+.voucher-request-payment-detail-changelog-modals {
+  .modal-content {
+    width: 1100px;
+  }
+}
+
+.modals-voucher-request-payment-propose {
+  .modal-content {
+    overflow: unset !important;
+  }
+}

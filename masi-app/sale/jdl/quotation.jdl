@@ -1,0 +1,39 @@
+entity Quotation {
+    id UUID required unique
+    status QuotationStatus required,
+    description String required,
+    quantity Float required,
+    unitPrice Float required,
+    totalPrice Float,
+    approvalSign ImageBlob, // trả về list thì không cần map
+    rejectNote String, // trả về list thì không cần map
+    approverId UUID,
+    companyId UUID,
+    lastUpdated ZonedDateTime required
+    updatedBy String required
+    createdDate ZonedDateTime required
+    createdBy String required
+    isDeleted Boolean required
+    deletedDate ZonedDateTime
+    deletedBy String
+}
+enum QuotationStatus {
+    NEW, WAITING_APPROVAL, APPROVED, CUSTOMER_APPROVED, NEED_UPDATE, SENT, REJECTED, CANCELLED
+}
+entity QuotationExport {
+    id UUID required unique,
+    pdfPath String required
+    lastUpdated ZonedDateTime required
+    updatedBy String required
+    createdDate ZonedDateTime required
+    createdBy String required
+    isDeleted Boolean required
+    deletedDate ZonedDateTime
+    deletedBy String
+}
+relationship OneToMany {
+    Quotation to QuotationExport
+}
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

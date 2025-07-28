@@ -1,0 +1,26 @@
+entity ProcessLeaveRegimeRequest{
+    id UUID,
+    leaveRegimeRequestId UUID,
+    status ProcessLeaveRegimeRequestStatus,
+    employeeId UUID,
+    approverId UUID,
+    reason String,
+    createdAt ZonedDateTime,
+  updatedAt ZonedDateTime,
+  deletedAt ZonedDateTime,
+  isDeleted Boolean,
+  createdBy UUID,
+  updatedBy UUID,
+  deletedBy UUID
+}
+
+enum ProcessLeaveRegimeRequestStatus{
+    WAITING_APPROVAL
+    APPROVED
+    REJECTED
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass

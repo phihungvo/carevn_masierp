@@ -1,0 +1,95 @@
+
+
+enum ContractType{
+    TRIAL
+    FIXED_TERM
+    UNDEFINED_TERM
+    SEASONAL
+}
+
+enum Position {
+    EMPLOYEE
+    TEAM_LEADER
+    SUPERVISOR
+    DIRECTOR
+}
+
+enum RecruitmentStatus {
+    WAITING_APPROVAL
+    APPROVED
+    REJECTED
+}
+
+enum RecruitmentProcess {
+    WAITING_INTERVIEW
+    INTERVIEWED
+}
+
+enum InterviewResult {
+    PASS
+    FAIL
+    HOLD
+}
+
+
+enum InterviewMode {
+    ONLINE
+    OFFLINE
+}
+
+enum  Gender{
+    FEMALE
+    MALE
+    NO_PREFERENCE
+}
+
+
+
+
+entity RecruitmentRequest {
+    id UUID required
+    requestDescription String required
+    position Position required
+    jobTitle String required
+    wage Float required
+    quantity Integer required
+    level Integer required
+    startDate LocalDate
+    recruitmentPurposes String
+    employeeId UUID required
+    requestNotes String
+    description String
+    gender Gender
+    approvalSign ImageBlob
+    rejectNote String
+    status RecruitmentStatus required
+    contractType ContractType required
+    lastUpdated  ZonedDateTime required
+    createdDate ZonedDateTime required
+    isDeleted Boolean
+}
+
+entity InterviewSchedule {
+    id UUID required
+    candidateName String required
+    interviewDate ZonedDateTime required
+    cvFile ImageBlob
+    interviewerId UUID required
+    rate String
+    process RecruitmentProcess
+    interviewMode InterviewMode
+    interviewResult InterviewResult
+    lastUpdated  ZonedDateTime required
+    createdDate ZonedDateTime required
+    isDeleted Boolean
+}
+
+relationship OneToMany {
+    RecruitmentRequest{interviewSchedules} to InterviewSchedule{recruitmentRequest}
+}
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass
+
+

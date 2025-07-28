@@ -1,0 +1,377 @@
+REQUEST:
+    VIEW: "Phiếu đề nghị"
+    CREATE: "Tạo phiếu đề nghị"
+    EDIT: "Chỉnh sửa phiếu đề nghị"
+    EXPORT: "Xuất phiếu đề nghị"
+
+SUPPLIES_REQUESTS:
+    VIEW: "Đề xuất mua hàng"
+    CREATE: "Tạo đề xuất mua hàng"
+    EDIT: "Chỉnh sửa đề xuất mua hàng"
+    EXPORT: "Xuất đề xuất mua hàng"
+
+TIME_SHEET:
+    VIEW: "Chấm công"
+    CREATE: "Tạo chấm công"
+    EDIT: "Chỉnh sửa chấm công"
+    EXPORT: "Xuất chấm công"
+
+TIME_SHEET_VIOLATION:
+    VIEW: "Vi phạm chấm công"
+    CREATE: "Tạo vi phạm chấm công"
+    EDIT: "Chỉnh sửa vi phạm chấm công"
+    EXPORT: "Xuất vi phạm chấm công"
+
+TIME_SHEET_EXPLANATION:
+    VIEW: "Giải trình chấm công"
+    CREATE: "Tạo giải trình chấm công"
+    EDIT: "Chỉnh sửa giải trình chấm công"
+    EXPORT: "Xuất giải trình chấm công"
+
+TIME_SHEET_BULK_APPROVAL:
+    VIEW: "Duyệt chấm công tháng"
+    CREATE: "Tạo duyệt chấm công tháng"
+    EDIT: "Chỉnh sửa duyệt chấm công tháng"
+    EXPORT: "Xuất duyệt chấm công tháng"
+
+LEAVE_REQUEST:
+    VIEW: "Nghỉ phép"
+    CREATE: "Tạo đơn nghỉ phép"
+    EDIT: "Chỉnh sửa đơn nghỉ phép"
+    EXPORT: "Xuất đơn nghỉ phép"
+
+CUSTOMERS:
+    VIEW: "Danh sách khách hàng"
+    CREATE: "Tạo khách hàng"
+    EDIT: "Chỉnh sửa khách hàng"
+    EXPORT: "Xuất danh sách khách hàng"
+
+CUSTOMERS_DISPOSED:
+    VIEW: "Danh sách vô hiệu hoá"
+    CREATE: "Tạo khách hàng vô hiệu hoá"
+    EDIT: "Chỉnh sửa khách hàng vô hiệu hoá"
+    EXPORT: "Xuất danh sách khách hàng vô hiệu hoá"
+
+PRICE_LIST:
+    VIEW: "Bảng báo giá"
+    CREATE: "Tạo bảng báo giá"
+    EDIT: "Chỉnh sửa bảng báo giá"
+    EXPORT: "Xuất bảng báo giá"
+
+CONTRACTS:
+    VIEW: "Danh sách tất cả hợp đồng"
+    CREATE: "Tạo hợp đồng"
+    EDIT: "Chỉnh sửa hợp đồng"
+    EXPORT: "Xuất hợp đồng"
+
+CONTRACTS_DELETED:
+    VIEW: "Danh sách hợp đồng đã xoá"
+    CREATE: "Tạo hợp đồng đã xoá"
+    EDIT: "Chỉnh sửa hợp đồng đã xoá"
+    EXPORT: "Xuất hợp đồng đã xoá"
+
+ORDERS:
+    VIEW: "Đơn đặt hàng"
+    CREATE: "Tạo đơn đặt hàng"
+    EDIT: "Chỉnh sửa đơn đặt hàng"
+    EXPORT: "Xuất đơn đặt hàng"
+
+EMPLOYEES:
+    VIEW: "Danh sách NV"
+    CREATE: "Tạo nhân viên"
+    EDIT: "Chỉnh sửa nhân viên"
+    EXPORT: "Xuất danh sách nhân viên"
+
+OFFICES:
+    VIEW: "Văn phòng/Nhà máy"
+    CREATE: "Tạo văn phòng"
+    EDIT: "Chỉnh sửa văn phòng"
+    EXPORT: "Xuất danh sách văn phòng"
+
+LEAVE_REGISTER:
+    VIEW: "Đăng ký nghỉ chế độ"
+    CREATE: "Tạo đăng ký nghỉ chế độ"
+    EDIT: "Chỉnh sửa đăng ký nghỉ chế độ"
+    EXPORT: "Xuất đăng ký nghỉ chế độ"
+
+RECRUITMENT:
+    VIEW: "Yêu cầu tuyển dụng"
+    CREATE: "Tạo yêu cầu tuyển dụng"
+    EDIT: "Chỉnh sửa yêu cầu tuyển dụng"
+    EXPORT: "Xuất yêu cầu tuyển dụng"
+
+RECRUITMENT_CANDIDATES:
+    VIEW: "Danh sách ứng viên"
+    CREATE: "Tạo ứng viên"
+    EDIT: "Chỉnh sửa ứng viên"
+    EXPORT: "Xuất danh sách ứng viên"
+
+DOCUMENTARY:
+    VIEW: "Công văn"
+    CREATE: "Tạo công văn"
+    EDIT: "Chỉnh sửa công văn"
+    EXPORT: "Xuất công văn"
+
+UNIFORM:
+    VIEW: "Danh sách đồng phục"
+    CREATE: "Tạo đồng phục"
+    EDIT: "Chỉnh sửa đồng phục"
+    EXPORT: "Xuất danh sách đồng phục"
+
+UNIFORM_ORDERS:
+    VIEW: "Đơn mua đồng phục"
+    CREATE: "Tạo đơn mua đồng phục"
+    EDIT: "Chỉnh sửa đơn mua đồng phục"
+    EXPORT: "Xuất đơn mua đồng phục"
+
+UNIFORM_EXPORTS:
+    VIEW: "Quản lý kho"
+    CREATE: "Tạo quản lý kho"
+    EDIT: "Chỉnh sửa quản lý kho"
+    EXPORT: "Xuất quản lý kho"
+
+REPORT_UNIFORMS_EXPIRED:
+    VIEW: "Nhân viên đến hạn cấp đồng phục"
+    CREATE: "Tạo báo cáo đồng phục hết hạn"
+    EDIT: "Chỉnh sửa báo cáo đồng phục hết hạn"
+    EXPORT: "Xuất báo cáo đồng phục hết hạn"
+
+REPORT_UNIFORMS_EXPORTS:
+    VIEW: "Nhập xuất tồn đồng phục"
+    CREATE: "Tạo báo cáo nhập xuất tồn đồng phục"
+    EDIT: "Chỉnh sửa báo cáo nhập xuất tồn đồng phục"
+    EXPORT: "Xuất báo cáo nhập xuất tồn đồng phục"
+
+REPORT_EMPLOYEE_EXPIRING_CONTRACT:
+    VIEW: "NV sắp hết hạn HĐ"
+    CREATE: "Tạo báo cáo hợp đồng hết hạn"
+    EDIT: "Chỉnh sửa báo cáo hợp đồng hết hạn"
+    EXPORT: "Xuất báo cáo hợp đồng hết hạn"
+
+REPORT_HUMAN_RESOURCE_CHANGE:
+    VIEW: "Biến động nhân sự"
+    CREATE: "Tạo báo cáo biến động nhân sự"
+    EDIT: "Chỉnh sửa báo cáo biến động nhân sự"
+    EXPORT: "Xuất báo cáo biến động nhân sự"
+
+REPORT_LEAVE_REGIME:
+    VIEW: "Số lượng NV đăng ký nghỉ chế độ"
+    CREATE: "Tạo báo cáo nghỉ chế độ"
+    EDIT: "Chỉnh sửa báo cáo nghỉ chế độ"
+    EXPORT: "Xuất báo cáo nghỉ chế độ"
+
+REPORT_RECRUITMENT:
+    VIEW: "Yêu cầu tuyển dụng"
+    CREATE: "Tạo báo cáo yêu cầu tuyển dụng"
+    EDIT: "Chỉnh sửa báo cáo yêu cầu tuyển dụng"
+    EXPORT: "Xuất báo cáo yêu cầu tuyển dụng"
+
+PRODUCTION_MANUFACTURE_ORDER_STANDARD:
+    VIEW: "Hằng ngày"
+    CREATE: "Tạo đơn hàng sản xuất"
+    EDIT: "Chỉnh sửa đơn hàng sản xuất"
+    EXPORT: "Xuất đơn hàng sản xuất"
+
+PRODUCTION_MANUFACTURE_ORDER:
+    VIEW: "Trộn bột"
+    CREATE: "Tạo đơn hàng trộn bột"
+    EDIT: "Chỉnh sửa đơn hàng trộn bột"
+    EXPORT: "Xuất đơn hàng trộn bột"
+
+PRODUCTION_PACKAGES:
+    VIEW: "Quản lý đóng gói"
+    CREATE: "Tạo quản lý đóng gói"
+    EDIT: "Chỉnh sửa quản lý đóng gói"
+    EXPORT: "Xuất quản lý đóng gói"
+
+PRODUCTION_QUALITY:
+    VIEW: "Quản lý kiểm tra chất lượng"
+    CREATE: "Tạo quản lý kiểm tra chất lượng"
+    EDIT: "Chỉnh sửa quản lý kiểm tra chất lượng"
+    EXPORT: "Xuất quản lý kiểm tra chất lượng"
+
+PRODUCTION_MAINTENANCE:
+    VIEW: "Quản lý bảo trì sản phẩm"
+    CREATE: "Tạo quản lý bảo trì sản phẩm"
+    EDIT: "Chỉnh sửa quản lý bảo trì sản phẩm"
+    EXPORT: "Xuất quản lý bảo trì sản phẩm"
+
+PRODUCTION_ROUTINGS:
+    VIEW: "Quản lý tuyến kho sản xuất"
+    CREATE: "Tạo quản lý tuyến kho sản xuất"
+    EDIT: "Chỉnh sửa quản lý tuyến kho sản xuất"
+    EXPORT: "Xuất quản lý tuyến kho sản xuất"
+
+PRODUCTION_STANDARD:
+    VIEW: "Quản lý định mức sản xuất"
+    CREATE: "Tạo quản lý định mức sản xuất"
+    EDIT: "Chỉnh sửa quản lý định mức sản xuất"
+    EXPORT: "Xuất quản lý định mức sản xuất"
+
+PRODUCTION_WORK_CENTERS:
+    VIEW: "Quản lý cụm máy sản xuất"
+    CREATE: "Tạo quản lý cụm máy sản xuất"
+    EDIT: "Chỉnh sửa quản lý cụm máy sản xuất"
+    EXPORT: "Xuất quản lý cụm máy sản xuất"
+
+LOGISTICS_SUPPLIERS:
+    VIEW: "Nhà cung cấp"
+    CREATE: "Tạo nhà cung cấp"
+    EDIT: "Chỉnh sửa nhà cung cấp"
+    EXPORT: "Xuất danh sách nhà cung cấp"
+
+LOGISTICS_SUPPLIES:
+    VIEW: "Hàng hoá"
+    CREATE: "Tạo hàng hoá"
+    EDIT: "Chỉnh sửa hàng hoá"
+    EXPORT: "Xuất hàng hoá"
+
+LOGISTICS_FACTORIES:
+    VIEW: "Quản lý nhà máy"
+    CREATE: "Tạo nhà máy"
+    EDIT: "Chỉnh sửa nhà máy"
+    EXPORT: "Xuất danh sách nhà máy"
+
+LOGISTICS_SUPPLIER_CONTRACTS:
+    VIEW: "Hợp đồng mua"
+    CREATE: "Tạo hợp đồng mua"
+    EDIT: "Chỉnh sửa hợp đồng mua"
+    EXPORT: "Xuất hợp đồng mua"
+
+INCOMING_INVOICE:
+    VIEW: "Hoá đơn đầu vào"
+    CREATE: "Tạo hoá đơn đầu vào"
+    EDIT: "Chỉnh sửa hoá đơn đầu vào"
+    EXPORT: "Xuất hoá đơn đầu vào"
+
+LOGISTICS_INVENTORIES_STORAGE:
+    VIEW: "Nhập kho"
+    CREATE: "Tạo nhập kho"
+    EDIT: "Chỉnh sửa nhập kho"
+    EXPORT: "Xuất nhập kho"
+
+LOGISTICS_INVENTORIES_STORAGE_DEPRECIATION_IMPORT:
+    VIEW: "Nhập kho(TS - CCDC)"
+    CREATE: "Tạo nhập kho(TS - CCDC)"
+    EDIT: "Chỉnh sửa nhập kho(TS - CCDC)"
+    EXPORT: "Xuất nhập kho(TS - CCDC)"
+
+LOGISTICS_INVENTORIES_STORAGE_EXPORT:
+    VIEW: "Xuất kho"
+    CREATE: "Tạo xuất kho"
+    EDIT: "Chỉnh sửa xuất kho"
+    EXPORT: "Xuất xuất kho"
+
+LOGISTICS_STOCKTAKING:
+    VIEW: "Kiểm kê"
+    CREATE: "Tạo kiểm kê"
+    EDIT: "Chỉnh sửa kiểm kê"
+    EXPORT: "Xuất kiểm kê"
+
+DELIVERY_SCHEDULE:
+    VIEW: "Lịch giao - nhận hàng"
+    CREATE: "Tạo lịch giao - nhận hàng"
+    EDIT: "Chỉnh sửa lịch giao - nhận hàng"
+    EXPORT: "Xuất lịch giao - nhận hàng"
+
+ASSET:
+    VIEW: "Hồ sơ tài sản - CCDC"
+    CREATE: "Tạo hồ sơ tài sản"
+    EDIT: "Chỉnh sửa hồ sơ tài sản"
+    EXPORT: "Xuất hồ sơ tài sản"
+
+ASSET_TRANSFER:
+    VIEW: "Điều chuyển tài sản"
+    CREATE: "Tạo điều chuyển tài sản"
+    EDIT: "Chỉnh sửa điều chuyển tài sản"
+    EXPORT: "Xuất điều chuyển tài sản"
+
+ASSET_DEPRECIATION:
+    VIEW: "Khấu hao tài sản"
+    CREATE: "Tạo khấu hao tài sản"
+    EDIT: "Chỉnh sửa khấu hao tài sản"
+    EXPORT: "Xuất khấu hao tài sản"
+
+ASSET_ALLOCATION:
+    VIEW: "Phân bổ CCDC"
+    CREATE: "Tạo phân bổ CCDC"
+    EDIT: "Chỉnh sửa phân bổ CCDC"
+    EXPORT: "Xuất phân bổ CCDC"
+
+ASSET_LIQUIDATION:
+    VIEW: "Thanh lý tài sản"
+    CREATE: "Tạo thanh lý tài sản"
+    EDIT: "Chỉnh sửa thanh lý tài sản"
+    EXPORT: "Xuất thanh lý tài sản"
+
+CUSTOMER_SERVICES_CALL_CENTER:
+    VIEW: "Call center"
+    CREATE: "Tạo call center"
+    EDIT: "Chỉnh sửa call center"
+    EXPORT: "Xuất call center"
+
+CUSTOMER_SERVICES_COMPLAIN:
+    VIEW: "Khiếu nại"
+    CREATE: "Tạo khiếu nại"
+    EDIT: "Chỉnh sửa khiếu nại"
+    EXPORT: "Xuất khiếu nại"
+
+TECHNICAL_MACHINERY_EQUIPMENT:
+    VIEW: "Máy móc thiết bị"
+    CREATE: "Tạo máy móc thiết bị"
+    EDIT: "Chỉnh sửa máy móc thiết bị"
+    EXPORT: "Xuất máy móc thiết bị"
+
+PERMISSIONS_USERS:
+    VIEW: "Người dùng"
+    CREATE: "Tạo người dùng"
+    EDIT: "Chỉnh sửa người dùng"
+    EXPORT: "Xuất người dùng"
+
+PERMISSIONS_GROUPS:
+    VIEW: "Nhóm quyền"
+    CREATE: "Tạo nhóm quyền"
+    EDIT: "Chỉnh sửa nhóm quyền"
+    EXPORT: "Xuất nhóm quyền"
+
+PERMISSIONS:
+    VIEW: "Danh sách quyền"
+    CREATE: "Tạo quyền"
+    EDIT: "Chỉnh sửa quyền"
+    EXPORT: "Xuất danh sách quyền"
+
+ANNUAL_LEAVE:
+    VIEW: "Phép năm"
+    CREATE: "Tạo phép năm"
+    EDIT: "Chỉnh sửa phép năm"
+    EXPORT: "Xuất phép năm"
+
+UOM:
+    VIEW: "Quản lý đơn vị"
+    CREATE: "Tạo đơn vị"
+    EDIT: "Chỉnh sửa đơn vị"
+    EXPORT: "Xuất danh sách đơn vị"
+
+ITEMS_SETTINGS:
+    VIEW: "Danh sách vật phẩm"
+    CREATE: "Tạo vật phẩm"
+    EDIT: "Chỉnh sửa vật phẩm"
+    EXPORT: "Xuất danh sách vật phẩm"
+
+UNIFORM_SETTINGS:
+    VIEW: "Đồng phục"
+    CREATE: "Tạo đồng phục"
+    EDIT: "Chỉnh sửa đồng phục"
+    EXPORT: "Xuất đồng phục"
+
+WAREHOUSES:
+    VIEW: "Danh sách kho"
+    CREATE: "Tạo kho"
+    EDIT: "Chỉnh sửa kho"
+    EXPORT: "Xuất danh sách kho"
+
+WAREHOUSES_TYPES:
+    VIEW: "Loại kho"
+    CREATE: "Tạo loại kho"
+    EDIT: "Chỉnh sửa loại kho"
+    EXPORT: "Xuất loại kho"

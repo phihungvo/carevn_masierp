@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity RequestApprovalDetail.
+    -->
+
+
+    <changeSet id="20241015024065715-1" author="Hoang Dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+
+            ALTER TABLE employee_shift_detail
+                ADD COLUMN
+                    IF NOT EXISTS shift_id UUID;
+
+
+            ALTER TABLE employee_shift_detail
+                ADD COLUMN
+                    IF NOT EXISTS employee_id UUID;
+
+            ALTER TABLE shift
+            ALTER COLUMN duration_hours TYPE FLOAT;
+        </sql>
+
+    </changeSet>
+
+    <changeSet id="20241015024065715" author="Hoang Dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('e36d91be-b52a-0187-1750-15707211d64a', '78d3940e-de9c-4719-8d95-72a44e02bcc4', 'Thứ 3', '3.5', 1, 30, 0, 5, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2014-11-28 03:45:45', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('d62d23c1-e0fb-4446-f3e2-61e61bbc7fa7', '78d3940e-de9c-4719-8d95-72a44e02bcc4', 'Thứ 3', '4.5', 6, 30, 0, 11, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2023-08-20 22:28:03', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('aa73a19f-5960-db7b-3833-9fe4d2479e39', '42b33853-e603-48fd-83b1-a9cd5707ef61', 'Thứ 4', '3.5', 1, 30, 0, 5, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2020-06-24 18:44:19', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('8d17105c-7dc2-7c08-e07d-c991d3964581', '42b33853-e603-48fd-83b1-a9cd5707ef61', 'Thứ 4', '4.5', 6, 30, 0, 11, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2007-04-03 19:47:04', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('cd8c00ca-311e-82fc-9c3f-dd46d2ed79e0', '0f46c563-a200-4608-8bca-a97fdeab3077', 'Thứ 5', '3.5', 1, 30, 0, 5, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2012-10-05 00:26:07', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('abc2da09-a6eb-b184-66f4-c89464cd5a6a', '0f46c563-a200-4608-8bca-a97fdeab3077', 'Thứ 5', '4.5', 6, 30, 0, 11, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2006-06-07 00:05:21', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('01895b6c-e8d2-a3b4-dd59-dc013aaebfe3', '912a79eb-beae-4998-9ae9-a41774b0a8bd', 'Thứ 6', '3.5', 1, 30, 0, 5, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2023-08-03 13:48:25', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('c527788e-890a-2fcb-f93b-669ea95b21ad', '912a79eb-beae-4998-9ae9-a41774b0a8bd', 'Thứ 6', '4.5', 6, 30, 0, 11, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2011-03-13 00:28:40', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('a07c8bf5-0cda-6abf-d281-e02483ba3111', 'd2e836cf-b502-425c-bedb-8edc83b8e044', 'Thứ 7', '3.5', 1, 30, 0, 5, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2004-04-21 13:42:56', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('d881e0b2-f4dd-a4ec-7059-aa45d1f39830', '53026fca-4d39-4be9-b1bc-09471bbcb341', 'Thứ 2', '4.5', 6, 30, 0, 11, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2013-11-15 11:47:23', NULL, NULL, NULL, NULL);
+            INSERT INTO "public"."shift" ("id", "id_standard_work_schedule_config", "shift_name", "duration_hours", "hour_start_time", "minute_start_time", "second_start_time", "hour_end_time", "minute_end_time", "second_end_time", "company", "department", "is_deleted", "created_by", "created_date", "updated_by", "updated_at", "deleted_by", "deleted_at") VALUES ('ed28433b-b232-f4a9-8950-863318ac29c4', '53026fca-4d39-4be9-b1bc-09471bbcb341', 'Thứ 2 ', '3.5', 1, 30, 0, 5, 0, 0, 'KIM_LONG', NULL, 'f', 'system', '2007-08-02 12:02:45', NULL, NULL, NULL, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241015024065716" author="Hoang Dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+            ALTER TABLE "public"."employee_shift_detail"
+                ALTER COLUMN "completion_percent" SET DEFAULT 0;
+
+        </sql>
+    </changeSet>
+    <changeSet id="1730193708793-1" author="[BE] Huu Hoang">
+        <sql>
+            ALTER TABLE recruitment_request
+                add COLUMN IF NOT EXISTS old_status VARCHAR (255);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20241015024065717" author="Hoang Dang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+             endDelimiter=";"
+             splitStatements="false"
+             stripComments="true">
+            ALTER TABLE "public"."employee_shift_detail"
+                ADD COLUMN IF NOT EXISTS "is_shift_off" BOOLEAN;
+
+            ALTER TABLE "public"."employee_shift_detail"
+                ADD COLUMN IF NOT EXISTS "leave_day_type" VARCHAR (255);
+
+            ALTER TABLE "public"."employee_shift_detail"
+                ADD COLUMN IF NOT EXISTS "is_wfh" BOOLEAN Default false;
+
+            ALTER TABLE "public"."employee_shift_detail"
+                ADD COLUMN IF NOT EXISTS "violation_id" UUID;
+
+            ALTER TABLE "public"."employee_shift_detail"
+                ADD COLUMN IF NOT EXISTS "violation_type" VARCHAR (255);
+
+            ALTER TABLE "public"."employee_shift_detail"
+                ADD COLUMN IF NOT EXISTS "note" TEXT;
+
+            ALTER TABLE "public"."employee_shift_detail"
+                ADD COLUMN IF NOT EXISTS "is_paid_shift" BOOLEAN Default true;
+
+            ALTER TABLE personal_monthly_timesheet
+            DROP
+            CONSTRAINT IF EXISTS fk_personal_monthly_timesheet__employee_id;
+
+            ALTER TABLE "public"."employee_shift_detail"
+                ALTER COLUMN "is_wfh" SET DEFAULT false,
+            ALTER
+            COLUMN "is_shift_off" SET DEFAULT false,
+                  ALTER
+            COLUMN "is_paid_shift" SET DEFAULT true;
+--
+            ALTER TABLE time_keeping_violation
+            DROP CONSTRAINT IF EXISTS ux_time_keeping_violation__time_keeping_id;
+
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

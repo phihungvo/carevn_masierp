@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity CronJob.
+    -->
+    <changeSet id="20240823023215-1" author="jhipster">
+        <validCheckSum>ANY</validCheckSum>
+        <createTable tableName="cron_job">
+            <column name="id" type="bigint" autoIncrement="true" startWith="1500">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="action" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="every_minute" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="at_minute" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="at_hour" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="at_day_of_month" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="at_month" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="at_day_of_week" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="enabled" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_run" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="next_run" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="zone_id" type="varchar(255)" defaultValue="Asia/Ho_Chi_Minh">
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="cron_job" columnName="last_run" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="cron_job" columnName="next_run" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="cron_job" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <sql dbms="postgresql" endDelimiter=";" splitStatements="true" stripComments="true">
+            INSERT INTO "public"."cron_job" ("id", "action", "name", "every_minute", "at_minute", "at_hour", "at_day_of_month", "at_month", "at_day_of_week", "enabled", "last_run", "next_run", "description", "status", "updated_at", "updated_by", "zone_id") VALUES (1, 'CHECK_DATE_TIME_KEEPING_VIOLATION', 'Kiểm tra vi phạm chấm công theo giờ', NULL, 7, 0, NULL, NULL, NULL, 't', '2011-09-15 14:34:10', '2019-05-27 03:24:51', 'COMPLETED', 'COMPLETED', '2020-12-18 12:59:23', 'system', 'Asia/Ho_Chi_Minh');
+            INSERT INTO "public"."cron_job" ("id", "action", "name", "every_minute", "at_minute", "at_hour", "at_day_of_month", "at_month", "at_day_of_week", "enabled", "last_run", "next_run", "description", "status", "updated_at", "updated_by", "zone_id") VALUES (2, 'LOCK_WEEK_TIME_KEEPING', 'Khóa chấm công tuần', NULL, 0, 23, NULL, NULL, 0, 't', '2011-09-15 14:34:10', '2019-05-27 03:24:51', 'COMPLETED', 'COMPLETED', '2020-12-18 12:59:23', 'system', 'Asia/Ho_Chi_Minh');
+            INSERT INTO "public"."cron_job" ("id", "action", "name", "every_minute", "at_minute", "at_hour", "at_day_of_month", "at_month", "at_day_of_week", "enabled", "last_run", "next_run", "description", "status", "updated_at", "updated_by", "zone_id") VALUES (3, 'CLEANUP_OLD_DELETED_CONTRACTS', 'Dọn dẹp hợp đồng cũ đã bị xóa', NULL, 0, 0, 1, NULL, NULL, 't', '2011-09-15 14:34:10', '2019-05-27 03:24:51', 'COMPLETED', 'COMPLETED', '2020-12-18 12:59:23', 'system', 'Asia/Ho_Chi_Minh');
+            INSERT INTO "public"."cron_job" ("id", "action", "name", "every_minute", "at_minute", "at_hour", "at_day_of_month", "at_month", "at_day_of_week", "enabled", "last_run", "next_run", "description", "status", "updated_at", "updated_by", "zone_id")
+                VALUES (4, 'SALE_CLEAN_OLD_DELETED_CONTRACT', 'Dọn dẹp hợp đồng bán hàng cũ đã bị xóa', NULL, 0, 0, 1, NULL, NULL, 't', '2011-09-15 14:34:10', '2019-05-27 03:24:51', 'COMPLETED', 'COMPLETED', '2020-12-18 12:59:23', 'system', 'Asia/Ho_Chi_Minh');
+            INSERT INTO "public"."cron_job" ("id", "action", "name", "every_minute", "at_minute", "at_hour", "at_day_of_month", "at_month", "at_day_of_week", "enabled", "last_run", "next_run", "description", "status", "updated_at", "updated_by", "zone_id")
+            VALUES (5, 'SALE_CUSTOMER_BIRTHDAY', 'Gửi thông báo sinh nhật khách hàng', NULL, 0, 3, 25, NULL, NULL, 't', '2011-09-15 14:34:10', '2019-05-27 03:24:51', 'COMPLETED', 'COMPLETED', '2020-12-18 12:59:23', 'system', 'Asia/Ho_Chi_Minh');
+
+
+        </sql>
+    </changeSet>
+    <changeSet id="1730430823903-1" author="[BE] Huu Hoang">
+        <validCheckSum>any</validCheckSum>
+        <sql>
+            --             AUTO_CREATE_SHIFT
+            insert into cron_job (id, action, name, every_minute, at_minute, at_hour, at_day_of_month, at_month,
+                                  at_day_of_week, enabled, last_run, next_run, description, status, updated_at,
+                                  updated_by, zone_id)
+            values (-1, 'AUTO_CREATE_SHIFT', 'Tạo ca tự động', null, 0, 10, null, null, null, true,
+                    '2021-09-15 14:34:10', '2021-09-15 14:34:10', 'Tạo ca tự động', 'COMPLETED', '2021-09-15 14:34:10',
+                    'system', 'Asia/Ho_Chi_Minh');
+
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>

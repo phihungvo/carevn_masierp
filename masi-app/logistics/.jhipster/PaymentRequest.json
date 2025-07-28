@@ -1,0 +1,92 @@
+{
+  "annotations": {
+    "changelogDate": "20241105075840"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "order",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "RequestTypeEnum",
+      "fieldValues": "PAYMENT,ADVANCEMENT,REIMBURSEMENT"
+    },
+    {
+      "fieldName": "departmentId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attachments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "paidAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "remainingAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "paymentDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "RequestStatus",
+      "fieldValues": "NEW,WAITING_APPROVE,APPROVED,REJECTED,IN_PROGRESS,COMPLETED"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "masiLogistics",
+  "name": "PaymentRequest",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "paymentDetail",
+      "otherEntityRelationshipName": "paymentRequest",
+      "relationshipName": "paymentDetail",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,61 @@
+
+// Đăng ký nghĩ chế độ
+// Tên field	Loại	Bắt buộc?	Có thể chỉnh sửa	Loại dữ liệu
+// Loại nghỉ phép	Lựa chọn	Y	Y	String
+// Ngày cuối cùng làm việc	Date picker	Y	Y	Date
+// Ngày trở lại làm việc	Date picker	Y	Y	Date
+// Người thay thế	Lựa chọn	N	Y	String
+// Đính kèm	Upload	N	Y	File
+// Người duyệt	Lựa chọn	Y	Y	String
+// Nghỉ chế độ tên bảng là LeaveRegime
+
+enum LeaveRequestDayType {
+  FULL_DAY
+  HALF_DAY
+}
+
+enum LeaveRegimeRequestStatus {
+    WAITING_APPROVAL
+    APPROVED
+    REJECTED
+    CANCEL
+}
+
+enum LeaveType {
+    SICK_LEAVE
+    ANNUAL_LEAVE
+    MATERNITY_LEAVE
+    UNPAID_LEAVE
+    FUNERAL_LEAVE
+    WEDDING_LEAVE
+    COMPENSATION_LEAVE
+}
+
+
+entity LeaveRegimeRequest{
+    id UUID,
+  leaveType LeaveType required,
+  lastWorkDate ZonedDateTime required,
+  returnWorkDate ZonedDateTime required,
+  substituteId UUID,
+  workspaceId UUID,
+  attachment Blob
+  attachmentName String,
+  employeeId UUID required,
+  leaveRequestDayType LeaveRequestDayType,
+  status LeaveRegimeRequestStatus,
+  leaveRequestId UUID,
+  createdAt ZonedDateTime,
+  updatedAt ZonedDateTime,
+  deletedAt ZonedDateTime,
+  isDeleted Boolean,
+  createdBy UUID,
+  updatedBy UUID,
+  deletedBy UUID
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceClass
+

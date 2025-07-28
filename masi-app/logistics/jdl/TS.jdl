@@ -1,0 +1,105 @@
+entity ItemAssetDepreciation {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  status String,
+
+  depreciationDate LocalDate,
+  accountingDate LocalDate,
+  employeeId UUID,
+  description String,
+  TypePageDepreciation TypePageDepreciation,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+
+}
+
+enum TypePageDepreciation{
+  AMORTIZATION,
+  ALLOWANCE
+}
+
+entity ItemAssetDepreciationDetail {
+  id UUID,
+  code String,
+  attribute String,
+  name TextBlob,
+
+  inventoriesStorageId UUID,
+  note TextBlob,
+  costInformation String,
+  amortizedCostInformation String,
+
+  amortizationAmount BigDecimal,
+  amortizationRate BigDecimal,
+  accumulatedAmortizationAmount BigDecimal,
+  recipe String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+
+}
+
+entity ItemLiquidation {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  status String,
+
+  liquidationDate ZonedDateTime,
+  description TextBlob,
+  reason TextBlob,
+  personnelList String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+
+entity ItemLiquidationDetail {
+  id UUID,
+  code String,
+  attribute String,
+  name String,
+  liquidationDate ZonedDateTime,
+  description String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime ,
+  createdBy String ,
+  updatedAt ZonedDateTime,
+  updatedBy String,
+  deletedAt ZonedDateTime,
+  deletedBy String,
+  company String,
+  department String
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

@@ -1,0 +1,37 @@
+package com.masi.employee.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.data.relational.core.sql.Column;
+import org.springframework.data.relational.core.sql.Expression;
+import org.springframework.data.relational.core.sql.Table;
+
+public class UniformReleaseSqlHelper {
+
+    public static List<Expression> getColumns(Table table, String columnPrefix) {
+        List<Expression> columns = new ArrayList<>();
+        columns.add(Column.aliased("id", table, columnPrefix + "_id"));
+        columns.add(Column.aliased("code", table, columnPrefix + "_code"));
+        columns.add(Column.aliased("date", table, columnPrefix + "_date"));
+        columns.add(Column.aliased("employee_id", table, columnPrefix + "_employee_id"));
+        columns.add(Column.aliased("quantity", table, columnPrefix + "_quantity"));
+        columns.add(Column.aliased("note", table, columnPrefix + "_note"));
+        columns.add(Column.aliased("file_id", table, columnPrefix + "_file_id"));
+        columns.add(Column.aliased("file_name", table, columnPrefix + "_file_name"));
+        columns.add(Column.aliased("signature_content_type", table, columnPrefix + "_signature_content_type"));
+        columns.add(Column.aliased("type", table, columnPrefix + "_type"));
+        columns.add(Column.aliased("cost", table, columnPrefix + "_cost"));
+        columns.add(Column.aliased("is_returned", table, columnPrefix + "_is_returned"));
+        columns.add(Column.aliased("create_at", table, columnPrefix + "_create_at"));
+        columns.add(Column.aliased("create_by", table, columnPrefix + "_create_by"));
+        columns.add(Column.aliased("update_at", table, columnPrefix + "_update_at"));
+        columns.add(Column.aliased("update_by", table, columnPrefix + "_update_by"));
+        columns.add(Column.aliased("delete_at", table, columnPrefix + "_delete_at"));
+        columns.add(Column.aliased("delete_by", table, columnPrefix + "_delete_by"));
+        columns.add(Column.aliased("company", table, columnPrefix + "_company"));
+        columns.add(Column.aliased("remaining", table, columnPrefix + "_remaining"));
+        columns.add(Column.aliased("warehouse_id", table, columnPrefix + "_warehouse_id"));
+
+        return columns;
+    }
+}

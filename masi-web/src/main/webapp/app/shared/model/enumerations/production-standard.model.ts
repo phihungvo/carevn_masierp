@@ -1,0 +1,4 @@
+export enum PRODUCTION_STANDARD_STATUS {
+  CANCELED = 'CANCELED',
+  NEW = 'NEW',
+}

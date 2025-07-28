@@ -1,0 +1,31 @@
+entity InventoriesStorage {
+  id UUID,
+  code String,
+  itemId UUID,
+  inventoriesDetailId UUID,
+
+  importDate ZonedDateTime,
+  exportDate ZonedDateTime,
+  depreciation String,
+  expiryDate ZonedDateTime
+  notes TextBlob,
+  attribute String,
+
+  isDeleted Boolean,
+  createdAt ZonedDateTime
+  createdBy String
+  updatedAt ZonedDateTime
+  updatedBy String
+  deletedAt ZonedDateTime
+  deletedBy String
+  company String
+  department String
+
+}
+
+// DTOs and Pagination
+dto * with mapstruct
+paginate * with pagination
+service * with serviceClass
+filter *
+// Services

@@ -1,0 +1,52 @@
+{
+  "annotations": {
+    "changelogDate": "20240609031939"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ReviewStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "APPROVED,REJECTED,AWAITING_REVIEW"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "LeaveRequestReview",
+  "relationships": [
+    {
+      "otherEntityName": "leaveRequest",
+      "otherEntityRelationshipName": "reviews",
+      "relationshipName": "leaveRequest",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

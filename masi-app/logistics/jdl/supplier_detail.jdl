@@ -1,0 +1,20 @@
+entity SupplierDetail{
+    id UUID
+    supplierId UUID
+    itemId UUID
+    basePrice BigDecimal
+    notes String
+    //
+    createAt ZonedDateTime required
+    createBy String required
+    updateAt ZonedDateTime
+    updateBy String
+    deleteAt ZonedDateTime
+    deleteBy String
+    company String
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

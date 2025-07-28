@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20240704084701-1" author="truongdd">
+        <sql>
+            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+        </sql>
+        <sql dbms="postgresql">
+            ALTER TABLE workspace ADD COLUMN id UUID DEFAULT uuid_generate_v4();
+        </sql>
+        <sql dbms="postgresql">
+            ALTER TABLE workspace ALTER COLUMN id DROP DEFAULT;
+        </sql>
+        <sql dbms="postgresql">
+            ALTER TABLE workspace ADD PRIMARY KEY (id);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20240704084701-2" author="truongdd">
+        <addUniqueConstraint tableName="workspace" columnNames="name" constraintName="uk_workspace_name"/>
+    </changeSet>
+
+</databaseChangeLog>

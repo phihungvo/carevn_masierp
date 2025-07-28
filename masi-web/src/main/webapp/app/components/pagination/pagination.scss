@@ -1,0 +1,98 @@
+@import '../../bootstrap-variables';
+
+.pagination {
+  justify-content: space-between;
+  margin: $space-8 0;
+  // padding-inline: $space-24;
+  padding-bottom: $space-16;
+  position: sticky;
+  left: 0;
+
+  &-jumper {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: $space-12;
+
+    .num-row {
+      max-width: $space-54;
+    }
+
+    .page {
+      max-width: $space-70;
+    }
+
+    input {
+      border-radius: $rounded-6 !important;
+      border: 1px solid $secondary-black-20 !important;
+      color: $secondary-black-20 !important;
+      font-weight: $font-body-400 !important;
+      padding: $space-4 !important;
+    }
+  }
+
+  &-container {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0;
+
+    .pagination-item {
+      transition: all 0.1s ease-in;
+      padding: $space-8;
+      text-align: center !important;
+      margin: auto 4px;
+      color: $secondary-black-20;
+      box-sizing: border-box;
+      align-items: center;
+      letter-spacing: -0.5px;
+      border-radius: $rounded-8;
+      line-height: 18px;
+      font-size: 13px;
+      min-width: $space-40;
+      border: 1px solid $secondary-black-50;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.dots:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+
+      &:hover {
+        background-color: $secondary-black-90;
+        cursor: pointer;
+      }
+
+      &.selected {
+        background-color: $primary-color;
+        color: white;
+        border: 1px solid $primary-color;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+
+      .arrow {
+        width: $space-24;
+        height: $space-24;
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+
+        .arrow::before {
+          border-right: 0.12em solid rgba(0, 0, 0, 0.43);
+          border-top: 0.12em solid rgba(0, 0, 0, 0.43);
+        }
+
+        &:hover {
+          background-color: transparent;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

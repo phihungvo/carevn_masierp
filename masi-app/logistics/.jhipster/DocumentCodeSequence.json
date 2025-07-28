@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20240912035829"
+  },
+  "applications": "*",
+  "clientRootFolder": "masiLogistics",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currentSequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "javaFormat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documentType",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "masiLogistics",
+  "name": "DocumentCodeSequence",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

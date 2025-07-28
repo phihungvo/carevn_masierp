@@ -1,0 +1,130 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet id="1718969045950-0" author="truongdd">
+        <sql>
+            TRUNCATE TABLE jhi_authority CASCADE;
+        </sql>
+        <sql>
+            TRUNCATE TABLE jhi_user CASCADE;
+        </sql>
+        <sql>
+            TRUNCATE TABLE jhi_user_authority CASCADE;
+        </sql>
+    </changeSet>
+    <changeSet author="itbee (generated)" id="1718969045950-1">
+        <insert tableName="jhi_authority">
+            <column name="name" value="ROLE_ADMIN"/>
+        </insert>
+        <insert tableName="jhi_authority">
+            <column name="name" value="ROLE_USER"/>
+        </insert>
+    </changeSet>
+    <changeSet author="itbee (generated)" id="1718969045950-3">
+        <insert tableName="jhi_user">
+            <column name="id" valueNumeric="1"/>
+            <column name="login" value="admin"/>
+            <column name="password_hash" value="$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC"/>
+            <column name="first_name" value="Administrator"/>
+            <column name="last_name" value="Administrator"/>
+            <column name="email" value="admin@localhost"/>
+            <column name="image_url" value=""/>
+            <column name="activated" valueBoolean="true"/>
+            <column name="lang_key" value="en"/>
+            <column name="activation_key"/>
+            <column name="reset_key"/>
+            <column name="created_by" value="system"/>
+            <column name="created_date"/>
+            <column name="reset_date"/>
+            <column name="last_modified_by" value="system"/>
+            <column name="last_modified_date"/>
+            <column name="is_super_admin" valueBoolean="true"/>
+        </insert>
+        <insert tableName="jhi_user">
+            <column name="id" valueNumeric="2"/>
+            <column name="login" value="user"/>
+            <column name="password_hash" value="$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K"/>
+            <column name="first_name" value="User"/>
+            <column name="last_name" value="User"/>
+            <column name="email" value="user@localhost"/>
+            <column name="image_url" value=""/>
+            <column name="activated" valueBoolean="true"/>
+            <column name="lang_key" value="en"/>
+            <column name="activation_key"/>
+            <column name="reset_key"/>
+            <column name="created_by" value="system"/>
+            <column name="created_date"/>
+            <column name="reset_date"/>
+            <column name="last_modified_by" value="system"/>
+            <column name="last_modified_date"/>
+            <column name="is_super_admin" valueBoolean="true"/>
+        </insert>
+        <insert tableName="jhi_user">
+            <column name="id" valueNumeric="4"/>
+            <column name="login" value="linhqtt"/>
+            <column name="password_hash" value="$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K"/>
+            <column name="first_name" value="Linh"/>
+            <column name="last_name" value="Quảng Thị Thùy"/>
+            <column name="email" value="linhqtt@localhost"/>
+            <column name="image_url" value=""/>
+            <column name="activated" valueBoolean="true"/>
+            <column name="lang_key" value="en"/>
+            <column name="activation_key"/>
+            <column name="reset_key"/>
+            <column name="created_by" value="system"/>
+            <column name="created_date"/>
+            <column name="reset_date"/>
+            <column name="last_modified_by" value="system"/>
+            <column name="last_modified_date"/>
+            <column name="is_super_admin" valueBoolean="true"/>
+        </insert>
+        <insert tableName="jhi_user">
+            <column name="id" valueNumeric="3"/>
+            <column name="login" value="haptb"/>
+            <column name="password_hash" value="$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K"/>
+            <column name="first_name" value="Hà"/>
+            <column name="last_name" value="Phan Thị Bích"/>
+            <column name="email" value="haptb@localhost"/>
+            <column name="image_url" value=""/>
+            <column name="activated" valueBoolean="true"/>
+            <column name="lang_key" value="en"/>
+            <column name="activation_key"/>
+            <column name="reset_key"/>
+            <column name="created_by" value="system"/>
+            <column name="created_date"/>
+            <column name="reset_date"/>
+            <column name="last_modified_by" value="system"/>
+            <column name="last_modified_date"/>
+            <column name="is_super_admin" valueBoolean="false"/>
+        </insert>
+    </changeSet>
+    <changeSet author="itbee (generated)" id="1718969045950-2">
+        <insert tableName="jhi_user_authority">
+            <column name="user_id" valueNumeric="1"/>
+            <column name="authority_name" value="ROLE_ADMIN"/>
+        </insert>
+        <insert tableName="jhi_user_authority">
+            <column name="user_id" valueNumeric="1"/>
+            <column name="authority_name" value="ROLE_USER"/>
+        </insert>
+        <insert tableName="jhi_user_authority">
+            <column name="user_id" valueNumeric="2"/>
+            <column name="authority_name" value="ROLE_USER"/>
+        </insert>
+        <insert tableName="jhi_user_authority">
+            <column name="user_id" valueNumeric="3"/>
+            <column name="authority_name" value="ROLE_ADMIN"/>
+        </insert>
+        <insert tableName="jhi_user_authority">
+            <column name="user_id" valueNumeric="3"/>
+            <column name="authority_name" value="ROLE_USER"/>
+        </insert>
+        <insert tableName="jhi_user_authority">
+            <column name="user_id" valueNumeric="4"/>
+            <column name="authority_name" value="ROLE_ADMIN"/>
+        </insert>
+        <insert tableName="jhi_user_authority">
+            <column name="user_id" valueNumeric="4"/>
+            <column name="authority_name" value="ROLE_USER"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

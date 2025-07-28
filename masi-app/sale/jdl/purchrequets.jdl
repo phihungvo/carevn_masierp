@@ -1,0 +1,70 @@
+
+entity PurchaseRequest {
+	id UUID required unique
+    purchaseRequestStatus RequestStatus required
+    productName String required
+    unit Unit required
+    quantity Float required
+    unitPrice Float required
+    totalPrice Float required
+    supplier String
+    note String
+    createDate ZonedDateTime required
+    updatedDate ZonedDateTime required
+    isDeleted Boolean required
+}
+
+relationship OneToMany {
+    PurchaseRequest to PurchaseRequestFile // để upload hình ảnh
+    PurchaseRequest to PurchaseDelivery // để xem tình trạng giao hàng
+    PurchaseRequest to PurchaseReview // duyệt đề nghị thu mua
+}
+enum Unit {
+	KG
+    TON
+    PIECE
+}
+
+entity PurchaseDelivery {
+	id UUID required unique
+    deliveried Float required // đã giao
+    waitingDelivery Float required  // còn nợ
+    createdAt ZonedDateTime required
+}
+
+entity PurchaseRequestFile {
+	id UUID required unique
+    filePath String required
+}
+enum RequestStatus {
+	NEW
+    WAITING_APPROVAL
+    APPROVED
+    REJECTED
+    DELIVERING
+    FINISHED
+}
+
+enum PurchaseReviewStatus{
+    APPROVED
+    PENDING
+    REJECTED
+}
+
+entity PurchaseReview{
+    id UUID required unique
+    status PurchaseReviewStatus required
+    approvalStatusSign ImageBlob
+    approvalStatusNote String
+    lastUpdated ZonedDateTime required
+    createdDate ZonedDateTime required
+    employeeId UUID required
+}
+
+
+
+paginate * with pagination
+
+// Set service options to all except few
+dto * with mapstruct
+service * with serviceClass

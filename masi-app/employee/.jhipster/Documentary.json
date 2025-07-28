@@ -1,0 +1,123 @@
+{
+  "annotations": {
+    "changelogDate": "20240725035332"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "documentNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateStart",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "group",
+      "fieldType": "DocumentaryGroup",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "OUTGOING,INCOMING,INTERNAL"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "DocumentaryType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ANNOUNCEMENT,DOCUMENTARY,RESPONSE"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "signer",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "recipient",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "archiveLocation",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "senderOrReceiver",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "attachments",
+      "fieldType": "ImageBlob"
+    },
+    {
+      "fieldName": "attachmentsContentnAME",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idGroup",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "idCompany",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "DocumentaryStatus",
+      "fieldValues": "NEW,PENDING_APPROVAL,APPROVED,REQUEST_EDIT"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "UUID"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "Documentary",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240712020825"
+  },
+  "applications": "*",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "parentId",
+      "fieldType": "UUID"
+    }
+  ],
+  "name": "Company",
+  "pagination": "pagination",
+  "relationships": [],
+  "service": "serviceClass"
+}

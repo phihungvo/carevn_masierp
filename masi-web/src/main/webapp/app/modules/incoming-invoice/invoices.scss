@@ -1,0 +1,26 @@
+@import '../../bootstrap-variables';
+
+.modal-invoices-filter {
+  .modal-content {
+    width: 290px;
+    overflow: unset !important;
+  }
+}
+
+.invoice-detail-modal {
+  .modal-content {
+    width: 1400px;
+  }
+}
+
+.modals-import-invoice {
+  .modal-content {
+    width: 484px;
+  }
+}
+
+.invoice-filter-modals {
+  .modal-content {
+    overflow: unset !important;
+  }
+}

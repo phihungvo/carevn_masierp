@@ -1,0 +1,49 @@
+enum ContractStatus {
+    NEW,
+    CANCELED,
+    PENDING,
+    APPROVED,
+    REJECTED
+}
+
+entity SupplierContract {
+    id UUID required unique,
+    contractCode String,
+    contractName String,
+    supplierId UUID,
+    contractDate LocalDate,
+    endDate LocalDate,
+    note String
+    attachments String,
+    status ContractStatus
+
+
+    company String,
+    department String,
+    createdBy String required,
+    createdAt ZonedDateTime required,
+    updatedBy String,
+    updatedAt ZonedDateTime,
+    deletedBy String,
+    deletedAt ZonedDateTime,
+}
+
+entity SupplierContractDetail {
+    id UUID required unique,
+    contractId UUID,
+    supplyItemId UUID,
+    unitId UUID,
+    quantity Integer,
+    note String,
+}
+
+
+relationship OneToMany {
+    SupplierContract to SupplierContractDetail{supplierContract required}
+}
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

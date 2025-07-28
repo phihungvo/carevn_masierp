@@ -1,0 +1,97 @@
+@import '../../bootstrap-variables';
+
+.actions-dropdown {
+  &-toggle {
+    background-color: white;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  .dropdown-item {
+    &:hover {
+      background-color: $secondary-black-90;
+      color: unset;
+    }
+
+    button {
+      font-weight: $font-body-400 !important;
+      font-size: $text-body-16 !important;
+    }
+  }
+
+  .update {
+    color: #46a6ff;
+  }
+
+  .approve {
+    color: $success-green-40;
+  }
+
+  .cancel {
+    color: $red-error-40;
+  }
+
+  .delete {
+    color: #f54635;
+  }
+}
+
+.orders-filter-modals {
+  .modal-content {
+    width: 600px;
+  }
+}
+
+.logistics-material-proposal-filter-modals {
+  .modal-content {
+    width: 600px;
+  }
+}
+
+.logistics-material-proposal-detail-modals {
+  .modal-content {
+    width: 800px;
+  }
+}
+
+.logistics-material-proposal-create-modals,
+.logistics-material-proposal-update-modals {
+  .modal-content {
+    width: 1000px;
+  }
+}
+
+.logistics-material-propose-modals {
+  .modal-content {
+    width: 600px;
+    overflow: unset !important;
+  }
+}
+
+.logistics-material-proposal-reject-modals {
+  .modal-content {
+    width: 600px;
+  }
+}
+
+.logistics-material-proposal-detail-changelog-modals {
+  .modal-content {
+    width: 1000px;
+  }
+}
+
+.logistics-material-proposal-create-success-modals,
+.logistics-material-proposal-update-success-modals,
+.logistics-material-propose-success-modals,
+.logistics-material-proposal-reject-success-modals,
+.logistics-material-proposal-delete-modals,
+.logistics-material-proposal-delete-success-modals,
+.logistics-material-proposal-cancel-success-modals,
+.logistics-material-proposal-approve-sign-success-modals,
+.logistics-material-proposal-approve-sign-modals {
+  .modal-content {
+    width: 500px;
+  }
+}

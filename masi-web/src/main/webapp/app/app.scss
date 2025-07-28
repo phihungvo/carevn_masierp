@@ -1,0 +1,757 @@
+// Override Bootstrap variables
+@import 'bootstrap-variables';
+@import 'bootswatch/dist/flatly/variables';
+// Import Bootstrap source files from node_modules
+@import 'bootstrap/scss/bootstrap';
+@import 'bootswatch/dist/flatly/bootswatch';
+@import '_antd';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body {
+  margin: 0;
+  background-color: $primary-background-color;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+
+  ::-webkit-scrollbar {
+    width: $space-6;
+    height: $space-6;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: rgba(226, 229, 237, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    height: $space-120;
+    border-radius: 3px;
+    background-color: #aebbc2;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .actions-dropdown {
+    &-toggle {
+      background-color: white;
+
+      &:hover {
+        background-color: white;
+      }
+    }
+
+    .dropdown-item {
+      &:hover {
+        background-color: $secondary-black-90;
+        color: unset;
+      }
+
+      button {
+        font-weight: $font-body-400 !important;
+        font-size: $text-body-16 !important;
+      }
+    }
+
+    .update {
+      color: #46a6ff;
+    }
+
+    .approve {
+      color: $success-green-40;
+    }
+
+    .cancel {
+      color: $red-error-40;
+    }
+
+    .delete {
+      color: #f54635;
+    }
+
+    .dispose {
+      color: #c67400;
+    }
+
+    .transfer {
+      color: $primary-blue-30;
+    }
+
+    .reject {
+      color: #c4382a;
+    }
+
+    .accept {
+      color: #009806;
+    }
+
+    .start {
+      color: $primary-blue-40;
+    }
+
+    .stop {
+      color: $red-error-30;
+    }
+
+    .success {
+      color: $success-green-20;
+    }
+
+    .create {
+      color: $primary-blue-30;
+    }
+
+    .info {
+      color: $info-color-50;
+    }
+
+    .sent {
+      color: $info-color-40;
+    }
+
+    .restore {
+      color: $primary-blue-40;
+    }
+
+    .propose-approve {
+      color: $info-color-40;
+    }
+
+    .propose-liquidate {
+      color: $warning-yellow-40;
+    }
+
+    .approve-liquidate {
+      color: $success-green-20;
+    }
+
+    .deactivate {
+      color: $warning-yellow-40;
+    }
+
+    .provide-account {
+      color: #3d56d3;
+    }
+
+    .activate {
+      color: #009806;
+    }
+
+    .upload-profile {
+      color: $primary-blue-30;
+    }
+
+    .confirm-leave {
+      color: $red-error-40;
+    }
+
+    .print {
+      color: $text-black;
+    }
+
+    .history {
+      color: #4c69ff;
+    }
+
+    .import {
+      color: $primary-blue-30;
+    }
+
+    .reject-warning {
+      color: $warning-yellow-40;
+    }
+
+    .result {
+      color: $primary-blue-30;
+    }
+
+    .approved {
+      color: $success-green-40;
+    }
+
+    .renew {
+      color: $primary-blue-30;
+    }
+
+    .deactivate {
+      color: $warning-yellow-40;
+    }
+  }
+}
+
+a {
+  color: #533f03;
+  font-weight: bold;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &:after,
+  &::before {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  font-family: 'Inter', sans-serif;
+}
+
+.app-container {
+  box-sizing: border-box;
+  height: calc(100vh - 40px);
+
+  .view-container {
+    // height: calc(100vh - 40px);
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    padding: 1rem;
+    margin-left: $left-bar-width;
+    transition: margin-left 0.2s;
+
+    position: relative;
+    z-index: 10;
+
+    .card {
+      padding: 1rem;
+    }
+
+    .view-routes {
+      height: 100%;
+
+      > div {
+        height: fit-content;
+      }
+    }
+
+    #app-header {
+      position: relative;
+      z-index: 99;
+    }
+  }
+}
+
+.fullscreen {
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  width: 99% !important;
+  height: calc(100vh - 110px) !important;
+  margin: 5px;
+  z-index: 1000;
+  padding: 5px 25px 50px 25px !important;
+}
+
+/* ==========================================================================
+Browser Upgrade Prompt
+========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+Custom button styles
+========================================================================== */
+
+.icon-button > .btn {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0.5rem;
+  line-height: 1rem;
+
+  &:hover {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+/* ==========================================================================
+Generic styles
+========================================================================== */
+
+/* Temporary workaround for availity-reactstrap-validation */
+.invalid-feedback {
+  display: inline;
+  margin-top: 0px;
+}
+
+/* other generic styles */
+
+.title {
+  font-size: 1.25em;
+  margin: 1px 10px 1px 10px;
+}
+
+.description {
+  font-size: 0.9em;
+  margin: 1px 10px 1px 10px;
+}
+
+.shadow {
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 6px,
+    rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  border-radius: 2px;
+}
+
+.error {
+  color: white;
+  background-color: red;
+}
+
+.break {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.break-word {
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.preserve-space {
+  white-space: pre-wrap;
+}
+
+/* padding helpers */
+
+@mixin pad($size, $side) {
+  @if $size== '' {
+    @if $side== '' {
+      .pad {
+        padding: 10px !important;
+      }
+    } @else {
+      .pad {
+        padding-#{$side}: 10px !important;
+      }
+    }
+  } @else {
+    @if $side== '' {
+      .pad-#{$size} {
+        padding: #{$size}px !important;
+      }
+    } @else {
+      .pad-#{$side}-#{$size} {
+        padding-#{$side}: #{$size}px !important;
+      }
+    }
+  }
+}
+
+@include pad('', '');
+@include pad('2', '');
+@include pad('3', '');
+@include pad('5', '');
+@include pad('10', '');
+@include pad('20', '');
+@include pad('25', '');
+@include pad('30', '');
+@include pad('50', '');
+@include pad('75', '');
+@include pad('100', '');
+@include pad('4', 'top');
+@include pad('5', 'top');
+@include pad('10', 'top');
+@include pad('20', 'top');
+@include pad('25', 'top');
+@include pad('30', 'top');
+@include pad('50', 'top');
+@include pad('75', 'top');
+@include pad('100', 'top');
+@include pad('4', 'bottom');
+@include pad('5', 'bottom');
+@include pad('10', 'bottom');
+@include pad('20', 'bottom');
+@include pad('25', 'bottom');
+@include pad('30', 'bottom');
+@include pad('50', 'bottom');
+@include pad('75', 'bottom');
+@include pad('100', 'bottom');
+@include pad('5', 'right');
+@include pad('10', 'right');
+@include pad('20', 'right');
+@include pad('25', 'right');
+@include pad('30', 'right');
+@include pad('50', 'right');
+@include pad('75', 'right');
+@include pad('100', 'right');
+@include pad('5', 'left');
+@include pad('10', 'left');
+@include pad('20', 'left');
+@include pad('25', 'left');
+@include pad('30', 'left');
+@include pad('50', 'left');
+@include pad('75', 'left');
+@include pad('100', 'left');
+
+@mixin no-padding($side) {
+  @if $side== 'all' {
+    .no-padding {
+      padding: 0 !important;
+    }
+  } @else {
+    .no-padding-#{$side} {
+      padding-#{$side}: 0 !important;
+    }
+  }
+}
+
+@include no-padding('left');
+@include no-padding('right');
+@include no-padding('top');
+@include no-padding('bottom');
+@include no-padding('all');
+
+/* end of padding helpers */
+
+.no-margin {
+  margin: 0px;
+}
+
+@mixin voffset($size) {
+  @if $size== '' {
+    .voffset {
+      margin-top: 2px !important;
+    }
+  } @else {
+    .voffset-#{$size} {
+      margin-top: #{$size}px !important;
+    }
+  }
+}
+
+@include voffset('');
+@include voffset('5');
+@include voffset('10');
+@include voffset('15');
+@include voffset('30');
+@include voffset('40');
+@include voffset('60');
+@include voffset('80');
+@include voffset('100');
+@include voffset('150');
+
+.readonly {
+  background-color: #eee;
+  opacity: 1;
+}
+
+/* ==========================================================================
+make sure browsers use the pointer cursor for anchors, even with no href
+========================================================================== */
+
+a:hover {
+  cursor: pointer;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+button.anchor-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  align-items: initial;
+  text-align: initial;
+  width: 100%;
+}
+
+a.anchor-btn:hover {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+Metrics and Health styles
+========================================================================== */
+
+#threadDump .popover,
+#healthCheck .popover {
+  top: inherit;
+  display: block;
+  font-size: 10px;
+  max-width: 1024px;
+}
+
+.thread-dump-modal-lock {
+  max-width: 450px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#healthCheck .popover {
+  margin-left: -50px;
+}
+
+.health-details {
+  min-width: 400px;
+}
+
+/* bootstrap 3 input-group 100% width
+http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
+
+.width-min {
+  width: 1% !important;
+}
+
+/* jhipster-needle-scss-add-main JHipster will add new css style */
+#left-menu {
+  left: 0px;
+  z-index: 11;
+}
+
+// Left bar
+.left-menu {
+  width: $left-bar-width;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  // border-right: 1px solid $secondary-border-color;
+  background-color: $secondary-background-color;
+  transition: left 0.2s;
+  z-index: 11;
+}
+
+.bg-primary {
+  background-color: $primary-color !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.btn-filter {
+  background-color: white !important;
+  color: $text-black !important;
+  font-size: $text-body-14 !important;
+  border-radius: $rounded-8 !important;
+  border: 1px solid $secondary-black-40 !important;
+  font-weight: $font-body-400 !important;
+  gap: $space-8 !important;
+  padding-inline: $space-8 !important;
+
+  &:hover {
+    background-color: $secondary-black-90 !important;
+  }
+}
+
+.attachment-link {
+  text-decoration: underline;
+  color: $info-color-40;
+  font-weight: $font-body-400;
+  cursor: pointer;
+}
+
+.input-time-check-bulk {
+  padding: $space-4 $space-2 !important;
+  width: $space-32 !important;
+  height: $space-32 !important;
+  text-align: center;
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+.export-timesheet {
+  position: relative;
+
+  .rmdp-input {
+    cursor: pointer !important;
+    position: absolute;
+    width: 40px;
+    height: 36px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .rmdp-wrapper {
+    transform: translate(-20%, 0%);
+  }
+}
+
+.card-template {
+  padding: $space-12 0 !important;
+  // form {
+  //   min-width: 678px;
+  // }
+  // .template-input {
+  //   width: 328px;
+  // }
+}
+
+.btn-group-template {
+  // padding-inline: $space-24;
+
+  .btn-cancel-template {
+    width: $space-74;
+  }
+}
+
+.btn-upload {
+  font-size: $text-body-14;
+
+  img {
+    width: 24.85px;
+    height: 24.85px;
+  }
+}
+
+.attachment {
+  font-size: $text-body-16;
+  font-weight: $font-body-700;
+  line-height: 18.75px;
+  letter-spacing: -0.5px;
+  margin-bottom: $space-16;
+}
+
+button:disabled,
+button.disabled {
+  pointer-events: visible !important;
+  cursor: not-allowed !important;
+
+  & > button {
+    cursor: not-allowed !important;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: $space-16 0;
+  background-color: $secondary-black-70;
+}
+
+.divider-vertical {
+  width: 1px;
+  max-width: 1px;
+  height: 100%;
+  margin: 0 $space-16;
+  padding: 0px !important;
+  background-color: $secondary-black-70;
+}
+
+.file-attachment {
+  font-size: $space-16;
+  font-weight: $font-body-400;
+  line-height: 18.75px;
+  letter-spacing: -0.5px;
+  color: $info-color-40;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.modal-content {
+  max-height: 100vh;
+  overflow: auto;
+}
+
+table {
+  caption-side: top;
+}
+
+.notification-badge {
+  background-color: $red-error-50 !important;
+  color: white;
+  font-size: $text-body-12 !important;
+  font-weight: $font-body-700;
+  padding: $space-4 $space-8;
+  border-radius: $rounded-8;
+}
+
+.default-buttton {
+  min-width: 77px;
+}
+
+.modal-default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    width: 90vw;
+  }
+
+  &-orders {
+    .modal-content {
+      border-radius: 8px;
+    }
+  }
+}
+
+.attachment-card {
+  width: 100%;
+  min-height: 90px;
+  flex: 1;
+
+  &.card {
+    padding: 8px !important;
+  }
+
+  &-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #344054;
+  }
+
+  &-link {
+    color: #365fbf;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.print-section {
+  display: none;
+}
+
+@media print {
+  .view-routes {
+    display: none;
+  }
+
+  .print-section {
+    display: flex;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    /* For Safari/Chrome */
+    print-color-adjust: exact;
+    /* For modern browsers */
+  }
+}
+
+.card-cs {
+  .ant-card-body {
+    padding: 12px 10px !important;
+  }
+}

@@ -1,0 +1,32 @@
+entity ReleaseWarehouse {
+  id UUID
+  itemId UUID
+  itemName String
+  itemCategoryId UUID
+  itemCategoryCode String
+  itemCategoryName String
+  itemCode String
+  uomId UUID
+  uomName String
+  warehouseId UUID
+  warehouseName String
+  warehouseTypeId UUID
+  warehouseTypeName String
+  percentProtein Float
+  productionVolume Integer
+  orderId UUID
+  manufactureOrderId UUID
+  company String
+  department String
+  isDeleted Boolean
+  createdBy String
+  createdDate ZonedDateTime
+  updatedBy String
+  updatedAt ZonedDateTime
+  deletedBy String
+  deletedAt ZonedDateTime
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

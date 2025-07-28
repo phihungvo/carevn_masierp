@@ -1,0 +1,95 @@
+{
+  "annotations": {
+    "changelogDate": "20241024065714"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "idStandardWorkScheduleConfig",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "shiftName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "durationHours",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "hourStartTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minuteStartTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "secondStartTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "hourEndTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minuteEndTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "secondEndTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deletedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "MasiEmployee",
+  "name": "Shift",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

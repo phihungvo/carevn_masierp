@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20240731162211" author="HoangDang">
+        <validCheckSum>ANY</validCheckSum>
+
+        <dropColumn tableName="customer" columnName="contract_from"/>
+        <dropColumn tableName="customer" columnName="contract_to"/>
+
+        <addColumn tableName="customer">
+            <column name="note" type="text" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+            <column name="company" type="varchar(255)" defaultValue="KIM_LONG">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(255)" defaultValue="">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+    </changeSet>
+</databaseChangeLog>

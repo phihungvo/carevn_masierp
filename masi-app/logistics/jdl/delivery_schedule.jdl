@@ -1,0 +1,50 @@
+entity DeliverySchedule {
+    id UUID,
+    code String
+    deliveryDate LocalDate
+    expectedReceiveDate LocalDate
+    contractId UUID
+    orderId UUID
+    content String
+    totalQuantity Integer
+    //    unitId UUID
+    totalPrice BigDecimal
+    //    total BigDecimal
+    paymentMethod String
+    receiverName String
+    deliveryLocation String
+    note String
+    type String
+
+    attachment String
+    attribute String
+
+    isDeleted Boolean,
+    createdAt ZonedDateTime
+    createdBy String
+    updatedAt ZonedDateTime
+    updatedBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+    company String
+    department String
+
+}
+
+
+entity DeliveryDetail {
+    id UUID,
+    deliveryScheduleId UUID,
+    itemId UUID,
+    quantity Integer,
+    uomId UUID,
+    price BigDecimal,
+
+    attachment String
+}
+
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter *

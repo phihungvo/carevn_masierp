@@ -1,0 +1,71 @@
+@import '../../bootstrap-variables';
+
+.actions-dropdown {
+  &-toggle {
+    background-color: white;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  .dropdown-item {
+    &:hover {
+      background-color: $secondary-black-90;
+      color: unset;
+    }
+
+    button {
+      font-weight: $font-body-400 !important;
+      font-size: $text-body-16 !important;
+    }
+  }
+
+  .update {
+    color: #46a6ff;
+  }
+
+  .approve {
+    color: $success-green-40;
+  }
+
+  .request {
+    color: #a15e00;
+  }
+
+  .delete {
+    color: #f54635;
+  }
+}
+
+.modals-filter-purchases {
+  .modal-content {
+    width: 522px;
+    overflow: unset !important;
+  }
+}
+
+.modals-detail-purchase {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.modals-create-purchase {
+  .modal-content {
+    width: 1040px;
+  }
+}
+
+.modals-request-purchase {
+  .modal-content {
+    width: 744px;
+    overflow: unset !important;
+  }
+}
+
+.modals-approve-sign {
+  .modal-content {
+    width: 575px;
+  }
+}

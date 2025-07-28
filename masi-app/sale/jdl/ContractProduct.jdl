@@ -1,0 +1,35 @@
+entity Product {
+    id UUID required unique,
+    productName String ,
+    note String,
+    company String ,
+    updatedAt ZonedDateTime ,
+    createdDate ZonedDateTime ,
+    isDeleted Boolean
+}
+
+
+
+entity ContractProduct {
+    id UUID required unique,
+    idContract UUID required,
+    idProduct UUID required,
+    price Double,
+    quantity Double,
+    unit String,
+    proteinParameters Float,
+    company String ,
+    department String ,
+    updatedAt ZonedDateTime ,
+    createdDate ZonedDateTime ,
+    isDeleted Boolean
+}
+
+relationship OneToMany {
+    ContractProduct{product} to Product
+}
+
+dto * with mapstruct
+service * with serviceClass
+
+paginate * with pagination

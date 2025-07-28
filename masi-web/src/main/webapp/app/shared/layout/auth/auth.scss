@@ -1,0 +1,11 @@
+@import "../../../bootstrap-variables";
+
+.auth {
+  padding-top: 38px;
+  background-color: white;
+  height: 100vh;
+
+  &-form {
+    width: 328px;
+  }
+}

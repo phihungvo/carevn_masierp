@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20240429145954"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiEmployee",
+  "databaseType": "sql",
+  "documentation": "Time keeping record entity.",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "checkIn",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiEmployee",
+  "name": "TimeKeepingRecord",
+  "relationships": [
+    {
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

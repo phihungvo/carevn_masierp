@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity IncomingInvoice.
+    -->
+    <changeSet id="20240912030822-1" author="jhipster">
+        <validCheckSum>any</validCheckSum>
+        <createTable tableName="incoming_invoice">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="invoice_no" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="invoice_date" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="employee_id" type="${uuidType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department_id" type="${uuidType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="content" type="text">
+                <constraints nullable="true"/>
+            </column>
+            <column name="total_amount" type="decimal(19,1)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="note" type="text">s
+                <constraints nullable="true"/>
+            </column>
+            <column name="attachments" type="jsonb">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="${datetimeType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="deleted_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="deleted_at" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="company" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="department" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="contract_id" type="${uuidType}">
+                <constraints nullable="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="incoming_invoice" columnName="invoice_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="incoming_invoice" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="incoming_invoice" columnName="updated_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="incoming_invoice" columnName="deleted_at" columnDataType="${datetimeType}"/>
+    </changeSet>
+    <changeSet id="20240912030822-2" author="jhipster">
+        <sql>
+            alter table incoming_invoice
+                add column invoice_type varchar(100);
+            alter table incoming_invoice rename column contract_id to document_id;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

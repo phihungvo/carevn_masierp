@@ -1,0 +1,60 @@
+
+//Manage Order
+entity Order {
+	id UUID required unique
+    status OrderStatus required
+    orderCode String required
+    numberOrder Integer required
+    dateOrder LocalDate required
+    contractId UUID required
+    packageType String required
+    quantity String required
+    protein String required
+    humidity String required
+    ashing String required
+    fat String required
+    salt String required
+    tvn String required
+    impurities String required
+    note String
+    finishDate LocalDate required
+    lastUpdated ZonedDateTime required
+    createdDate ZonedDateTime required
+    isDeleted Boolean required 
+}
+entity OrderReview{
+    id UUID required unique
+    status OrderReviewStatus required
+    approvalStatusSign ImageBlob required
+    approvalStatusNote String required
+    approvalSolution String required
+    awaitingDate LocalDate 
+    lastUpdated ZonedDateTime required
+    createdDate ZonedDateTime required
+    employeeId UUID required
+}
+
+enum OrderReviewStatus{
+    APPROVED
+    PENDING
+    REJECTED 
+}
+
+
+enum OrderStatus {
+    WAITING_APPROVAL
+    APPROVED
+    NOT_APPROVE
+    WAITTING
+    REJECTED
+    DELETED
+}
+
+relationship OneToMany {
+    Order to OrderReview    
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass

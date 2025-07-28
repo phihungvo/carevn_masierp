@@ -1,0 +1,50 @@
+entity Documentary {
+    id UUID required unique
+    documentNumber String required,
+    dateStart LocalDate required,
+    group DocumentaryGroup required,
+    type DocumentaryType required,
+    content String required,
+    signer UUID required,
+    recipient String required,
+    archiveLocation String required,
+    senderOrReceiver UUID,
+    attachments ImageBlob ,
+    attachmentsContentnAME String ,
+    idGroup UUID required,
+    idCompany UUID required,
+    status DocumentaryStatus
+
+    createdAt ZonedDateTime,
+    updatedAt ZonedDateTime,
+    deletedAt ZonedDateTime,
+    isDeleted Boolean,
+    department UUID,
+    createdBy UUID,
+    updatedBy UUID,
+    deletedBy UUID
+}
+
+enum DocumentaryGroup {
+    OUTGOING,
+    INCOMING,
+    INTERNAL
+}
+
+enum DocumentaryType {
+    ANNOUNCEMENT,
+    DOCUMENTARY,
+    RESPONSE
+}
+
+enum DocumentaryStatus {
+    NEW,
+    PENDING_APPROVAL,
+    APPROVED,
+    REQUEST_EDIT
+}
+
+paginate * with pagination
+dto * with mapstruct
+service * with serviceClass
+

@@ -1,0 +1,19 @@
+export enum PROFILE_STATES {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+}
+
+export enum EMPLOYEE_STATUS {
+  WORKING = 'WORKING',
+  RESIGNED = 'RESIGNED',
+}
+
+export enum PROFILE_ATTACHMENT_TYPE {
+  CMND = 'CMND',
+  HK = 'HK',
+  SYLL = 'SYLL',
+  DON_XV = 'DON_XV',
+  GKSK = 'GKSK',
+  GCK = 'GCK',
+  OTHER = 'OTHER',
+}

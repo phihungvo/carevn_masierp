@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ConfirmLeave.
+    -->
+    <changeSet id="20240813094044" author="HuuHoang">
+        <validCheckSum>ANY</validCheckSum>
+        <sql dbms="postgresql"
+        endDelimiter=";"
+        splitStatements="true"
+        stripComments="true">
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS nitrogen_180_price VARCHAR(255);
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS nitrogen_150_price VARCHAR(255);
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS price VARCHAR(255);
+            ALTER TABLE quotation ADD COLUMN IF NOT EXISTS customer_reject_note VARCHAR(255);
+            ALTER TABLE quotation ADD COLUMN IF NOT EXISTS customer_approver_id VARCHAR(255);
+            ALTER TABLE quotation_detail ALTER COLUMN minimum_weight TYPE VARCHAR(255);
+            ALTER TABLE quotation_detail ALTER COLUMN weight TYPE VARCHAR(255);
+            ALTER TABLE quotation_detail DROP COLUMN IF EXISTS product_id;
+            ALTER TABLE quotation_detail ADD COLUMN IF NOT EXISTS material_id UUID;
+
+
+
+</sql>
+    </changeSet>
+
+</databaseChangeLog>

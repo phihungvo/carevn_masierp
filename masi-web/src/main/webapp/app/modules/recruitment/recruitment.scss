@@ -1,0 +1,69 @@
+@import '../../bootstrap-variables';
+
+.modals-detail-recruitment {
+  .modal-content {
+    width: 1024px;
+  }
+}
+
+.modals-filter-recruitment {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.modals-create-recruitment {
+  .modal-content {
+    transform: unset !important;
+    width: 100%;
+  }
+}
+
+.modals-schedule-recruitment {
+  .modal-content {
+    width: 800px;
+  }
+}
+
+.modals-result-recruitment {
+  .modal-content {
+    width: 800px;
+  }
+}
+
+.modals-approve-sign {
+  .modal-content {
+    width: 540px;
+  }
+}
+
+.recruitment-wage {
+  position: relative;
+
+  &-unit {
+    position: absolute;
+    right: 16px;
+    top: calc(50% + 8px);
+    transform: translateY(-50%);
+    border: none !important;
+    width: 82px;
+  }
+}
+
+.modals-renew-recruitment {
+  .modal-content {
+    width: 600px;
+    overflow: unset !important;
+  }
+}
+
+.modals-recruitment-history {
+  .modal-content {
+    overflow: unset !important;
+  }
+}
+
+.highlight-overdue-deadline {
+  color: $red-invalid;
+  font-weight: 600;
+}

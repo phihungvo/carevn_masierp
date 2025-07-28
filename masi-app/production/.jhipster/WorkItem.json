@@ -1,0 +1,78 @@
+{
+  "annotations": {
+    "changelogDate": "20240604094050"
+  },
+  "applications": "*",
+  "clientRootFolder": "MasiProduction",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "microserviceName": "MasiProduction",
+  "name": "WorkItem",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "receiveMaterialChecklist",
+      "otherEntityRelationshipName": "workItem",
+      "relationshipName": "receiveMaterialChecklist",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "additiveMaterialChecklist",
+      "otherEntityRelationshipName": "workItem",
+      "relationshipName": "additiveMaterialChecklist",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "machineOperationChecklist",
+      "otherEntityRelationshipName": "workItem",
+      "relationshipName": "machineOperationChecklist",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "steamingProcessChecklist",
+      "otherEntityRelationshipName": "workItem",
+      "relationshipName": "steamingProcessChecklist",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "metalDetectionChecklist",
+      "otherEntityRelationshipName": "workItem",
+      "relationshipName": "metalDetectionChecklist",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "mixingReportChecklist",
+      "otherEntityRelationshipName": "workItem",
+      "relationshipName": "mixingReportChecklist",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

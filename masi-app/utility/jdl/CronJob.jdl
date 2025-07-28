@@ -1,0 +1,27 @@
+entity CronJob {
+    action String
+    name String
+    everyMinute Integer
+    atMinute Integer
+    atHour Integer
+    atDayOfMonth Integer
+    atMonth Integer
+    atDayOfWeek Integer
+    enabled Boolean
+    lastRun ZonedDateTime
+    nextRun ZonedDateTime
+    description String
+    status CronJobStatus
+    updatedAt ZonedDateTime
+    updatedBy String
+}
+
+enum CronJobStatus {
+    RUNNING
+    STOPPED
+    PAUSED
+    ERROR
+}
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination

@@ -1,0 +1,82 @@
+entity Inventories {
+    id UUID,
+    code String,
+    receiverUserId UUID,
+    deliveryDate LocalDate,
+
+    InventoriesTypeId UUID,
+    dateCreate LocalDate,
+    customerId UUID,
+    customerRecipientId UUID,
+    invoiceId UUID,
+    address String,
+    note String,
+    purchasePrice BigDecimal,
+    salePrice BigDecimal,
+    totalAmount BigDecimal,
+
+    inputDepartmentId UUID,
+    incomingWarehouseId UUID,
+    outgoingWarehouseId UUID,
+
+    employeeId UUID,
+    orderId UUID,
+    supplierRequestId UUID,
+    taxCode String,
+    series String,
+    currencyCodeRate String,
+    exchangeRate  BigDecimal,
+    isEmptiness Boolean,
+    emptinessId UUID,
+
+    file String,
+    attribute String,
+
+    status StatusEntity
+
+
+    isDeleted Boolean,
+    createdAt ZonedDateTime required
+    createdBy String required
+    updatedAt ZonedDateTime
+    updatedBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+    company String
+    department String
+
+
+}
+
+entity InventoriesType{
+    id UUID,
+    code String,
+    name String,
+    description String,
+    isActive Boolean,
+
+    isDeleted Boolean,
+    createdAt ZonedDateTime required
+    createdBy String required
+    updatedAt ZonedDateTime
+    updatedBy String
+    deletedAt ZonedDateTime
+    deletedBy String
+    company String
+    department String
+}
+
+enum StatusEntity {
+    NEW,
+    APPROVED,
+    REJECTED,
+    CANCELLED,
+    COMPLETED
+}
+
+// DTOs and Pagination
+dto * with mapstruct
+paginate * with pagination
+service * with serviceClass
+filter *
+// Services

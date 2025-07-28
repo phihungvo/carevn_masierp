@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ProMaintainProPackage.
+    -->
+    <changeSet id="20240927064633" author="jhipster">
+        <sql>
+            ALTER TABLE release_warehouse ADD COLUMN IF NOT EXISTS additive_material_checklist_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-1" author="luc.luong">
+        <sql>
+            ALTER TABLE production_standard ADD COLUMN IF NOT EXISTS code VARCHAR(255);
+            ALTER TABLE production_standard ADD COLUMN IF NOT EXISTS note text;
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-2" author="luc.luong">
+        <sql>
+            ALTER TABLE work_center ADD COLUMN IF NOT EXISTS code VARCHAR(255);
+            ALTER TABLE work_center ADD COLUMN IF NOT EXISTS note text;
+            ALTER TABLE work_center ADD COLUMN IF NOT EXISTS company VARCHAR(255);
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-3" author="luc.luong">
+        <sql>
+            ALTER TABLE product_package ADD COLUMN IF NOT EXISTS package_by UUID;
+            ALTER TABLE product_package ADD COLUMN IF NOT EXISTS package_at TIMESTAMP;
+            ALTER TABLE product_package ADD COLUMN IF NOT EXISTS weight DOUBLE PRECISION;
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-4" author="luc.luong">
+        <sql>
+            ALTER TABLE product_package ADD COLUMN IF NOT EXISTS note text;
+        </sql>
+    </changeSet>
+    <changeSet id="1732847018164-1" author="luc.luong">
+        <sql>
+            ALTER TABLE product_maintain ADD COLUMN IF NOT EXISTS note text;
+            ALTER TABLE product_maintain ADD COLUMN IF NOT EXISTS product_package_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-5" author="luc.luong">
+        <sql>
+            ALTER TABLE quality_check_sample ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMP;
+            ALTER TABLE quality_check_sample ADD COLUMN IF NOT EXISTS deleted_by UUID;
+            ALTER TABLE quality_check_sample ADD COLUMN IF NOT EXISTS protein_percentage_apply DOUBLE PRECISION;
+
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-6" author="luc.luong">
+        <sql>
+            ALTER TABLE product_routing ADD COLUMN IF NOT EXISTS warehouse_date TIMESTAMP;
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-7" author="luc.luong">
+        <sql>
+            ALTER TABLE product_routing ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN;
+            ALTER TABLE product_routing ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMP;
+            ALTER TABLE product_routing ADD COLUMN IF NOT EXISTS deleted_by VARCHAR(255);
+            ALTER TABLE product_routing ADD COLUMN IF NOT EXISTS created_by VARCHAR(255);
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="20240927064633-8" author="HOANG DANG">
+        <sql>
+            ALTER TABLE quality_check_sample ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN;
+            ALTER TABLE quality_check_sample ADD COLUMN IF NOT EXISTS protein_percentage DOUBLE PRECISION;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20240927064633-9" author="HOANG DANG">
+        <sql>
+            ALTER TABLE manufacture_order ADD COLUMN IF NOT EXISTS production_routing_id UUID;
+            ALTER TABLE manufacture_order ADD COLUMN IF NOT EXISTS inventory_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-10" author="luc.luong">
+        <sql>
+            ALTER TABLE quality_check_sample ADD COLUMN IF NOT EXISTS attributes JSONB;
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-11" author="luc.luong">
+        <sql>
+            ALTER TABLE quality_check_sample ADD COLUMN IF NOT EXISTS item_id UUID;
+        </sql>
+    </changeSet>
+    <changeSet id="20240927064633-12" author="luc.luong">
+        <sql>
+            ALTER TABLE manufacture_order ADD COLUMN IF NOT EXISTS order_item_id UUID;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

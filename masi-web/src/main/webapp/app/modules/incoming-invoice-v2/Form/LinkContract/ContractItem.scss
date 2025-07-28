@@ -1,0 +1,18 @@
+.contract-item {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #E4E7EC;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+  &__code {
+    color: #365FBF;
+  }
+
+}

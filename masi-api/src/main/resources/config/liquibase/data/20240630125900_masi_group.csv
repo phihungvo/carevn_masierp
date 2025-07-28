@@ -1,0 +1,6 @@
+id;name;description;created_by;created_date;last_modified_by;last_modified_date;activated;workspace_id
+3d839e53-2e0d-4a48-8af4-7a3c14dd2b2a;Group1;This is group 1;creator1;2022-01-01 00:00:00;;2022-01-01 00:00:00;true;d4f07c91-8d32-44e4-ac3b-09cd98388971
+5e8a3e53-4d6f-4a49-8b6b-6c4c14dd2b2b;Group2;This is group 2;creator2;2022-01-02 00:00:00;;2022-01-02 00:00:00;true;d4f07c91-8d32-44e4-ac3b-09cd98388971
+7f8b3e53-6c7d-4a4a-9c8c-7d4c14dd2b2c;Group3;This is group 3;creator3;2022-01-03 00:00:00;;2022-01-03 00:00:00;true;d4f07c91-8d32-44e4-ac3b-09cd98388971
+9f9c3e53-8d8e-4a4b-bd9d-8e4c14dd2b2d;Group4;This is group 4;creator4;2022-01-04 00:00:00;;2022-01-04 00:00:00;true;d4f07c91-8d32-44e4-ac3b-09cd98388971
+bfad3e53-ae9f-4a4c-deaf-9f4c14dd2b2e;Group5;This is group 5;creator5;2022-01-05 00:00:00;;2022-01-05 00:00:00;true;d4f07c91-8d32-44e4-ac3b-09cd98388971

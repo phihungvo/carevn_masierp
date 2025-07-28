@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="floatType" value="float4" dbms="postgresql"/>
+    <property name="clobType" value="clob" dbms="postgresql"/>
+    <property name="blobType" value="bytea" dbms="postgresql"/>
+    <property name="uuidType" value="uuid" dbms="postgresql"/>
+    <property name="datetimeType" value="datetime" dbms="postgresql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240506065220_added_entity_ProductionStandard.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240604094048_added_entity_ManufactureOrder.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240604094049_added_entity_WorkOrder.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240604094050_added_entity_WorkItem.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093743_added_entity_ReceiveMaterialChecklist.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093744_added_entity_AdditiveMaterialChecklist.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093745_added_entity_MachineOperationChecklist.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093746_added_entity_MachineGroup.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093747_added_entity_MachineCheckRecord.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093748_added_entity_SteamingProcessChecklist.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093749_added_entity_MetalDetectionChecklist.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093750_added_entity_MixingReportChecklist.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093751_added_entity_QualityCheckSample.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093752_added_entity_SampleDisposal.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240718024112_add_data.xml" relativeToChangelogFile="false"/>
+
+    <include file="config/liquibase/changelog/20240604094049_added_entity_constraints_WorkOrder.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240604094050_added_entity_constraints_WorkItem.xml"
+             relativeToChangelogFile="false"/>
+    <!-- <include file="config/liquibase/changelog/20240605093746_added_entity_constraints_MachineGroup.xml" relativeToChangelogFile="false"/> -->
+    <!-- <include file="config/liquibase/changelog/20240605093747_added_entity_constraints_MachineCheckRecord.xml" relativeToChangelogFile="false"/> -->
+    <include file="config/liquibase/changelog/20240605093751_added_entity_constraints_QualityCheckSample.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093753_change_SteamingTemDataType.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240605093754_change_materialWeightDatatype.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240620145323_change_workItem_remove_column.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240621180000_backup_MasiProduction.xml"
+             relativeToChangelogFile="false"/>
+
+    <include file="config/liquibase/changelog/20240617093229_added_entity_WorkCenter.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240618064522_added_entity_Factory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240618064523_added_entity_ProductRouting.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240618064524_added_entity_Storage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240619022435_added_entity_ProductMaintain.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240619022436_added_entity_ProductPackage.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240618064523_added_entity_constraints_ProductRouting.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240619022436_added_entity_constraints_ProductPackage.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240708181111_add_unit_field.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240723024111_add_data.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240729024111_add_data_company_department.xml"
+             relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240812024111_add_more_field.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240723024111_add_type_producttion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240812024112_add_field_marterial.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240812024113_add_field_manufacture_order.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240924021555_added_entity_ReleaseWarehouse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240924021556_update_MO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240924021557_update_MO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240927064630_added_entity_ProMaintainProPackage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240927064631_deleted_fk_prounting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240927064632_add_field_product_package.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240927064633_add_field_material_additive.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase
+    constraints changelogs here -->
+
+</databaseChangeLog>
